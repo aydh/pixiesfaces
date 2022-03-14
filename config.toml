@@ -16,6 +16,15 @@ theme = "hugo-elate-theme"
   # Google Maps Javascript API Key (if not set will default to not passing a key)
   googleMapsApiKey = ""
 
+  [params.logo]
+    mobile = "logo-mobile.png"
+    mobile_height = "70px"
+    mobile_width = "70px"
+    desktop = "logo.png"
+    desktop_height = "70px"
+    desktop_width = "70px"
+    alt = "Pixies Logo"
+
   # Navigation
   [params.navigation]
     brand = "Pixies Face Painting"
