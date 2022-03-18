@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "head.html" .}}
+    </head>
+    <body>
+        {{ partial "nav.html" .}}
+		{{ partial "logo.html" .}}
+		{{ partial "hero.html" .}}
+        {{ partial "intro.html" .}}
+		{{ if .Site.Params.work.enable }}
+       		{{ partial "work.html" .}}
+       	{{ end }}
+		{{ if .Site.Params.testimonials.enable }}
+        	{{ partial "testimonials.html" .}}
+		{{ end }}
+		{{ if .Site.Params.services.enable }}
+        	{{ partial "services.html" .}}
+		{{ end }}
+		{{ if .Site.Params.contact.enable }}
+        	{{ partial "contact.html" .}}
+        {{ end }}
+        {{ if .Site.Params.footer.enable }}
+        	{{ partial "footer.html" .}}
+        {{ end }}
+        {{ partial "js.html" .}}
+    </body>
+</html>

@@ -2,11 +2,8 @@
 baseurl = "/"
 title = "Pixies Face Painting"
 languageCode = "en-us"
-theme = "hugo-elate-theme"
 
 [params]
-  
-  custom_css = ["css/pixies.css"]
 
   # Meta
   author = "Pixies Face Painting"
@@ -172,78 +169,6 @@ theme = "hugo-elate-theme"
       description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
       icon = "icon-video2"
 
-  # About section
-  [params.about]
-    enable = false
-    title = "About"
-    description = "This is about you and the team?"
-
-    [[params.about.item]]
-      name = "Jean Smith"
-      position = "Web Designer"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
-      img = "person1.jpg"
-      alt = "Person1"
-      social = [
-        ["icon-twitter", "#"],
-        ["icon-facebook", "#"],
-        ["icon-linkedin", "#"]
-      ]
-
-    [[params.about.item]]
-      name = "Rob Smith"
-      position = "Web Developer"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
-      img = "person2.jpg"
-      alt = "Person2"
-      social = [
-        ["icon-twitter", "#"],
-        ["icon-facebook", "#"],
-        ["icon-github", "#"]
-      ]
-
-    [[params.about.item]]
-      name = "Larry Ben"
-      position = "Web Designer"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
-      img = "person3.jpg"
-      alt = "Person3"
-      social = [
-        ["icon-twitter", "#"],
-        ["icon-facebook", "#"],
-        ["icon-dribbble", "#"]
-      ]      
-
-  # Counters section
-  [params.counters]
-    enable = false
-    title = "Stats"
-    background = "full_image_1.png"
-
-    [[params.counters.item]]
-      description = "Faces Painted"
-      icon = "icon-briefcase"
-      from = 0
-      to = 167
-      interval = 50
-      speed = 5000
-
-    [[params.counters.item]]
-      description = "Balloons Twisted"
-      icon = "icon-code"
-      from = 0
-      to = 59
-      interval = 50
-      speed = 5000
-
-    [[params.counters.item]]
-      description = "Happy Children"
-      icon = "icon-cup"
-      from = 0
-      to = 432
-      interval = 50
-      speed = 5000
-
   # Contact section
   [params.contact]
     enable = true
@@ -256,6 +181,7 @@ theme = "hugo-elate-theme"
     details = [
         ["icon-phone", "+61 406 074 909"],
         ["icon-facebook", "https://m.me/username"],
+        ["icon-home", "7 Vista Avenue, Ringwood East, Victoria 3135, Australia"],
       ]
 
     email = "Your Email"
