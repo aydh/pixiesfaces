@@ -247,7 +247,7 @@ theme = "hugo-elate-theme"
   # Contact section
   [params.contact]
     enable = true
-    map = false
+    map = true
     form = true
     title = "Get in touch"
     description = "Call or send me a message"
