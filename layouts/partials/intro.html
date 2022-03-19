@@ -10,19 +10,11 @@
 						<h2>{{ .title }}</h2>
 						<p>{{ .description }}</p>
 						{{ if .button}}
-						<p><a href="{{ .url }}" class="btn btn-primary">{{ .button}}</a></p>
+						<p><a href="#" data-nav-section="{{ .navigation }}" class="btn btn-primary">{{ .button}}</a></p>
 						{{ end }}
 					</div>
 				</div>
 				{{ end }}
 			</div>
-			{{ if .Site.Params.intro.video.enable }}
-			<div class="row watch-video text-center to-animate">
-				<!-- <span>{{ with .Site.Params.intro.video }}{{ . }}{{ end }}</span> -->
-				<span>{{.Site.Params.intro.video.title | markdownify }}</span>
-
-				<a href="{{ .Site.Params.intro.video.url }}" class="popup-vimeo btn-video"><i class="{{ .Site.Params.intro.video.icon | markdownify }}"></i></a>
-			</div>
-			{{ end }}
 		</div>
 	</section>

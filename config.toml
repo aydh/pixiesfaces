@@ -6,7 +6,7 @@ languageCode = "en-us"
 [params]
 
   # Meta
-  author = "Pixies Face Painting"
+  author = "Jenny Saunders"
   description = "Beautiful Face Painting"
   email = "info@pixiesfaces.com"
 
@@ -29,8 +29,7 @@ languageCode = "en-us"
     work = "Gallery"
     testimonials = "Testimonials"
     services = "Booking Info"
-    about = "About"
-    contact = "Contact"
+    contact = "Contact Us"
 
     # You can add custom links before or after the default links
     # Assign a weight to define the order
@@ -60,7 +59,7 @@ languageCode = "en-us"
   [[params.intro.item]]
     title = "Face Painting"
     description = "Your childern will go mad for these faces!"
-    url = "contact"
+    navigation = "contact"
     button = "Face Painting"
     icon = "icon-bulb"
     img = "snowtiger.png"
@@ -68,7 +67,7 @@ languageCode = "en-us"
   [[params.intro.item]]
     title = "Balloons"
     description = "Amazing balloons, the like of which you've never seen."
-    url = "#"
+    navigation = "contact"
     button = "Balloons"
     icon = "icon-wrench"
     img = "iceprincess.png"
@@ -76,16 +75,10 @@ languageCode = "en-us"
   [[params.intro.item]]
     title = "Fairy Parties"
     description = "You won't believe how fun Pixies parties can be!"
-    url = "#"
+    navigation = "services"
     button = "Fairy Parties"
     icon = "icon-rocket"
     img = "flowers.png"
-
-  [params.intro.video]
-    enable = false
-    title = "Watch the video"
-    icon = "icon-play2"
-    url = "https://vimeo.com/channels/staffpicks/93951774"
 
   # Work section
   [params.work]
@@ -133,19 +126,19 @@ languageCode = "en-us"
     [[params.testimonials.item]]
       quote = "&ldquo;My daughter had the best time&rdquo;"
       person = 'Fred Bloggs'
-      img = "person1.jpg"
+      img = "person1.png"
       alt = "Fred Blogs"
 
     [[params.testimonials.item]]
       quote = "&ldquo;My daughter had the best time&rdquo;"
       person = 'Fred Bloggs'
-      img = "person1.jpg"
+      img = "person1.png"
       alt = "Fred Blogs"
 
     [[params.testimonials.item]]
       quote = "&ldquo;My daughter had the best time&rdquo;"
       person = 'Fred Bloggs'
-      img = "person1.jpg"
+      img = "person1.png"
       alt = "Fred Blogs"
     
   # Services section
@@ -172,7 +165,7 @@ languageCode = "en-us"
   # Contact section
   [params.contact]
     enable = true
-    map = true
+    map = false
     form = true
     title = "Get in touch"
     description = "Call or send me a message"
@@ -180,7 +173,7 @@ languageCode = "en-us"
     # Available icons: http://simplelineicons.com/
     details = [
         ["icon-phone", "+61 406 074 909"],
-        ["icon-facebook", "https://m.me/username"],
+        ["icon-facebook", "https://m.me/pixiesfaces"],
         ["icon-home", "7 Vista Avenue, Ringwood East, Victoria 3135, Australia"],
       ]
 
