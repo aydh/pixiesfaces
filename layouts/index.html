@@ -5,7 +5,9 @@
     </head>
     <body>
         {{ partial "nav.html" .}}
-		{{ partial "logo.html" .}}
+		{{ if .Site.Params.logo.enable }}
+			{{ partial "logo.html" .}}
+		{{ end }}
 		{{ partial "hero.html" .}}
         {{ partial "intro.html" .}}
 		{{ if .Site.Params.work.enable }}

@@ -5,13 +5,19 @@
                 <div class="navbar-header">
                     <!-- Mobile Toggle Menu Button -->
                     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                    <a class="navbar-brand" href="index.html">{{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}</a> 
+                    {{ if .Site.Params.navigation.showbrand }}
+                        <a class="navbar-brand" href="index.html">{{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}</a>
+                    {{end}}
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
 
                     {{ range .Site.Menus.prepend }}
                         <li><a class="external" href="{{ .URL }}"><span>{{ .Name | markdownify }}</span></a></li>
+                    {{ end }}
+
+                    {{ if .Site.Params.logo.enable }}
+                        <li><a href="#" data-nav-section="logo"><span>{{ with .Site.Params.navigation.logo }}{{ . | markdownify }}{{ end }}</span></a></li> 
                     {{ end }}
 
                     <li class="active"><a href="#" data-nav-section="home"><span>{{ with .Site.Params.navigation.home }}{{ . | markdownify }}{{ end }}</span></a></li>
