@@ -21,8 +21,6 @@
 		$(window).stellar();
 	};
 
-
-
 	// Burger Menu
 	var burgerMenu = function() {
 
@@ -119,10 +117,6 @@
 
 	};
 
-
-	
-
-
 	// Window Scroll
 	var windowScroll = function() {
 		var lastScrollTop = 0;
@@ -132,11 +126,12 @@
 		   	var header = $('#fh5co-header'),
 				scrlTop = $(this).scrollTop();
 
-			if ( scrlTop > 500 && scrlTop <= 2000 ) {
+			if ( scrlTop > 500 ) {
 				header.addClass('navbar-fixed-top fh5co-animated slideInDown');
 			} else if ( scrlTop <= 500) {
 				if ( header.hasClass('navbar-fixed-top') ) {
-					header.addClass('navbar-fixed-top fh5co-animated slideOutUp');
+					header.removeClass('slideInDown');
+					header.addClass('slideOutUp');
 					setTimeout(function(){
 						header.removeClass('navbar-fixed-top fh5co-animated slideInDown slideOutUp');
 					}, 100 );
@@ -145,7 +140,6 @@
 			
 		});
 	};
-
 
 
 	// Animations
@@ -371,7 +365,6 @@
 		navigationSection();
 
 		goToTop();
-
 
 		// Animations
 		homeAnimate();

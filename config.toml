@@ -16,7 +16,11 @@ languageCode = "en-us"
   # Navigation
   [params.navigation]
     showbrand = true
+    showlogo = false
     brand = "Pixies"
+    img = "logo.png"
+    alt = "Pixies Logo"
+
     logo = "Home"
     home = "Intro"
     work = "Gallery"
