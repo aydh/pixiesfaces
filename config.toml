@@ -1,17 +1,29 @@
 # Page settings
 baseurl = "/"
 title = "Pixies Face Painting"
+
 languageCode = "en-us"
+DefaultContentLanguage = "en"
+
+enableRobotsTXT = true
+canonifyURLs = true
 
 [params]
-
-  # Meta
   author = "Jenny Saunders"
   description = "Beautiful Face Painting"
   email = "info@pixiesfaces.com"
+  github = "https://github.com/pixiesfaces"
+  facebook = "https://facebook.com/pixiesfaces"
+  seoimage = "/images/logo.png"
+  twitter = "@pixiesfaces"
+  site_type: "LocalBusiness"
+  local_business_type: "EntertainmentBusiness"
 
-  # Google Maps Javascript API Key (if not set will default to not passing a key)
-  googleMapsApiKey = ""
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 1
 
   # Navigation
   [params.navigation]

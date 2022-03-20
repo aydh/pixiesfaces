@@ -1,8 +1,31 @@
+/* lora-regular - latin */
 @font-face {
-  font-family: 'Lora', serif;
-  font-weight: normal;
+  font-family: 'Lora';
   font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lora-v23-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lora-v23-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lora-v23-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lora-v23-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lora-v23-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lora-v23-latin-regular.svg#Lora') format('svg'); /* Legacy iOS */
 }
+
+/* lora-600 - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/lora-v23-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lora-v23-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lora-v23-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lora-v23-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lora-v23-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lora-v23-latin-600.svg#Lora') format('svg'); /* Legacy iOS */
+}
+
 /* =======================================================
 *
 * 	Template Style 
@@ -11,7 +34,7 @@
 * ======================================================= */
 body {
   font-family: 'Lora', serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
   color: #3d2b3d;
@@ -260,7 +283,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #3d2b3d;
   position: relative;
   font-size: 19px;
-  font-weight: 300;
+  font-weight: 400;
 }
 #fh5co-header #navbar li a span {
   position: relative;
@@ -312,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
   float: left;
   display: block;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 400;
   padding-left: 0;
   color: #3d2b3d;
   vertical-align: middle;
@@ -437,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-home .text-inner h2 {
   font-size: 28px;
   line-height: 38px;
-  font-weight: 300;
+  font-weight: 400;
   color: #f9f6f0;
   margin: 0;
 }
@@ -667,7 +690,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #f9f6f0;
   background: #965d96;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -808,7 +831,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #fh5co-work .fh5co-project-item .fh5co-text h2 {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 400;
   margin: 0;
 }
 #fh5co-work .fh5co-project-item .fh5co-text span {
@@ -884,7 +907,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading h2 {
   margin: 0 0 30px 0;
   font-size: 50px;
-  font-weight: 300;
+  font-weight: 400;
   color: #3d2b3d;
   text-transform: uppercase;
   position: relative;
@@ -920,7 +943,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .section-heading h3 {
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #3d2b3d;
 }
