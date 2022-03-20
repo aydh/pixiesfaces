@@ -1,5 +1,5 @@
 # Page settings
-baseurl = "/"
+baseurl = "http://pixiesfaces.netlify.com"
 title = "Pixies Face Painting"
 
 languageCode = "en-us"
