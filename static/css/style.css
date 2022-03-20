@@ -1245,3 +1245,26 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
+#pixies-error {
+  background-color: #fff;
+  width: 100%;
+  color: #3d2b3d;
+}
+
+#pixies-error .text-wrap {
+  height: 100vh;
+  display: table;
+  width: 100%;
+}
+#pixies-error .text-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#pixies-error .text-inner h1 {
+  font-size: 48px;
+  color: #3d2b3d;
+  margin: 0 0 2em 0;
+}

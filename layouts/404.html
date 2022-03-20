@@ -1,7 +1,24 @@
-{{ define "main"}}
-    <main id="main">
-      <div>
-       <h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
-      </div>
-    </main>
-{{ end }}
+<!DOCTYPE html>
+<html>
+    <head>
+      {{ partial "head.html" .}}
+    </head>
+    <body>
+      {{ partial "nav.html" .}}
+      <section id="pixies-error">
+        <div class="container">
+          <div class="text-wrap">
+            <div class="text-inner">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <h1>{{ with .Site.Params.errorpage.heading }}{{ . | markdownify }}{{ end }}</h2>
+                  <p><a href="/" class="btn btn-primary">{{ .Site.Params.errorpage.details }}</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </body>
+    {{ partial "js.html" .}}
+  </html>

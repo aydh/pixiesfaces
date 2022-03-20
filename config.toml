@@ -29,7 +29,7 @@ canonifyURLs = true
   [params.navigation]
     showbrand = false
     brand = "Pixies"
-    showlogo = true
+    showlogo = false
     img = "logo.png"
     logoheight = "50px"
     logowidth = "50px"
@@ -214,3 +214,11 @@ canonifyURLs = true
         ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"],
         ["fa-brands fa-twitter", "https://twitter.com/pixiesfaces"]
       ]
+
+  [params.errorpage]
+    image = "logo.png"
+    alt = "Pixies Logo"
+    heading = "That page doesn't exist"
+    details = "Back to Home"
+    
+
