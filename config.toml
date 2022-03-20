@@ -16,8 +16,8 @@ canonifyURLs = true
   facebook = "https://facebook.com/pixiesfaces"
   seoimage = "/images/logo.png"
   twitter = "@pixiesfaces"
-  site_type: "LocalBusiness"
-  local_business_type: "EntertainmentBusiness"
+  site_type = "LocalBusiness"
+  local_business_type = "EntertainmentBusiness"
 
 [languages]
   [languages.en]
