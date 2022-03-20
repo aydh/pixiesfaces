@@ -237,6 +237,7 @@ body:after{
   border: 0;
   background: transparent;
   height: 100vh;
+  position: relative;
 }
 
 #fh5co-header {
@@ -888,32 +889,6 @@ body:after{
 }
 .btn:hover, .btn:active, .btn:focus {
   outline: none;
-}
-
-#fh5co-contact:before, #fh5co-contact:after {
-  position: absolute;
-  transform: rotate(-1.7deg);
-  -ms-transform: rotate(-1.7deg);
-  -webkit-transform: rotate(-1.7deg);
-  -o-transform: rotate(-1.7deg);
-  -moz-transform: rotate(-1.7deg);
-  background-color: #f9f6f8;
-  content: "";
-  z-index: 3;
-  display: inline-block;
-  height: 70px;
-  padding: 0;
-  width: 101%;
-}
-
-#fh5co-contact:before {
-  top: 0;
-  margin-top: -35px;
-}
-
-#fh5co-contact:after {
-  bottom: 0;
-  margin-bottom: -35px;
 }
 
 #fh5co-contact {
