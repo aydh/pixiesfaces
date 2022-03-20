@@ -124,11 +124,17 @@
 		$(window).scroll(function(event){
 
 		   	var header = $('#fh5co-header'),
-				scrlTop = $(this).scrollTop();
+				scrlTop = $(this).scrollTop(),
+				navbrand = $('#navbar-brand');
+
 
 			if ( scrlTop > 500 ) {
 				header.addClass('navbar-fixed-top fh5co-animated slideInDown');
+				console.log("Showing Brand");
+		    	navbrand.attr('visibility', ':visible');
+
 			} else if ( scrlTop <= 500) {
+		    	navbrand.attr('visibility', ':hidden');
 				if ( header.hasClass('navbar-fixed-top') ) {
 					header.removeClass('slideInDown');
 					header.addClass('slideOutUp');

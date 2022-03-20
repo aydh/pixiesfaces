@@ -315,6 +315,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   padding-left: 0;
   color: #3d2b3d;
+  vertical-align: middle;
+  padding: 0;
+  visibility: hidden;
 }
 #fh5co-header.navbar-fixed-top {
   position: fixed !important;
@@ -628,6 +631,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #f9f6f0;
 }
 #fh5co-services .icon {
+  font-weight: 900 !important;
   font-size: 70px;
   margin-bottom: 30px;
   display: -moz-inline-stack;

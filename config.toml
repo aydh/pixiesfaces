@@ -15,12 +15,15 @@ languageCode = "en-us"
 
   # Navigation
   [params.navigation]
-    showbrand = true
-    showlogo = false
+    showbrand = false
     brand = "Pixies"
+    showlogo = true
     img = "logo.png"
+    logoheight = "50px"
+    logowidth = "50px"
     alt = "Pixies Logo"
 
+    # Menu Configuration
     logo = "Home"
     home = "Intro"
     work = "Gallery"
@@ -47,15 +50,17 @@ languageCode = "en-us"
   [params.logo]
     enable = true  
     background = "logo.png"
+    alt = "Alt Text"
 
   # Hero section
   [params.hero]
     title = "Pixies Face Painting"
     subtitle = 'Beautiful Face Painting'
     background = "full_image_1.jpg"
- 
+    alt = "Pixies Logo"
+
   # Intro section
-  # Available icons: http://simplelineicons.com/
+  # Font awesome icons https://fontawesome.com/icons
   [params.intro]
 
   [[params.intro.item]]
@@ -63,24 +68,28 @@ languageCode = "en-us"
     description = "Your childern will go mad for these faces!"
     navigation = "contact"
     button = "Face Painting"
-    icon = "icon-bulb"
+    icon = "fa-solid fa-paintbrush"
     img = "snowtiger.png"
+    alt = "Alt Text"
+
 
   [[params.intro.item]]
     title = "Balloons"
     description = "Amazing balloons, the like of which you've never seen."
     navigation = "contact"
     button = "Balloons"
-    icon = "icon-wrench"
+    icon = "fa-solid fa-balloons"
     img = "iceprincess.png"
+    alt = "Alt Text"
 
   [[params.intro.item]]
     title = "Fairy Parties"
     description = "You won't believe how fun Pixies parties can be!"
     navigation = "services"
     button = "Fairy Parties"
-    icon = "icon-rocket"
+    icon = "fa-solid fa-paintbrush"
     img = "flowers.png"
+    alt = "Alt Text"
 
   # Work section
   [params.work]
@@ -152,31 +161,30 @@ languageCode = "en-us"
     [[params.services.item]]
       title = "Face Painting"
       description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
-      icon = "icon-anchor"
+      icon = "fa-solid fa-paintbrush"
 
     [[params.services.item]]
       title = "Ballooning"
       description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
-      icon = "icon-layers2"
+      icon = "fa-solid fa-paintbrush"
 
     [[params.services.item]]
       title = "Fairy Parties"
       description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
-      icon = "icon-video2"
+      icon = "fa-solid fa-paintbrush"
 
   # Contact section
   [params.contact]
     enable = true
-    map = false
     form = true
     title = "Get in touch"
     description = "Call or send me a message"
     
-    # Available icons: http://simplelineicons.com/
+    # Font awesome icons https://fontawesome.com/icons
     details = [
-        ["icon-phone", "+61 406 074 909"],
-        ["icon-facebook", "https://m.me/pixiesfaces"],
-        ["icon-home", "7 Vista Avenue, Ringwood East, Victoria 3135, Australia"],
+        ["fa-solid fa-phone", "+61 406 074 909"],
+        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfaces"],
+        ["fa-solid fa-house", "7 Vista Avenue, Ringwood East, Victoria 3135, Australia"],
       ]
 
     email = "Your Email"
@@ -185,11 +193,12 @@ languageCode = "en-us"
     button = "Send message"
 
   # Footer section
+  # Font awesome icons https://fontawesome.com/icons
   [params.footer]
     enable = true
     copyright = '&copy; Pixies Face Painting 2022'
     links = [
-        ["icon-instagram", "https://instagran.com/pixiesfaces"],
-        ["icon-facebook", "https://facebook.com/pixiesfaces"],
-        ["icon-twitter", "https://twitter.com/pixiesfaces"]
+        ["fa-brands fa-instagram", "https://instagram.com/pixiesfaces"],
+        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"],
+        ["fa-brands fa-twitter", "https://twitter.com/pixiesfaces"]
       ]

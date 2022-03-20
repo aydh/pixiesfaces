@@ -2,19 +2,15 @@
         <div class="container">
             <!-- <div class="row"> -->
             <nav class="navbar navbar-default">
-                <div class="navbar-header">
+                <div class="navbar-header"> 
                     <!-- Mobile Toggle Menu Button -->
                     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                    <!--<ul>-->
-                        {{ if .Site.Params.navigation.showbrand }}
-                            <a class="navbar-brand" href="index.html">{{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}</a>
-                            <!--<li><a class="navbar-brand" href="index.html">{{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}</a></li>-->
-                        {{end}}
-                        {{ if .Site.Params.navigation.showlogo }}
-                            <li><a class="navbar-logo" href="index.html"><img src="images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}">
-                            </a></li>
-                        {{end}}
-                    <!--</ul>-->
+                    {{ if .Site.Params.navigation.showlogo }}
+                        <a class="navbar-brand" href="index.html"><img src="images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}"></a>
+                    {{end}}
+                    {{ if .Site.Params.navigation.showbrand }}
+                        <a class="navbar-brand" href="index.html">{{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}</a>
+                    {{end}}
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
@@ -39,10 +35,6 @@
 
                     {{ if .Site.Params.services.enable }}
                     <li><a href="#" data-nav-section="services"><span>{{ with .Site.Params.navigation.services }}{{ . | markdownify }}{{ end }}</span></a></li> 
-                    {{ end }}
-
-                    {{ if .Site.Params.about.enable }}
-                    <li><a href="#" data-nav-section="about"><span>{{ with .Site.Params.navigation.about }}{{ . | markdownify }}{{ end }}</span></a></li> 
                     {{ end }}
 
                     {{ if .Site.Params.contact.enable }}
