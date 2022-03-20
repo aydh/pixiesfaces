@@ -231,6 +231,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  #fh5co-logo {
+    background-attachment: scroll;
+  }
+}
+
 #fh5co-header {
   position: absolute;
   z-index: 99;
