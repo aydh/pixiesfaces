@@ -36,8 +36,7 @@ canonifyURLs = true
     alt = "Pixies Logo"
 
     # Menu Configuration
-    logo = "Home"
-    home = "Intro"
+    home = "Home"
     work = "Gallery"
     testimonials = "Testimonials"
     services = "Booking Info"
@@ -58,11 +57,12 @@ canonifyURLs = true
     #  name = "External link"
     #  weight = 10
   
-  # Logo section
-  [params.logo]
-    enable = true  
-    background = "logo.png"
-    alt = "Alt Text"
+  # Fixed Background section
+  [params.background]
+    enableheader = true  
+    enablefooter = true  
+    #image = "logo.png"
+    #alt = "Pixies Logo"
 
   # Hero section
   [params.hero]

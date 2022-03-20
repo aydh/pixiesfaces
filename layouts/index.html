@@ -5,8 +5,8 @@
     </head>
     <body>
         {{ partial "nav.html" .}}
-		{{ if .Site.Params.logo.enable }}
-			{{ partial "logo.html" .}}
+		{{ if .Site.Params.background.enableheader }}
+			{{ partial "background.html" .}}
 		{{ end }}
 		{{ partial "hero.html" .}}
         {{ partial "intro.html" .}}
@@ -22,7 +22,10 @@
 		{{ if .Site.Params.contact.enable }}
         	{{ partial "contact.html" .}}
         {{ end }}
-        {{ if .Site.Params.footer.enable }}
+		{{ if .Site.Params.background.enablefooter }}
+			{{ partial "background.html" .}}
+		{{ end }}
+		{{ if .Site.Params.footer.enable }}
         	{{ partial "footer.html" .}}
         {{ end }}
         {{ partial "js.html" .}}

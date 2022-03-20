@@ -1,11 +1,6 @@
 	<footer id="footer" role="contentinfo">
 		<a href="#" class="gotop js-gotop"><i class="fa-solid fa-arrow-up"></i></a>
 		<div class="container">
-			<div class="">
-				<div class="col-md-12 text-center">
-					<p>{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</p>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="social social-circle">
@@ -13,6 +8,11 @@
 						<li><a href="{{ with index . 1}}{{ . }}{{ end }}"><i class="{{ with index . 0}}{{ . }}{{ end }}"></i></a></li>
 					{{ end }}
 					</ul>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="col-md-12 text-center">
+					<p>{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</p>
 				</div>
 			</div>
 		</div>

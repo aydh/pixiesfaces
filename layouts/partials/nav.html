@@ -19,10 +19,6 @@
                         <li><a class="external" href="{{ .URL }}"><span>{{ .Name | markdownify }}</span></a></li>
                     {{ end }}
 
-                    {{ if .Site.Params.logo.enable }}
-                        <li><a href="#" data-nav-section="logo"><span>{{ with .Site.Params.navigation.logo }}{{ . | markdownify }}{{ end }}</span></a></li> 
-                    {{ end }}
-
                     <li class="active"><a href="#" data-nav-section="home"><span>{{ with .Site.Params.navigation.home }}{{ . | markdownify }}{{ end }}</span></a></li>
                     
                     {{ if .Site.Params.work.enable }}
