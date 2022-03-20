@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-color: #fff;
   vertical-align: middle;
   background-attachment: fixed;
