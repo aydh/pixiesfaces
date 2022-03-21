@@ -428,12 +428,12 @@ body:after{
   background-color: #f9f6f8;
   /* IE9, iOS 3.2+ */
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #965d96), color-stop(1, #f9f6f8));
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #b95d93), color-stop(1, #635ea5));
   /* Android 2.3 */
-  background-image: -webkit-repeating-linear-gradient(top left, #965d96 0%, #f9f6f8 100%);
+  background-image: -webkit-repeating-linear-gradient(top left, #b95d93 0%, #635ea5 100%);
   /* IE10+ */
-  background-image: repeating-linear-gradient(to bottom right, #965d96 0%, #f9f6f8 100%);
-  background-image: -ms-repeating-linear-gradient(top left, #965d96 0%, #f9f6f8 100%);
+  background-image: repeating-linear-gradient(to bottom right, #b95d93 0%, #635ea5 100%);
+  background-image: -ms-repeating-linear-gradient(top left, #b95d93 0%, #635ea5 100%);
 }
 #fh5co-home, #fh5co-home .text-wrap {
   height: 700px;
@@ -621,12 +621,12 @@ body:after{
   background-color: #f9f6f8;
   /* IE9, iOS 3.2+ */
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #965d96), color-stop(1, #f9f6f8));
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #288994), color-stop(1, #87b85e));
   /* Android 2.3 */
-  background-image: -webkit-repeating-linear-gradient(top left, #965d96 0%, #f9f6f8 100%);
+  background-image: -webkit-repeating-linear-gradient(top left, #288994 0%, #87b85e 100%);
   /* IE10+ */
-  background-image: repeating-linear-gradient(to bottom right, #965d96 0%, #f9f6f8 100%);
-  background-image: -ms-repeating-linear-gradient(top left, #965d96 0%, #f9f6f8 100%);
+  background-image: repeating-linear-gradient(to bottom right, #288994 0%, #87b85e 100%);
+  background-image: -ms-repeating-linear-gradient(top left, #288994 0%, #87b85e 100%);
   overflow: hidden;
   position: relative;
 }
@@ -767,12 +767,12 @@ body:after{
   background-color: #f9f6f8;
   /* IE9, iOS 3.2+ */
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #965d96), color-stop(1, #f9f6f8));
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #c9a949), color-stop(1, #c4868c));
   /* Android 2.3 */
-  background-image: -webkit-repeating-linear-gradient(top left, #965d96 0%, #f9f6f8 100%);
+  background-image: -webkit-repeating-linear-gradient(top left, #c9a949 0%, #c4868c 100%);
   /* IE10+ */
-  background-image: repeating-linear-gradient(to bottom right, #965d96 0%, #f9f6f8 100%);
-  background-image: -ms-repeating-linear-gradient(top left, #965d96 0%, #f9f6f8 100%);
+  background-image: repeating-linear-gradient(to bottom right, #c9a949 0%, #c4868c 100%);
+  background-image: -ms-repeating-linear-gradient(top left, #c9a949 0%, #c4868c 100%);
 }
 #fh5co-work a {
   color: rgba(255, 255, 255, 0.5);
