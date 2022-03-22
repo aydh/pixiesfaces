@@ -18,7 +18,17 @@ canonifyURLs = true
   twitter = "@pixiesfaces"
   site_type = "LocalBusiness"
   local_business_type = "EntertainmentBusiness"
-
+  textColor = #3d2b3d
+  backgroundColor = #f9f1f9
+  highlightColor = #959d96
+  homeColor1 = #f00
+  homeColor2 = #0f0
+  servicesColor1 = #ff0
+  servicesColor2 = #0ff
+  workColor1 = #00f
+  workColor2 = #f00
+  whiteColour = #fff
+  
 [languages]
   [languages.en]
     languageName = "English"
