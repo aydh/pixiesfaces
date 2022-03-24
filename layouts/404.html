@@ -19,6 +19,24 @@
           </div>
         </div>
       </section>
-      </body>
+    </body>
+    <footer id="footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <ul class="social social-circle">
+            {{ range .Site.Params.footer.links }}
+              <li><a href="{{ with index . 1}}{{ . }}{{ end }}"><i class="{{ with index . 0}}{{ . }}{{ end }}"></i></a></li>
+            {{ end }}
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="col-md-12 text-center">
+            <p>{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     {{ partial "js.html" .}}
   </html>

@@ -18,17 +18,107 @@ canonifyURLs = true
   twitter = "@pixiesfaces"
   site_type = "LocalBusiness"
   local_business_type = "EntertainmentBusiness"
+
   textColor = "#3d2b3d"
-  backgroundColor = "#f9f1f9"
-  highlightColor = "#959d96"
+  backgroundColor = "#f8f1f8"
+  highlightColor = "#965d96"
   homeColor1 = "#f00"
-  homeColor2 = "#0f0"
-  servicesColor1 = "#ff0"
-  servicesColor2 = "#0ff"
-  workColor1 = "#00f"
-  workColor2 = "#f00"
-  whiteColour = "#fff"
+  homeColor2 = "#f0f"
+  workColor1 = "#f0f"
+  workColor2 = "#00f"
+  servicesColor1 = "#00f"
+  servicesColor2 = "#0f0"
+  whiteColor = "#fff"
+  jauntyAngle = "-1.7deg"
+  jauntyWidth = "101%"
+  jauntyHeight = "70px"
+
+  sectionPadding = "4em"
+  sectionPaddingMobile = "2em"
   
+  # Not entirely sure what this effects
+  introRowPaddingBottom = "0"
+  introRowPaddingBottomMobile = "0"
+  workRowPaddingBottom = "0"
+  workRowPaddingBottomMobile = "0"
+  contactRowPaddingBottom = "0"
+  contactRowPaddingBottomMobile = "0"
+
+  # Default body ext size
+  bodyTextSize = "18px"
+  
+  # Brand in top left of menu bar text size
+  brandTextSize = "30px"
+
+  # Menu item Text size
+  menuTextSize = "18px"
+ 
+  # Hero image overlay main text size
+  heroTextSizeH1 = "50px"
+
+  # Hero image overlay sub text size
+  heroTextSizeH2 = "28px"
+
+  # Intro section icon size
+  introIconSize = "50px"
+
+  # Intro section heading text size
+  introTextSizeH2 = "24px"
+
+  # Intro section text size
+  introTextSize = "16px"
+
+  # All section headings text size
+  sectionHeadingTextSizeH2 = "50px"
+
+  # All section headings text size - mobile
+  sectionHeadingTextSizeH2Mobile = "30px"
+
+  # All section sub headings text size
+  sectionHeadingTextSizeH3 = "28px"
+  
+  # All section sub headings text size - mobile
+  sectionHeadingTextSizeH3Mobile = "24px"
+
+  # Gallery title text size
+  workItemTextSizeH2 = "18px"
+
+  # Gallery - not used
+  workItemTextSizeSpan = "16px"
+
+  # Testimonal text sixe
+  testimonialTextSize = "18px"
+  
+  # Testimonal author text sixe  
+  testimonialAuthorTextSize = "16px"
+
+  # Testimonal - not used
+  testimonialSubTextSize = "16px"
+
+  # Services icon size
+  servicesIconSize = "70px"
+
+  # Services heading text size
+  servicesTextSizeH3 = "24px"
+
+  # Services description text size
+  servicesTextSize = "18px"
+
+  # Contact form text size
+  formTextSize = "18px"
+
+  # go to top button icon size
+  goTopIconSize = "40px"
+
+  # Social icons size
+  socialIconSize = "16px"
+
+  # Copyright text size (footer and gallery)
+  copyrightTextSize = "14px"
+
+  # Error text size
+  pixiesErrorTextSizeH1 = "50px"
+
 [languages]
   [languages.en]
     languageName = "English"
@@ -37,7 +127,7 @@ canonifyURLs = true
 
   # Navigation
   [params.navigation]
-    showbrand = false
+    showbrand = true
     brand = "Pixies"
     showlogo = false
     img = "logo.png"
@@ -71,8 +161,8 @@ canonifyURLs = true
   [params.background]
     enableheader = true  
     enablefooter = true  
-    #image = "logo.png"
-    #alt = "Pixies Logo"
+    image = "logo.png"
+    alt = "Pixies Logo"
 
   # Hero section
   [params.hero]
