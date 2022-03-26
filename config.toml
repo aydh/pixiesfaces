@@ -29,20 +29,6 @@ canonifyURLs = true
   servicesColor1 = "#00f"
   servicesColor2 = "#0f0"
   whiteColor = "#fff"
-  jauntyAngle = "-1.7deg"
-  jauntyWidth = "101%"
-  jauntyHeight = "70px"
-
-  sectionPadding = "4em"
-  sectionPaddingMobile = "2em"
-  
-  # Not entirely sure what this effects
-  introRowPaddingBottom = "0"
-  introRowPaddingBottomMobile = "0"
-  workRowPaddingBottom = "0"
-  workRowPaddingBottomMobile = "0"
-  contactRowPaddingBottom = "0"
-  contactRowPaddingBottomMobile = "0"
 
   # Default body ext size
   bodyTextSize = "18px"
