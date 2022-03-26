@@ -236,7 +236,7 @@ body:after{
   position: relative;
 }
 
-#pixies-background .godown {
+#pixies-background .gotoSection {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -260,7 +260,7 @@ body:after{
   color: {{ .Site.Params.backgroundColor }};  
 }
 
-#pixies-background .godown:hover, #footer .godown:focus {
+#pixies-background .gotoSection:hover, #footer .gotoSection:focus {
   bottom: 15px;
   text-decoration: none !important;
   background-color: {{ .Site.Params.textColor }};
@@ -281,7 +281,7 @@ TESTIMONIAL SECTION
 @media screen and (max-width: 768px) {
   #fh5co-header {
     margin-top: 0;
-    background: {{ .Site.Params.whiteColor }};
+    background: transparent;
     -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);

@@ -57,9 +57,9 @@
 	};
 
 
-	var goDownToHome = function() {
+	var gotoSection = function() {
 
-		$('.js-godown').on('click', function(event){
+		$('.js-gotoSection').on('click', function(event){
 			
 			event.preventDefault();
 
@@ -391,7 +391,7 @@
 		navigationSection();
 
 		goToTop();
-		goDownToHome();
+		gotoSection();
 
 		// Animations
 		homeAnimate();

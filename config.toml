@@ -19,16 +19,23 @@ canonifyURLs = true
   site_type = "LocalBusiness"
   local_business_type = "EntertainmentBusiness"
 
-  textColor = "#3d2b3d"
+  # Main Colours
+  whiteColor = "#fff"
   backgroundColor = "#f8f1f8"
+  textColor = "#3d2b3d"
   highlightColor = "#965d96"
+ 
+  # Gradient Home/Hero Section
   homeColor1 = "#f00"
   homeColor2 = "#f0f"
+
+  # Gradient work/Gallery Section
   workColor1 = "#f0f"
   workColor2 = "#00f"
+
+  # Gradient services/Bookings Section
   servicesColor1 = "#00f"
   servicesColor2 = "#0f0"
-  whiteColor = "#fff"
 
   # Default body ext size
   bodyTextSize = "18px"
@@ -115,10 +122,10 @@ canonifyURLs = true
   [params.navigation]
     showbrand = true
     brand = "Pixies"
-    showlogo = false
+    showlogo = true
     img = "logo.png"
-    logoheight = "50px"
-    logowidth = "50px"
+    logoheight = "40px"
+    logowidth = "40px"
     alt = "Pixies Logo"
 
     # Menu Configuration
@@ -164,19 +171,18 @@ canonifyURLs = true
   [[params.intro.item]]
     title = "Face Painting"
     description = "Your childern will go mad for these faces!"
-    navigation = "contact"
-    button = "Face Painting"
+    navigation = "testimonials"
+    button = "What People Say"
     icon = "fa-solid fa-paintbrush"
     img = "snowtiger.png"
     alt = "Alt Text"
 
-
   [[params.intro.item]]
     title = "Balloons"
     description = "Amazing balloons, the like of which you've never seen."
-    navigation = "contact"
-    button = "Balloons"
-    icon = "fa-solid fa-balloons"
+    navigation = "work"
+    button = "See For Yourself"
+    icon = "fa-solid fa-paintbrush"
     img = "iceprincess.png"
     alt = "Alt Text"
 
@@ -184,7 +190,7 @@ canonifyURLs = true
     title = "Fairy Parties"
     description = "You won't believe how fun Pixies parties can be!"
     navigation = "services"
-    button = "Fairy Parties"
+    button = "Booking Info"
     icon = "fa-solid fa-paintbrush"
     img = "flowers.png"
     alt = "Alt Text"

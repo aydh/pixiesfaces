@@ -5,11 +5,13 @@
                 <div class="navbar-header"> 
                     <!-- Mobile Toggle Menu Button -->
                     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <!-- Brand Logo and Title -->
                     {{ if .Site.Params.navigation.showlogo }}
-                        <a class="navbar-brand" href="index.html"><img src="images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}"></a>
-                    {{end}}
-                    {{ if .Site.Params.navigation.showbrand }}
-                        <a class="navbar-brand" href="index.html">{{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}</a>
+                        <a class="navbar-brand" href="#"><img class="d-inline-block align-top" src="images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}">
+                        {{ if .Site.Params.navigation.showbrand }}
+                            {{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}
+                        {{end}}
+                        </a>
                     {{end}}
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
