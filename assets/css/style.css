@@ -447,6 +447,8 @@ HOME SECTION
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
   position: relative;
   width: 100%;
   background-color: {{ .Site.Params.highlightColor }};
