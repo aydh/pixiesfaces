@@ -7,11 +7,7 @@
                     <a href="#" class="js-pixies-nav-toggle pixies-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
                     <!-- Brand Logo and Title -->
                     {{ if .Site.Params.navigation.showlogo }}
-                        <a class="navbar-brand" href="#"><img class="d-inline-block align-top" src="images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}">
-                        {{ if .Site.Params.navigation.showbrand }}
-                            {{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }}
-                        {{end}}
-                        </a>
+                        <a class="navbar-brand" href="#"><img src="images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}"></a>
                     {{end}}
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">

@@ -15,7 +15,10 @@
 					<h3>{{ with .Site.Params.contact.info }}{{ . | markdownify }}{{ end }}</h3>
 					<ul class="pixies-contact-info">
 					{{ range .Site.Params.contact.details }}
-						<li class="pixies-contact-address "><i class="{{ with index . 0}}{{ . }}{{ end }}"></i>{{ with index . 1}}{{ . | markdownify }}{{ end }}</li>
+						<li class="pixies-contact-address ">
+							<i class="{{ with index . 0}}{{ . }}{{ end }}"></i>
+							<a href="{{ with index . 1}}{{ . | safeURL }}{{ end }}">
+								{{ with index . 2}}{{ . }}{{ end }}</a></li>
 					{{ end }}
 					</ul>
 				</div>

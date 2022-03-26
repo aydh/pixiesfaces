@@ -285,7 +285,7 @@ TESTIMONIAL SECTION
   width: 100%;
   opacity: 1;
   top: 0;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 @media screen and (max-width: 768px) {
   #pixies-header {
@@ -295,9 +295,6 @@ TESTIMONIAL SECTION
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
-  }
-  #pixies-header .navbar-brand {
-    color: {{ .Site.Params.textColor }} !important;
   }
   #pixies-header #navbar li a {
     color: rgba(0, 0, 0, 0.5) !important;
@@ -383,10 +380,8 @@ TESTIMONIAL SECTION
 #pixies-header .navbar-brand {
   float: left;
   display: block;
-  font-size: {{ .Site.Params.brandTextSize }};
-  font-weight: 600;
-  padding-left: 0;
-  color: {{ .Site.Params.textColor }};
+  padding: 0;
+  visibility: hidden;
 }
 #pixies-header.navbar-fixed-top {
   position: fixed !important;
@@ -399,7 +394,8 @@ TESTIMONIAL SECTION
   top: 0;
 }
 #pixies-header.navbar-fixed-top .navbar-brand {
-  color: {{ .Site.Params.textColor }};
+  visibility: visible;
+  vertical-align: middle;
 }
 #pixies-header.navbar-fixed-top #navbar li a {
   color: {{ .Site.Params.textColor }};
@@ -549,7 +545,7 @@ INTRO SECTION
   float: left;
   text-align: center;
   font-size: {{ .Site.Params.introTextSize }};
-  min-height: 300px;
+  min-height: 400px;
   vertical-align: middle;
   padding: 40px;
   background: {{ .Site.Params.whiteColor }};
@@ -617,6 +613,9 @@ INTRO SECTION
   color: {{ .Site.Params.backgroundColor }};
 }
 #pixies-intro .pixies-block:hover h2, #pixies-intro .pixies-block:focus h2 {
+  color: {{ .Site.Params.backgroundColor }};
+}
+#pixies-intro .pixies-block:hover p, #pixies-intro .pixies-block:focus p {
   color: {{ .Site.Params.backgroundColor }};
 }
 #pixies-intro .pixies-block:hover .btn, #pixies-intro .pixies-block:focus .btn {

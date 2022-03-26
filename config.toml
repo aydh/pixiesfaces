@@ -21,9 +21,9 @@ canonifyURLs = true
 
   # Main Colours
   whiteColor = "#fff"
-  backgroundColor = "#f8f1f8"
+  backgroundColor = "#fff"
   textColor = "#3d2b3d"
-  highlightColor = "#965d96"
+  highlightColor = "#f0f"
  
   # Gradient Home/Hero Section
   homeColor1 = "#f00"
@@ -120,12 +120,10 @@ canonifyURLs = true
 
   # Navigation
   [params.navigation]
-    showbrand = true
-    brand = "Pixies"
     showlogo = true
     img = "logo.png"
-    logoheight = "40px"
-    logowidth = "40px"
+    logoheight = "55px"
+    logowidth = "55px"
     alt = "Pixies Logo"
 
     # Menu Configuration
@@ -282,15 +280,16 @@ canonifyURLs = true
     enable = true
     form = true
     title = "Get in touch"
-    description = "Call or send me a message"
+    description = "We'd love to hear from you."
+    info = "Contact details"
     
     # Font awesome icons https://fontawesome.com/icons
     details = [
-        ["fa-solid fa-phone", "+61 406 074 909"],
-        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfaces"],
-        ["fa-solid fa-house", "7 Vista Avenue, Ringwood East, Victoria 3135, Australia"],
+        ["fa-solid fa-phone", "tel:+61406074909", "0406 074 909"],
+        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfaces", "Messenger"],
       ]
-
+    
+    # Form Labels
     email = "Your Email"
     phone = "Your Contact Number"
     message = "Message"
