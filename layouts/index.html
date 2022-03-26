@@ -6,7 +6,7 @@
     <body>
         {{ partial "nav.html" .}}
 		{{ if .Site.Params.background.enableheader }}
-			{{ partial "background.html" .}}
+			{{ partial "background-header.html" .}}
 		{{ end }}
 		{{ partial "hero.html" .}}
         {{ partial "intro.html" .}}
@@ -23,7 +23,7 @@
         	{{ partial "contact.html" .}}
         {{ end }}
 		{{ if .Site.Params.background.enablefooter }}
-			{{ partial "background.html" .}}
+			{{ partial "background-footer.html" .}}
 		{{ end }}
 		{{ if .Site.Params.footer.enable }}
         	{{ partial "footer.html" .}}

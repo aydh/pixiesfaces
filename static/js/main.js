@@ -24,7 +24,7 @@
 	// Burger Menu
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+		$('body').on('click', '.js-pixies-nav-toggle', function(event){
 
 			event.preventDefault();
 
@@ -93,7 +93,7 @@
 		    if ( navbar.is(':visible')) {
 		    	navbar.removeClass('in');
 		    	navbar.attr('aria-expanded', 'false');
-		    	$('.js-fh5co-nav-toggle').removeClass('active');
+		    	$('.js-pixies-nav-toggle').removeClass('active');
 		    }
 
 		    event.preventDefault();
@@ -143,13 +143,13 @@
 
 		$(window).scroll(function(event){
 
-		   	var header = $('#fh5co-header'),
+		   	var header = $('#pixies-header'),
 				scrlTop = $(this).scrollTop(),
 				navbrand = $('#navbar-brand');
 
 
 			if ( scrlTop > 500 ) {
-				header.addClass('navbar-fixed-top fh5co-animated slideInDown');
+				header.addClass('navbar-fixed-top pixies-animated slideInDown');
 				console.log("Showing Brand");
 		    	navbrand.attr('visibility', ':visible');
 
@@ -159,7 +159,7 @@
 					header.removeClass('slideInDown');
 					header.addClass('slideOutUp');
 					setTimeout(function(){
-						header.removeClass('navbar-fixed-top fh5co-animated slideInDown slideOutUp');
+						header.removeClass('navbar-fixed-top pixies-animated slideInDown slideOutUp');
 					}, 100 );
 				}
 			} 
@@ -172,15 +172,15 @@
 	// Home
 
 	var homeAnimate = function() {
-		if ( $('#fh5co-home').length > 0 ) {	
+		if ( $('#pixies-home').length > 0 ) {	
 
-			$('#fh5co-home').waypoint( function( direction ) {
+			$('#pixies-home').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
-						$('#fh5co-home .to-animate').each(function( k ) {
+						$('#pixies-home .to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -201,15 +201,15 @@
 
 
 	var introAnimate = function() {
-		if ( $('#fh5co-intro').length > 0 ) {	
+		if ( $('#pixies-intro').length > 0 ) {	
 
-			$('#fh5co-intro').waypoint( function( direction ) {
+			$('#pixies-intro').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
-						$('#fh5co-intro .to-animate').each(function( k ) {
+						$('#pixies-intro .to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -229,15 +229,15 @@
 	};
 
 	var workAnimate = function() {
-		if ( $('#fh5co-work').length > 0 ) {	
+		if ( $('#pixies-work').length > 0 ) {	
 
-			$('#fh5co-work').waypoint( function( direction ) {
+			$('#pixies-work').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
-						$('#fh5co-work .to-animate').each(function( k ) {
+						$('#pixies-work .to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -258,7 +258,7 @@
 
 
 	var testimonialAnimate = function() {
-		var testimonial = $('#fh5co-testimonials');
+		var testimonial = $('#pixies-testimonials');
 		if ( testimonial.length > 0 ) {	
 
 			testimonial.waypoint( function( direction ) {
@@ -300,7 +300,7 @@
 	};
 
 	var servicesAnimate = function() {
-		var services = $('#fh5co-services');
+		var services = $('#pixies-services');
 		if ( services.length > 0 ) {	
 
 			services.waypoint( function( direction ) {
@@ -343,7 +343,7 @@
 	};
 
 	var contactAnimate = function() {
-		var contact = $('#fh5co-contact');
+		var contact = $('#pixies-contact');
 		if ( contact.length > 0 ) {	
 
 			contact.waypoint( function( direction ) {
