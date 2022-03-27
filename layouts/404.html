@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      {{ partial "head.html" .}}
-    </head>
-    <body>
-      {{ partial "nav.html" .}}
-      <section id="pixies-error">
-        <div class="container">
-          <div class="text-wrap">
-            <div class="text-inner">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <h1>{{ with .Site.Params.errorpage.heading }}{{ . | markdownify }}{{ end }}</h2>
-                  <p><a href="/" class="btn btn-primary">{{ .Site.Params.errorpage.details }}</a></p>
-                </div>
+  <head>
+    {{ partial "head.html" .}}
+  </head>
+  <body>
+    <section id="pixies-error">
+      <div class="gradient"></div>
+      <div class="container">
+        <div class="text-wrap">
+          <div class="text-inner">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h1 class="to-animate">{{ with .Site.Params.errorpage.title }}{{ . | markdownify }}{{ end }}</h1>
+                <h2 class="to-animate">{{ with .Site.Params.errorpage.subtitle }}{{ . | markdownify }}{{ end }}</h2>
+                <p><a href="/" class="to-animate btn btn-primary">{{ with .Site.Params.errorpage.button }}{{ . | markdownify }}{{ end }}</a></p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </body>
-    <footer id="footer" role="contentinfo">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <ul class="social social-circle">
-            {{ range .Site.Params.footer.links }}
-              <li><a href="{{ with index . 1}}{{ . }}{{ end }}"><i class="{{ with index . 0}}{{ . }}{{ end }}"></i></a></li>
-            {{ end }}
-            </ul>
-          </div>
-        </div>
-        <div class="copyright">
-          <div class="col-md-12 text-center">
-            <p>{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</p>
-          </div>
-        </div>
       </div>
-    </footer>
+    </section>
     {{ partial "js.html" .}}
-  </html>
+  </body>
+</html>

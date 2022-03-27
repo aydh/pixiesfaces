@@ -92,6 +92,11 @@ canonifyURLs = true
 
   # Error text sizes
   pixiesErrorTextSizeH1 = "50px"
+  pixiesErrorTextSizeH2 = "28px"
+
+  # Gradient Home/Hero Section
+  errorColor1 = "#f00"
+  errorColor2 = "#f0f"
 
 [languages]
   [languages.en]
@@ -182,11 +187,6 @@ canonifyURLs = true
     footertext = '&copy; Pixies Face Painting 2022'
 
     [[params.work.row]]
-      img = "snowtiger.png"
-      alt = "Snow Tiger"
-      title = "Snow Tiger"
-
-    [[params.work.row]]
       img = "iceprincess.png"
       alt = "Ice Princess"
       title = "Ice Princess"
@@ -222,6 +222,11 @@ canonifyURLs = true
       title = "Happy Dog"
 
     [[params.work.row]]
+      img = "snowtiger.png"
+      alt = "Snow Tiger"
+      title = "Snow Tiger"
+
+    [[params.work.row]]
       img = "illusion.png"
       alt = "Illusion Magazine"
       title = "Illusion Magazine"
@@ -234,7 +239,7 @@ canonifyURLs = true
 
     [[params.testimonials.item]]
       quote = "&ldquo;My daughter had the best time&rdquo;"
-      person = 'Sarah Bloggs'
+      person = 'Sarah McDermott'
       icon = "fa-solid fa-user"
 
     [[params.testimonials.item]]
@@ -294,15 +299,14 @@ canonifyURLs = true
     enable = true
     copyright = '&copy; Pixies Face Painting 2022'
     links = [
-        ["fa-brands fa-instagram", "https://instagram.com/pixiesfaces"],
+        ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
         ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"],
         ["fa-brands fa-twitter", "https://twitter.com/pixiesfaces"]
       ]
 
   [params.errorpage]
-    image = "logo.png"
-    alt = "Pixies Logo"
-    heading = "That page doesn't exist"
-    details = "Back to Home"
-    
-
+    image = "redtiger.png"
+    alt = "Red Tiger"
+    title = "Sorry"
+    subtitle = "It seems that page does not exist"
+    button = "Back to Home"

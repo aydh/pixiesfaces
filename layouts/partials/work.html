@@ -17,7 +17,6 @@
 						<img src="images/{{ .img }}" alt="{{ .alt }}" class="img-responsive">
 						<div class="pixies-text">
 						<h2>{{ .title }}</h2>
-						<span>{{ .subtitle }}</span>
 						</div>
 					</a>
 				</div>				
@@ -27,7 +26,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center to-animate">
-					<p>{{ .Site.Params.work.footertext | markdownify }}</p>
+					<p>{{ with .Site.Params.work.footertext }}{{ . | markdownify }}{{ end }}</p>
 				</div>
 			</div>
 		</div>

@@ -457,7 +457,6 @@ HOME SECTION
   right: 0;
   z-index: 2;
   opacity: .6;
-  background-color: {{ .Site.Params.whiteColor }};
   /* IE9, iOS 3.2+ */
   /*background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);*/
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, {{ .Site.Params.homeColor1 }}), color-stop(1, {{ .Site.Params.homeColor2 }}));
@@ -640,7 +639,6 @@ SERVICES SECTION
 */
 
 #pixies-services {
-  background-color: {{ .Site.Params.whiteColor }};
   /* IE9, iOS 3.2+ */
   /*background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);*/
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, {{ .Site.Params.servicesColor1 }}), color-stop(1, {{ .Site.Params.servicesColor2 }}));
@@ -778,7 +776,6 @@ WORK SECTION
   overflow: hidden;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
-  background-color: {{ .Site.Params.whiteColor }};
   /* IE9, iOS 3.2+ */
   /*background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);*/
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, {{ .Site.Params.workColor1 }}), color-stop(1, {{ .Site.Params.workColor2 }}));
@@ -1314,16 +1311,45 @@ ERROR PAGE
 */
 
 #pixies-error {
-  background-color: {{ .Site.Params.backgroundColor }};
+  background: url(../images/{{ .Site.Params.errorpage.image }}) center center;
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
   width: 100%;
-  color: {{ .Site.Params.textColor }};
+  color: {{ .Site.Params.whiteColor }};
+  overflow: hidden;
 }
 
-#pixies-error .text-wrap {
+#pixies-error .gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: .8;
+  /* IE9, iOS 3.2+ */
+  /*background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);*/
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, {{ .Site.Params.errorColor1 }}), color-stop(1, {{ .Site.Params.errorColor2 }}));
+  /* Android 2.3 */
+  background-image: -webkit-repeating-linear-gradient(top left, {{ .Site.Params.errorColor1 }} 0%, {{ .Site.Params.errorColor2 }} 100%);
+  /* IE10+ */
+  background-image: repeating-linear-gradient(to bottom right, {{ .Site.Params.errorColor1 }} 0%, {{ .Site.Params.errorColor2 }} 100%);
+  background-image: -ms-repeating-linear-gradient(top left, {{ .Site.Params.errorColor1 }} 0%, {{ .Site.Params.errorColor2 }} 100%);
+}
+
+#pixies-error, #pixies-error .text-wrap {
   height: 100vh;
+}
+#pixies-error .text-wrap {
   display: table;
   width: 100%;
+  position: relative;
+  z-index: 4;
 }
+
 #pixies-error .text-inner {
   display: table-cell;
   vertical-align: middle;
@@ -1332,6 +1358,12 @@ ERROR PAGE
 
 #pixies-error .text-inner h1 {
   font-size: {{ .Site.Params.pixiesErrorTextSizeH1 }};
-  color: {{ .Site.Params.textColor }};
+  color: {{ .Site.Params.backgroundColor }};
+  margin: 0 0 0.5em 0;
+}
+
+#pixies-error .text-inner h2 {
+  font-size: {{ .Site.Params.pixiesErrorTextSizeH2 }};
+  color: {{ .Site.Params.backgroundColor }};
   margin: 0 0 2em 0;
 }
