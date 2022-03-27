@@ -79,7 +79,6 @@
 
 	// Page Nav
 	var clickMenu = function() {
-		console.log("Page Nav");
 		$('#navbar a:not([class="external"])').click(function(event){
 			var section = $(this).data('nav-section'),
 				navbar = $('#navbar');
@@ -150,7 +149,6 @@
 
 			if ( scrlTop > 500 ) {
 				header.addClass('navbar-fixed-top pixies-animated slideInDown');
-				console.log("Showing Brand");
 		    	navbrand.attr('visibility', ':visible');
 
 			} else if ( scrlTop <= 500) {

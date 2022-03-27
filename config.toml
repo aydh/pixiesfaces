@@ -9,6 +9,7 @@ enableRobotsTXT = true
 canonifyURLs = true
 
 [params]
+  # SEO Related Config
   author = "Jenny Saunders"
   description = "Beautiful Face Painting"
   email = "info@pixiesfaces.com"
@@ -18,12 +19,13 @@ canonifyURLs = true
   twitter = "@pixiesfaces"
   site_type = "LocalBusiness"
   local_business_type = "EntertainmentBusiness"
+  favicon = "favicon.png"
 
   # Main Colours
-  whiteColor = "#fff"
   backgroundColor = "#fff"
+  whiteColor = "#fff"
   textColor = "#3d2b3d"
-  highlightColor = "#f0f"
+  highlightColor = "#9900f6"
  
   # Gradient Home/Hero Section
   homeColor1 = "#f00"
@@ -33,83 +35,62 @@ canonifyURLs = true
   workColor1 = "#f0f"
   workColor2 = "#00f"
 
+  # Gradient testimonial Section
+  testimonialColor1 = "#00f"
+  testimonialColor2 = "#f0f"
+
   # Gradient services/Bookings Section
   servicesColor1 = "#00f"
   servicesColor2 = "#0f0"
 
-  # Default body ext size
+  # Default body text size
   bodyTextSize = "18px"
   
-  # Brand in top left of menu bar text size
-  brandTextSize = "30px"
-
   # Menu item Text size
   menuTextSize = "18px"
  
-  # Hero image overlay main text size
-  heroTextSizeH1 = "50px"
+  # Background Header Section
+  gotoSectionIconSize = "50px"
 
-  # Hero image overlay sub text size
+  # Hero image text sizes
+  heroTextSizeH1 = "50px"
   heroTextSizeH2 = "28px"
 
-  # Intro section icon size
+  # Intro section text sizes
   introIconSize = "50px"
-
-  # Intro section heading text size
   introTextSizeH2 = "24px"
-
-  # Intro section text size
   introTextSize = "16px"
 
-  # All section headings text size
+  # General section headings text sizes
   sectionHeadingTextSizeH2 = "50px"
-
-  # All section headings text size - mobile
   sectionHeadingTextSizeH2Mobile = "30px"
-
-  # All section sub headings text size
   sectionHeadingTextSizeH3 = "28px"
-  
-  # All section sub headings text size - mobile
   sectionHeadingTextSizeH3Mobile = "24px"
 
-  # Gallery title text size
+  # Gallery section text sizes
   workItemTextSizeH2 = "18px"
-
   # Gallery - not used
   workItemTextSizeSpan = "16px"
 
-  # Testimonal text sixe
+  # Testimonal section text sizes
+  testimonialIconSize = "50px"
   testimonialTextSize = "18px"
-  
-  # Testimonal author text sixe  
   testimonialAuthorTextSize = "16px"
 
-  # Testimonal - not used
-  testimonialSubTextSize = "16px"
-
-  # Services icon size
+  # Services section text sizes
   servicesIconSize = "70px"
-
-  # Services heading text size
   servicesTextSizeH3 = "24px"
-
-  # Services description text size
   servicesTextSize = "18px"
 
-  # Contact form text size
+  # Contact section text sizes
   formTextSize = "18px"
 
-  # go to top button icon size
+  # Footer text sizes
   goTopIconSize = "40px"
-
-  # Social icons size
   socialIconSize = "16px"
-
-  # Copyright text size (footer and gallery)
   copyrightTextSize = "14px"
 
-  # Error text size
+  # Error text sizes
   pixiesErrorTextSizeH1 = "50px"
 
 [languages]
@@ -121,9 +102,9 @@ canonifyURLs = true
   # Navigation
   [params.navigation]
     showlogo = true
-    img = "logo.png"
-    logoheight = "55px"
-    logowidth = "55px"
+    img = "banner-logo.png"
+    logoheight = "50px"
+    logowidth = "50px"
     alt = "Pixies Logo"
 
     # Menu Configuration
@@ -152,14 +133,14 @@ canonifyURLs = true
   [params.background]
     enableheader = true  
     enablefooter = true  
-    image = "logo.png"
+    image = "background-logo.png"
     alt = "Pixies Logo"
 
   # Hero section
   [params.hero]
     title = "Pixies Face Painting"
     subtitle = 'Beautiful Face Painting'
-    background = "full_image_1.jpg"
+    image = "full_image_1.jpg"
     alt = "Pixies Logo"
 
   # Intro section
@@ -171,7 +152,7 @@ canonifyURLs = true
     description = "Your childern will go mad for these faces!"
     navigation = "testimonials"
     button = "What People Say"
-    icon = "fa-solid fa-paintbrush"
+    icon = "fa-solid fa-comments"
     img = "snowtiger.png"
     alt = "Alt Text"
 
@@ -180,7 +161,7 @@ canonifyURLs = true
     description = "Amazing balloons, the like of which you've never seen."
     navigation = "work"
     button = "See For Yourself"
-    icon = "fa-solid fa-paintbrush"
+    icon = "fa-solid fa-images"
     img = "iceprincess.png"
     alt = "Alt Text"
 
@@ -189,7 +170,7 @@ canonifyURLs = true
     description = "You won't believe how fun Pixies parties can be!"
     navigation = "services"
     button = "Booking Info"
-    icon = "fa-solid fa-paintbrush"
+    icon = "fa-solid fa-face-smile-beam"
     img = "flowers.png"
     alt = "Alt Text"
 
@@ -238,21 +219,18 @@ canonifyURLs = true
 
     [[params.testimonials.item]]
       quote = "&ldquo;My daughter had the best time&rdquo;"
-      person = 'Fred Bloggs'
-      img = "person1.png"
-      alt = "Fred Blogs"
+      person = 'Sarah Bloggs'
+      icon = "fa-solid fa-user"
 
     [[params.testimonials.item]]
-      quote = "&ldquo;My daughter had the best time&rdquo;"
-      person = 'Fred Bloggs'
-      img = "person1.png"
-      alt = "Fred Blogs"
+      quote = "&ldquo;Pixie is amazing.  She made my daughter's day so special!&rdquo;"
+      person = 'Mary Smith'
+      icon = "fa-solid fa-user"
 
     [[params.testimonials.item]]
-      quote = "&ldquo;My daughter had the best time&rdquo;"
-      person = 'Fred Bloggs'
-      img = "person1.png"
-      alt = "Fred Blogs"
+      quote = "&ldquo;Always a professional, we hire Pixie every year!&rdquo;"
+      person = 'Bob Harris'
+      icon = "fa-regular fa-user"
     
   # Services section
   [params.services]
@@ -268,12 +246,12 @@ canonifyURLs = true
     [[params.services.item]]
       title = "Ballooning"
       description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
-      icon = "fa-solid fa-paintbrush"
+      icon = "fa-solid fa-face-smile"
 
     [[params.services.item]]
       title = "Fairy Parties"
       description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
-      icon = "fa-solid fa-paintbrush"
+      icon = "fa-solid fa-cake-candles"
 
   # Contact section
   [params.contact]

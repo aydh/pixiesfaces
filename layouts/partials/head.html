@@ -67,7 +67,7 @@
     -->
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/{{ .Site.Params.favicon }}">
  
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
@@ -80,7 +80,8 @@
 
     <!-- Site Specific  -->
     <!--
-    <link rel="stylesheet" href="css/style.css">	-->
+    <link rel="stylesheet" href="css/style.css">
+	-->
 
     {{ $templateStyle := resources.Get "css/style.css" }}
 	{{ $style := $templateStyle | resources.ExecuteAsTemplate "css/styleNew.css" . }}

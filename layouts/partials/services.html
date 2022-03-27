@@ -13,7 +13,7 @@
 			<div class="row">
 			{{ range .Site.Params.services.item }}
 				<div class="col-md-6 col-sm-6 pixies-service to-animate">
-					<i class="icon to-animate-2 {{ .icon | markdownify }}"></i>
+					<i class="icon to-animate-2 {{ .icon }}"></i>
 					<h3>{{ .title | markdownify }}</h3>
 					<p>{{ .description | markdownify }}</p>
 				</div>
