@@ -18,7 +18,15 @@
 
 	// Parallax
 	var parallax = function() {
-		$(window).stellar();
+
+
+		$(window).stellar({
+			horizontalScrolling: false,
+			horizontalOffset: 0,
+  			verticalOffset: 200,
+		  	responsive: true
+
+		});
 	};
 
 	// Burger Menu
