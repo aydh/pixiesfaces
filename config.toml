@@ -108,7 +108,7 @@ canonifyURLs = true
     alt = "Pixies Logo"
 
     # Menu Configuration
-    home = "Home"
+    home = "Intro"
     work = "Gallery"
     testimonials = "Testimonials"
     services = "Booking Info"
@@ -140,7 +140,7 @@ canonifyURLs = true
   [params.hero]
     title = "Pixies Face Painting"
     subtitle = 'Beautiful Face Painting'
-    image = "full_image_1.jpg"
+    image = "redtiger.png"
     alt = "Pixies Logo"
 
   # Intro section
@@ -197,19 +197,34 @@ canonifyURLs = true
       title = "Irridescent Butterfly"
 
     [[params.work.row]]
-      img = "snowtiger.png"
-      alt = "Snow Tiger"
-      title = "Snow Tiger"
+      img = "redtiger.png"
+      alt = "Red Tiger"
+      title = "Red Tiger"
 
     [[params.work.row]]
-      img = "iceprincess.png"
-      alt = "Ice Princess"
-      title = "Ice Princess"
+      img = "snaketiger.png"
+      alt = "Snake Tiger"
+      title = "Snake Tiger"
+
+   [[params.work.row]]
+      img = "flowerprincess.png"
+      alt = "Flower Princess"
+      title = "Flower Princess"
+
+   [[params.work.row]]
+      img = "flowers.png"
+      alt = "Flowers"
+      title = "Flowers"
+
+   [[params.work.row]]
+      img = "happydog.png"
+      alt = "Happy Dog"
+      title = "Happy Dog"
 
     [[params.work.row]]
-      img = "irridescentbutterfly.png"
-      alt = "Irridescent Butterfly"
-      title = "Irridescent Butterfly"
+      img = "illusion.png"
+      alt = "Illusion Magazine"
+      title = "Illusion Magazine"
 
   # Testimonials section
   [params.testimonials]

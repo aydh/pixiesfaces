@@ -469,7 +469,7 @@ HOME SECTION
 }
 
 #pixies-home, #pixies-home .text-wrap {
-  height: 100vh;
+  height: 80vh;
 }
 #pixies-home .text-wrap {
   display: table;
@@ -551,7 +551,8 @@ INTRO SECTION
   flex-grow: 1;
   background-size: cover;
   position: relative;
-  backgroun-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 @media screen and (max-width: 768px) {
   #pixies-intro .pixies-block {
