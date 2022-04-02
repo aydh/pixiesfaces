@@ -143,7 +143,7 @@ canonifyURLs = true
   # Fixed Background section
   [params.background]
     enableheader = true  
-    enablefooter = true  
+    enablefooter = false  
     image = "background-logo.png"
     alt = "Pixies Logo"
 
@@ -157,6 +157,7 @@ canonifyURLs = true
   # Intro section
   # Font awesome icons https://fontawesome.com/icons
   [params.intro]
+  enable = false
 
   [[params.intro.item]]
     title = "Face Painting"
@@ -187,7 +188,7 @@ canonifyURLs = true
 
   # Work section
   [params.work]
-    enable = true
+    enable = false
     title = "Gallery"
     description = "Have a look at some of Pixie's amazing faces."
     footertext = '&copy; Pixies Face Painting 2022'
@@ -239,7 +240,7 @@ canonifyURLs = true
 
   # Testimonials section
   [params.testimonials]
-    enable = true
+    enable = false
     title = "Testimonials"
     description = "People love Pixie!"
 
@@ -260,7 +261,7 @@ canonifyURLs = true
     
   # Services section
   [params.services]
-    enable = true
+    enable = false
     title = "Booking Info"
     description = "What value for money!"
 

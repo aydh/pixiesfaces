@@ -1131,7 +1131,7 @@ FOOTER
   color: {{ .Site.Params.backgroundColor }};  
 }
 #footer .gotop:hover, #footer .gotop:focus {
-  top: -5px;
+  top: 25px;
   text-decoration: none !important;
   background-color: {{ .Site.Params.highlightColor }};
 }

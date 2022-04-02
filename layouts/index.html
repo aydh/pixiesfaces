@@ -9,7 +9,9 @@
 			{{ partial "background-header.html" .}}
 		{{ end }}
 		{{ partial "hero.html" .}}
-        {{ partial "intro.html" .}}
+		{{ if .Site.Params.intro.enable }}
+	        {{ partial "intro.html" .}}
+		{{ end }}
 		{{ if .Site.Params.work.enable }}
        		{{ partial "work.html" .}}
        	{{ end }}
