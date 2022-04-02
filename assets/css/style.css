@@ -231,10 +231,17 @@ body:after{
 }
 
 @media screen and (max-width: 768px) {
-  #pixies-background-header {
-    height: 90vh;
+  body:after{
+    top: -50px ;
+  }
+  #pixies-background-header .gotoSection {
+    bottom: 80px !important;
+  }
+  #pixies-background-header .gotoSection:hover, #pixies-background-header .gotoSection:focus {
+    bottom: 75px !important;
   }
 }
+
 #pixies-background-header .gotoSection {
   position: absolute;
   bottom: 30px;
@@ -259,7 +266,7 @@ body:after{
   color: {{ .Site.Params.backgroundColor }};  
 }
 
-#pixies-background-header .gotoSection:hover, #footer .gotoSection:focus {
+#pixies-background-header .gotoSection:hover, #pixies-background-header .gotoSection:focus {
   bottom: 25px;
   text-decoration: none !important;
   background-color: {{ .Site.Params.highlightColor }};
@@ -489,7 +496,7 @@ HOME SECTION
 }
 
 #pixies-home, #pixies-home .text-wrap {
-  height: 90vh;
+  height: 100vh;
 }
 #pixies-home .text-wrap {
   display: table;
