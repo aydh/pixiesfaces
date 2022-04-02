@@ -33,7 +33,7 @@
                     {{ if .Site.Params.navigation.social.enable }}
                         <li><span>
                             {{ range .Site.Params.navigation.social.links }}
-                            <a class="external" href="{{ with index . 1}}{{ . }}{{ end }}"><i class="{{ with index . 0}}{{ . }}{{ end }}"></i></a>
+                            <a class="external" target="_blank" rel="noopener noreferrer" href="{{ with index . 1}}{{ . }}{{ end }}"><i class="{{ with index . 0}}{{ . }}{{ end }}"></i></a>
                             {{ end }}
                         </span></li>
                     {{ end }}
