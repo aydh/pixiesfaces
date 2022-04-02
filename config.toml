@@ -15,7 +15,7 @@ canonifyURLs = true
   email = "info@pixiesfaces.com"
   github = "https://github.com/pixiesfaces"
   facebook = "https://facebook.com/pixiesfaces"
-  seoimage = "/images/logo.png"
+  seoimage = "/images/banner-logo.png"
   twitter = "@pixiesfaces"
   site_type = "LocalBusiness"
   local_business_type = "EntertainmentBusiness"
@@ -50,7 +50,7 @@ canonifyURLs = true
   menuTextSize = "18px"
  
   # Background Header Section
-  gotoSectionIconSize = "50px"
+  gotoSectionIconSize = "40px"
 
   # Hero image text sizes
   heroTextSizeH1 = "50px"
@@ -119,21 +119,13 @@ canonifyURLs = true
     services = "Booking Info"
     contact = "Contact Us"
 
-    # You can add custom links before or after the default links
-    # Assign a weight to define the order
-    
-    # prepended links
-    #[[menu.prepend]]
-    #  url = "http://gohugo.io"
-    #  name = "Hugo"
-    #  weight = 10
+  [params.navigation.social]
+    enable = true
+    links = [
+        ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
+        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"]
+      ]
 
-    # postpended links
-    #[[menu.postpend]]
-    #  url = "http://gohugo.io"
-    #  name = "External link"
-    #  weight = 10
-  
   # Fixed Background section
   [params.background]
     enableheader = true  
@@ -300,8 +292,7 @@ canonifyURLs = true
     copyright = '&copy; Pixies Face Painting 2022'
     links = [
         ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
-        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"],
-        ["fa-brands fa-twitter", "https://twitter.com/pixiesfaces"]
+        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"]
       ]
 
   [params.errorpage]
