@@ -232,7 +232,7 @@ body:after{
 
 @media screen and (max-width: 768px) {
   body:after{
-    top: -50px ;
+    top: -100px ;
   }
   #pixies-background-header .gotoSection {
     bottom: 80px !important;
