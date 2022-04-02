@@ -14,7 +14,7 @@ canonifyURLs = true
   description = "Beautiful Face Painting"
   email = "info@pixiesfaces.com"
   github = "https://github.com/pixiesfaces"
-  facebook = "https://facebook.com/pixiesfaces"
+  facebook = "https://facebook.com/pixiesfacepainting"
   seoimage = "/images/background-logo.png"
   twitter = "@pixiesfaces"
   site_type = "LocalBusiness"
@@ -137,7 +137,7 @@ canonifyURLs = true
     enable = true
     links = [
         ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
-        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"]
+        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
       ]
 
   # Fixed Background section
@@ -292,7 +292,7 @@ canonifyURLs = true
     # Font awesome icons https://fontawesome.com/icons
     details = [
         ["fa-solid fa-phone", "tel:+61406074909", "0406 074 909"],
-        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfaces", "Facebook Messenger"],
+        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfacepainting", "Facebook Messenger"],
       ]
     
     # Form Labels
@@ -308,7 +308,7 @@ canonifyURLs = true
     copyright = '&copy; Pixies Face Painting 2022'
     links = [
         ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
-        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfaces"]
+        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
       ]
 
   [params.errorpage]
