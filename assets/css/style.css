@@ -232,13 +232,13 @@ body:after{
 
 @media screen and (max-width: 768px) {
   body:after{
-    top: -100px ;
+    top: -50px ;
   }
   #pixies-background-header .gotoSection {
-    bottom: 80px !important;
+    bottom: 130px !important;
   }
   #pixies-background-header .gotoSection:hover, #pixies-background-header .gotoSection:focus {
-    bottom: 75px !important;
+    bottom: 125px !important;
   }
 }
 
