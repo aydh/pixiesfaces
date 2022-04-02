@@ -5,8 +5,15 @@ title = "Pixies Face Painting"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 
+disableKinds = ["categories", "tags"]
 enableRobotsTXT = true
 canonifyURLs = true
+
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = "0.5"
 
 [params]
   # SEO Related Config

@@ -25,7 +25,7 @@
 				{{ if .Site.Params.contact.form }}
 				<div class="col-md-6 to-animate">
 					<h3>{{ with .Site.Params.contact.formHeader }}{{ . | markdownify }}{{ end }}</h3>
-					<form method="post" data-netlify="true">
+					<form method="post" data-netlify="true" data-netlify-recaptcha="true">
 					<div class="form-group ">
 						{{ with .Site.Params.contact.name }}
 						<label for="name" class="sr-only">{{ . | markdownify }}</label>
@@ -49,6 +49,8 @@
 						<label for="message" class="sr-only">{{ . | markdownify }}</label>
 						<textarea id="message" cols="30" rows="5" class="form-control" name="message" placeholder="{{ . }}"></textarea>
 						{{ end }}
+					</div>
+					<div data-netlify-recaptcha="true">
 					</div>
 					<div class="form-group ">
 						<input class="btn btn-primary btn-lg" value="{{ .Site.Params.contact.button | markdownify }}" type="submit">
