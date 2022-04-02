@@ -9,6 +9,7 @@ disableKinds = ["taxonomy","term","RSS"]
 enableRobotsTXT = true
 canonifyURLs = true
 
+googleAnalytics = "G-9GQ5TF9022"
 
 [sitemap]
   changefreq = "monthly"
