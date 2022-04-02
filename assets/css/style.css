@@ -1104,6 +1104,7 @@ FOOTER
 #footer {
   padding: 20px 0 0 0;
   color: {{ .Site.Params.textColor }};
+  background-color: {{ .Site.Params.backgroundColor }};  
   position: relative;
   margin: 0 0 0 0;
 }
