@@ -5,7 +5,7 @@ title = "Pixies Face Painting"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 
-disableKinds = ["categories", "tags"]
+disableKinds = ["taxonomy","term","RSS"]
 enableRobotsTXT = true
 canonifyURLs = true
 
