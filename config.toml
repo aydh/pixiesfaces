@@ -101,7 +101,6 @@ canonifyURLs = true
   formTextSize = "18px"
 
   # Footer text sizes
-  goTopIconSize = "40px"
   socialIconSize = "16px"
   copyrightTextSize = "14px"
 
