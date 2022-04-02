@@ -1,15 +1,21 @@
 # Page settings
 baseurl = "https://www.pixiesfaces.com"
 title = "Pixies Face Painting"
-
-languageCode = "en-us"
-DefaultContentLanguage = "en"
-
 disableKinds = ["taxonomy","term","RSS"]
 enableRobotsTXT = true
 canonifyURLs = true
 
+# Google Analytics Tag
 googleAnalytics = "G-9GQ5TF9022"
+
+# Language Settings
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 1
 
 [sitemap]
   changefreq = "monthly"
@@ -19,7 +25,7 @@ googleAnalytics = "G-9GQ5TF9022"
 [params]
   # SEO Related Config
   author = "Jenny Saunders"
-  description = "Beautiful Face Painting"
+  description = "Beautiful face painting, balloon twisting and fairy parties in Melbourne East."
   email = "info@pixiesfaces.com"
   github = "https://github.com/pixiesfaces"
   facebook = "https://facebook.com/pixiesfacepainting"
@@ -119,12 +125,6 @@ googleAnalytics = "G-9GQ5TF9022"
   # Gradient Home/Hero Section
   errorColor1 = "#f00"
   errorColor2 = "#f0f"
-
-[languages]
-  [languages.en]
-    languageName = "English"
-    languageCode = "en-us"
-    weight = 1
 
   # Navigation
   [params.navigation]
