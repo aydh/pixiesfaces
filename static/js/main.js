@@ -16,19 +16,6 @@
 	    );
 	};
 
-	// Parallax
-	var parallax = function() {
-
-
-		$(window).stellar({
-			horizontalScrolling: false,
-			horizontalOffset: 0,
-  			verticalOffset: 200,
-		  	responsive: true
-
-		});
-	};
-
 	// Burger Menu
 	var burgerMenu = function() {
 
@@ -411,8 +398,6 @@
 
 	// Document on load.
 	$(function(){
-
-		parallax();
 
 		burgerMenu();
 

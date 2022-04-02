@@ -25,8 +25,17 @@ canonifyURLs = true
   backgroundColor = "#fff"
   whiteColor = "#fff"
   textColor = "#3d2b3d"
-  highlightColor = "#9900f6"
- 
+  highlightColor = "#9900f6" 
+
+  # Nav Toggle
+  navbarHeight = "50px"
+  navbarToggleTopPadding = "8px"
+  navToggleColor = "#3d2b3d"
+  barThickness = "4px"
+  burgerWidth = "40px"
+  spacing = "-12px"
+  spacingActive = "-15px"
+
   # Gradient Home/Hero Section
   homeColor1 = "#f00"
   homeColor2 = "#f0f"
@@ -47,10 +56,16 @@ canonifyURLs = true
   bodyTextSize = "18px"
   
   # Menu item Text size
-  menuTextSize = "18px"
+  menuTextSize = "22px"
+  toggleMenuTextSize = "22px"
  
   # Background Header Section
-  gotoSectionIconSize = "40px"
+  # icon size should be about 2/3 of button size
+  # offset should be negative half button size
+  gotoSectionIconSize = "33px"
+  gotoSectionButtonSize = "50px"
+  gotoSectionButtonOffset = "-25px"
+  gotoSectionIconColour = "#3d2b3d"
 
   # Hero image text sizes
   heroTextSizeH1 = "50px"
