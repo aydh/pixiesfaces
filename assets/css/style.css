@@ -230,6 +230,11 @@ body:after{
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  #pixies-background-header {
+    height: 80vh;
+  }
+}
 #pixies-background-header .gotoSection {
   position: absolute;
   bottom: 30px;
