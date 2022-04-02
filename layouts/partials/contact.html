@@ -24,6 +24,7 @@
 				</div>
 				{{ if .Site.Params.contact.form }}
 				<div class="col-md-6 to-animate">
+					<h3>{{ with .Site.Params.contact.formHeader }}{{ . | markdownify }}{{ end }}</h3>
 					<form method="post" data-netlify="true">
 					<div class="form-group ">
 						{{ with .Site.Params.contact.name }}

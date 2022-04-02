@@ -284,14 +284,15 @@ canonifyURLs = true
   [params.contact]
     enable = true
     form = true
-    title = "Get in touch"
-    description = "We'd love to hear from you."
-    info = "Contact details"
+    title = "Enquire"
+    description = "Get in touch for more information about face painting, balloon twisting and fairy parties in Melbourne East."
+    info = "Call or Message"
+    formHeader = "Send an email"
     
     # Font awesome icons https://fontawesome.com/icons
     details = [
         ["fa-solid fa-phone", "tel:+61406074909", "0406 074 909"],
-        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfaces", "Messenger"],
+        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfaces", "Facebook Messenger"],
       ]
     
     # Form Labels
