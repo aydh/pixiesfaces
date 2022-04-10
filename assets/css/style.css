@@ -213,7 +213,7 @@ body:after{
   left:0;
   right:0;
   z-index:-1; /* needed to keep in the background */
-  background: url(../images/{{ .Site.Params.background.image }}) center center;
+  background: url({{ .Site.BaseURL }}images/{{ .Site.Params.background.image }}) center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -467,7 +467,7 @@ HOME SECTION
 */
 
 #pixies-home {
-  background: url(../images/{{ .Site.Params.hero.image }}) center center;
+  background: url({{ .Site.BaseURL }}images/{{ .Site.Params.hero.image }}) center center;
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1333,7 +1333,7 @@ ERROR PAGE
 */
 
 #pixies-error {
-  background: url(../images/{{ .Site.Params.errorpage.image }}) center center;
+  background: url({{ .Site.BaseURL }}images/{{ .Site.Params.errorpage.image }}) center center;
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
@@ -1388,4 +1388,12 @@ ERROR PAGE
   font-size: {{ .Site.Params.pixiesErrorTextSizeH2 }};
   color: {{ .Site.Params.backgroundColor }};
   margin: 0 0 2em 0;
+}
+
+#pixies-privacy {
+  background-color: {{ .Site.Params.backgroundColor }};
+}
+
+#pixies-privacy li {
+  color: {{ .Site.Params.textColor }};
 }
