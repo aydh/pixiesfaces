@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		{{ template "_internal/google_analytics.html" . }}
+        {{ partial "head.html" .}}
+    </head>
+    <body>
+        {{block "main" . }}{{ end }}
+		{{ if .Site.Params.footer.enable }}
+        	{{ partial "footer.html" .}}
+        {{ end }}
+        {{ partial "js.html" .}}
+    </body>
+</html>
