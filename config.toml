@@ -86,7 +86,7 @@ DefaultContentLanguage = "en"
   gotoSectionIconColour = "#3d2b3d"
 
   # Hero image text sizes
-  heroTextSizeH1 = "50px"
+  heroTextSizeH1 = "60px"
   heroTextSizeH2 = "28px"
 
   # Intro section text sizes
@@ -140,7 +140,7 @@ DefaultContentLanguage = "en"
 
     # Menu Configuration
     home = "Intro"
-    insta = "Instagram"
+    insta = "Pictures"
     work = "Gallery"
     testimonials = "Testimonials"
     services = "Booking Info"
@@ -163,7 +163,7 @@ DefaultContentLanguage = "en"
   # Hero section
   [params.hero]
     title = "Pixies Face Painting"
-    subtitle = 'Beautiful Face Painting'
+    subtitle = 'Beautiful face painting, balloon twisting and fairy parties in Melbourne East.'
     image = "redtiger.png"
     alt = "Pixies Logo"
 
@@ -202,13 +202,13 @@ DefaultContentLanguage = "en"
   # Instagram Feed section
   [params.insta]
     enable = true
-    title = "Instagram"
+    title = "Pictures"
     description = "Have a look at what Pixie has been up to recently."
     footertext = '&copy; Pixies Face Painting 2022'
 
   # Work section
   [params.work]
-    enable = true
+    enable = false
     title = "Gallery"
     description = "Have a look at some of Pixie's amazing faces."
     footertext = '&copy; Pixies Face Painting 2022'
