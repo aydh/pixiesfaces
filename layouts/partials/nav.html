@@ -14,6 +14,10 @@
 
                         <li class="active"><a href="#" data-nav-section="home"><span>{{ with .Site.Params.navigation.home }}{{ . | markdownify }}{{ end }}</span></a></li>
                     
+                    {{ if .Site.Params.insta.enable }}
+                        <li><a href="#" data-nav-section="insta"><span>{{ with .Site.Params.navigation.insta }}{{ . | markdownify }}{{ end }}</span></a></li> 
+                    {{ end }}
+
                     {{ if .Site.Params.work.enable }}
                         <li><a href="#" data-nav-section="work"><span>{{ with .Site.Params.navigation.work }}{{ . | markdownify }}{{ end }}</span></a></li> 
                     {{ end }}

@@ -249,6 +249,33 @@
 		}
 	};
 
+	var instaAnimate = function() {
+		if ( $('#pixies-insta').length > 0 ) {	
+
+			$('#pixies-insta').waypoint( function( direction ) {
+										
+				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+
+
+					setTimeout(function() {
+						$('#pixies-insta .to-animate').each(function( k ) {
+							var el = $(this);
+							
+							setTimeout ( function () {
+								el.addClass('fadeInUp animated');
+							},  k * 200, 'easeInOutExpo' );
+							
+						});
+					}, 200);
+
+					
+					$(this.element).addClass('animated');
+						
+				}
+			} , { offset: '80%' } );
+
+		}
+	};
 
 	var testimonialAnimate = function() {
 		var testimonial = $('#pixies-testimonials');
@@ -413,6 +440,7 @@
 		// Animations
 		homeAnimate();
 		introAnimate();
+		instaAnimate();
 		workAnimate();
 		testimonialAnimate();
 		servicesAnimate();

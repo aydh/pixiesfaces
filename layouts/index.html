@@ -13,6 +13,9 @@
 		{{ if .Site.Params.intro.enable }}
 	        {{ partial "intro.html" .}}
 		{{ end }}
+		{{ if .Site.Params.insta.enable }}
+       		{{ partial "insta.html" .}}
+       	{{ end }}
 		{{ if .Site.Params.work.enable }}
        		{{ partial "work.html" .}}
        	{{ end }}
