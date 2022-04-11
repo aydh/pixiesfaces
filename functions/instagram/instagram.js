@@ -13,6 +13,7 @@ const handler = async function (event) {
   const endpoint = 'https://graph.instagram.com';
   const userId = process.env.INSTAGRAM_USER_ID;
   const fields = 'caption,media_url,media_type,permalink';
+
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
   const limit = 5;
   const url = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}&count=${limit}`;
