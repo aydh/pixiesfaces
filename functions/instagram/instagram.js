@@ -14,8 +14,7 @@ const handler = async function (event) {
   const userId = process.env.INSTAGRAM_USER_ID;
   const fields = 'id,caption,media_url,permalink';
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-  const limit = 5;
-  const url = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}&count=${limit}`;
+  const url = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
   console.log('Constructed URL is ...', url)
 
   try {
@@ -27,6 +26,7 @@ const handler = async function (event) {
       statusCode: 200,
       headers: {
         'content-type': 'application/json',
+        'Access-Control-Allow-Origin': '*', // Allow from anywhere 
       },
       body: JSON.stringify(data),
     }
