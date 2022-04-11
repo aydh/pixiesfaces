@@ -422,7 +422,7 @@
 		const instarow = document.getElementById('insta');
 
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://localhost:9999/.netlify/functions/instagram', true);
+		request.open('GET', 'https://www.pixiesfaces.com/.netlify/functions/instagram', true);
 		request.onload = function () {
 		
 		  // Begin accessing JSON data here
