@@ -652,11 +652,11 @@ INTRO SECTION
 GENERAL PADDING
 */
 
-#pixies-services, #pixies-testimonials, #pixies-work, #pixies-contact {
+#pixies-services, #pixies-testimonials, #pixies-work, #pixies-insta, #pixies-contact {
   padding: 4em 0;
 }
 @media screen and (max-width: 768px) {
-  #pixies-services, #pixies-testimonials, #pixies-work, #pixies-contact {
+  #pixies-services, #pixies-testimonials, #pixies-work, #pixies-insta, #pixies-contact {
     padding: 2em 0;
   }
 }
@@ -794,6 +794,72 @@ TESTIMONIAL SECTION
 #pixies-testimonials .box-testimony .author p {
   float: left;
   margin-top: 15px;
+}
+
+/*
+WORK SECTION
+*/
+
+#pixies-insta {
+  overflow: hidden;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  /* IE9, iOS 3.2+ */
+  /*background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);*/
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, {{ .Site.Params.instaColor1 }}), color-stop(1, {{ .Site.Params.instaColor2 }}));
+  /* Android 2.3 */
+  background-image: -webkit-repeating-linear-gradient(top left, {{ .Site.Params.instaColor1 }} 0%, {{ .Site.Params.instaColor2 }} 100%);
+  /* IE10+ */
+  background-image: repeating-linear-gradient(to bottom right, {{ .Site.Params.instaColor1 }} 0%, {{ .Site.Params.instaColor2 }} 100%);
+  background-image: -ms-repeating-linear-gradient(top left, {{ .Site.Params.instaColor1 }} 0%, {{ .Site.Params.instaColor2 }} 100%);
+}
+
+#pixies-insta .section-heading h2 {
+  color: {{ .Site.Params.backgroundColor }};
+}
+#pixies-insta .section-heading h2:after {
+  background: {{ .Site.Params.backgroundColor }};
+}
+#pixies-insta .section-heading h3 {
+  color: {{ .Site.Params.backgroundColor }};
+}
+#pixies-insta p {
+  color: {{ .Site.Params.backgroundColor }};
+  font-size: {{ .Site.Params.copyrightTextSize }};
+}
+#pixies-insta .pixies-insta-item {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 0;
+  background: {{ .Site.Params.backgroundColor }};
+  overflow: hidden;
+  z-index: 9;
+  margin-bottom: 30px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#pixies-insta .pixies-insta-item img {
+  z-index: 8;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#pixies-insta .pixies-insta-item .pixies-text {
+  padding: 10px 20px;
+}
+#pixies-insta .pixies-insta-item .pixies-text p {
+  text-decoration: none !important;
+  color: {{ .Site.Params.textColor }};
+  font-size: {{ .Site.Params.workItemTextSizeH2 }};
+  font-weight: 400;
+  margin: 0;
 }
 
 /*

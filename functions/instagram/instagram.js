@@ -12,7 +12,8 @@ const handler = async function (event) {
   // Get env var values defined in our Netlify site UI
   const endpoint = 'https://graph.instagram.com';
   const userId = process.env.INSTAGRAM_USER_ID;
-  const fields = 'id,caption,media_url,permalink';
+  const fields = 'caption,media_url,media_type,permalink';
+
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
   const url = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
   console.log('Constructed URL is ...', url)

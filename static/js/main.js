@@ -249,6 +249,33 @@
 		}
 	};
 
+	var instaAnimate = function() {
+		if ( $('#pixies-insta').length > 0 ) {	
+
+			$('#pixies-insta').waypoint( function( direction ) {
+										
+				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+
+
+					setTimeout(function() {
+						$('#pixies-insta .to-animate').each(function( k ) {
+							var el = $(this);
+							
+							setTimeout ( function () {
+								el.addClass('fadeInUp animated');
+							},  k * 200, 'easeInOutExpo' );
+							
+						});
+					}, 200);
+
+					
+					$(this.element).addClass('animated');
+						
+				}
+			} , { offset: '80%' } );
+
+		}
+	};
 
 	var testimonialAnimate = function() {
 		var testimonial = $('#pixies-testimonials');
@@ -390,14 +417,64 @@
 		}
 	};
 	
-	
+	var loadInsta = function() {
 
+		const instarow = document.getElementById('insta');
 
-	
-	
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://www.pixiesfaces.com/.netlify/functions/instagram', true);
+		request.onload = function () {
+		
+		  // Begin accessing JSON data here
+		  var insta = JSON.parse(this.response);
+		  if (request.status >= 200 && request.status < 400) {
+			for (let image of insta.data) {
+			//insta.data.forEach(image => {
+			  if (image.media_type === 'VIDEO') continue;
+			  
+			  const div1 = document.createElement('div');
+			  div1.setAttribute('class', 'col-md-4 col-sm-6 col-xxs-12');
+			  instarow.appendChild(div1);
+		
+			  const a = document.createElement('a');
+			  a.setAttribute('class', 'pixies-insta-item');
+			  a.setAttribute('href', image.permalink);
+			  div1.appendChild(a);
+		
+			  const img = document.createElement('img');
+			  img.setAttribute('class', 'img-responsive');
+			  img.setAttribute('alt', image.caption);
+			  img.setAttribute('src', image.media_url);
+			  a.appendChild(img);
+		
+			  const div2 = document.createElement('div');
+			  div2.setAttribute('class', 'pixies-text');
+			  a.appendChild(div2);
+		
+			  const p = document.createElement('p');
+			  const captionArray = image.caption.split("#");
+			  p.textContent = captionArray[0];
+			  div2.appendChild(p);
+		
+			  const div3 = document.createElement('div');
+			  div3.setAttribute('class', 'clearfix visible-sm-block');
+			  instarow.appendChild(div3);
+			//});
+			};
+		  } else {
+			const errorMessage = document.createElement('marquee');
+			errorMessage.textContent = `Gah, it's not working!`;
+			app.appendChild(errorMessage);
+		  }
+		}
+		
+		request.send();
+	};
 
 	// Document on load.
 	$(function(){
+
+		loadInsta();
 
 		burgerMenu();
 
@@ -413,6 +490,7 @@
 		// Animations
 		homeAnimate();
 		introAnimate();
+		instaAnimate();
 		workAnimate();
 		testimonialAnimate();
 		servicesAnimate();
