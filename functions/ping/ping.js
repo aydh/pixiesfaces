@@ -1,5 +1,7 @@
 const handler = async (event) => {
   console.log('Got pinged')
+  const params = qs.stringify(event.queryStringParameters)
+  console.log('params', params)
   try {
     return {
       statusCode: 200,
