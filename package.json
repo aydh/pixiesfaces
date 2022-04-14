@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "instafeed.js": "^2.0.0"
+    "instafeed.js": "^2.0.0",
+    "sendmail": "^1.6.1"
   }
 }
