@@ -1,15 +1,16 @@
 {
-  "name": "instagram",
+  "name": "ping",
   "version": "1.0.0",
-  "description": "instagram.js",
-  "main": "instagram.js",
+  "description": "ping.js",
+  "main": "ping.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrew Saunders",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.26.1",
+    "process": "^0.11.10",
     "qs": "^6.10.3"
   }
 }

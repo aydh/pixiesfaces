@@ -53,7 +53,7 @@ const handler = async (event) => {
   const descriptor = {
     from: `"${body.email}" <no-reply@gql-modules.com>`,
     to: process.env.CONTACT_EMAIL,
-    subject: `${body.name} sent you a message from gql-modules.com`,
+    subject: `[Pixies Face Painting] New enquiry from ${body.name}`,
     text: body.details,
   }
 

@@ -1,11 +1,10 @@
 const process = require('process')
-
 const axios = require('axios')
 const qs = require('qs')
 
 const handler = async function (event) {
 
-  // apply our function to the queryStringParameters and assign it to a variable
+  console.log('instagram.js was called...')
   const params = qs.stringify(event.queryStringParameters)
   console.log('params', params)
 
@@ -13,16 +12,12 @@ const handler = async function (event) {
   const endpoint = 'https://graph.instagram.com';
   const userId = process.env.INSTAGRAM_USER_ID;
   const fields = 'caption,media_url,media_type,permalink';
-
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
   const url = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
   console.log('Constructed URL is ...', url)
 
   try {
     const { data } = await axios.get(url)
-    // refer to axios docs for other methods if you need them
-    // for example if you want to POST data:
-    //    axios.post('/user', { firstName: 'Fred' })
     return {
       statusCode: 200,
       headers: {
