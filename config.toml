@@ -140,11 +140,11 @@ DefaultContentLanguage = "en"
 
     # Menu Configuration
     home = "Intro"
-    insta = "Pictures"
-    work = "Gallery"
+    insta = "Gallery"
+    work = "Images"
     testimonials = "Testimonials"
     services = "Booking Info"
-    contact = "Contact Us"
+    contact = "Contact"
 
   [params.navigation.social]
     enable = true
@@ -202,8 +202,8 @@ DefaultContentLanguage = "en"
   # Instagram Feed section
   [params.insta]
     enable = true
-    title = "Pictures"
-    description = "Have a look at what Pixie has been up to recently."
+    title = "Gallery"
+    description = "Recent beautiful creations from Instagram"
     footertext = '&copy; Pixies Face Painting 2022'
 
   # Work section
@@ -280,24 +280,25 @@ DefaultContentLanguage = "en"
       icon = "fa-regular fa-user"
     
   # Services section
+  # Font awesome icons https://fontawesome.com/icons
   [params.services]
     enable = false
-    title = "Booking Info"
-    description = "What value for money!"
+    title = "Booking Information"
+    description = "put your sub heading here"
 
     [[params.services.item]]
       title = "Face Painting"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+      description = "put your description here"
       icon = "fa-solid fa-paintbrush"
 
     [[params.services.item]]
       title = "Ballooning"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+      description = "put your description here"
       icon = "fa-solid fa-face-smile"
 
     [[params.services.item]]
       title = "Fairy Parties"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+      description = "put your description here"
       icon = "fa-solid fa-cake-candles"
 
   # Contact section
@@ -307,19 +308,20 @@ DefaultContentLanguage = "en"
     title = "Enquire"
     description = "Get in touch for more information about face painting, balloon twisting and fairy parties in Melbourne East."
     info = "Call or Message"
-    formHeader = "Send an email"
+    formHeader = "Enquire by Email"
     
     # Font awesome icons https://fontawesome.com/icons
     details = [
         ["fa-solid fa-phone", "tel:+61406074909", "0406 074 909"],
-        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfacepainting", "Facebook Messenger"],
+        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfacepainting", "Facebook messenger"],
       ]
     
     # Form Labels
-    email = "Your Email"
-    phone = "Your Contact Number"
-    message = "Message"
-    button = "Send message"
+    email = "Your email address"
+    phone = "Best contact number"
+    subject = "Email subject"
+    message = "Email message"
+    button = "Send email"
 
   # Footer section
   # Font awesome icons https://fontawesome.com/icons
@@ -331,6 +333,7 @@ DefaultContentLanguage = "en"
         ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
       ]
 
+  # Custom error/404 page
   [params.errorpage]
     image = "redtiger.png"
     alt = "Red Tiger"

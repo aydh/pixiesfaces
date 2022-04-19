@@ -447,18 +447,18 @@
 			  img.setAttribute('src', image.media_url);
 			  a.appendChild(img);
 		
-			  const div2 = document.createElement('div');
-			  div2.setAttribute('class', 'pixies-text');
-			  a.appendChild(div2);
+			  //const div2 = document.createElement('div');
+			  //div2.setAttribute('class', 'pixies-text');
+			  //a.appendChild(div2);
 		
-			  const p = document.createElement('p');
-			  const captionArray = image.caption.split("#");
-			  p.textContent = captionArray[0];
-			  div2.appendChild(p);
+			  //const p = document.createElement('p');
+			  //const captionArray = image.caption.split("#");
+			  //p.textContent = captionArray[0];
+			  //div2.appendChild(p);
 		
-			  const div3 = document.createElement('div');
-			  div3.setAttribute('class', 'clearfix visible-sm-block');
-			  instarow.appendChild(div3);
+			  //const div3 = document.createElement('div');
+			  //div3.setAttribute('class', 'clearfix visible-sm-block');
+			  //instarow.appendChild(div3);
 			//});
 			};
 		  } else {
