@@ -80,9 +80,7 @@ module.exports = {
           response.data.pipe(dest);
           await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           console.log("Image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
-        }
       }
     }
-
   }
 }
