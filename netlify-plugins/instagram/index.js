@@ -1,4 +1,5 @@
 const process = require('process');
+const fs      = require('fs  ');
 const axios   = require('axios');
 const chalk   = require('chalk');
 
@@ -12,11 +13,11 @@ module.exports = {
     const fields = 'caption,media_url,media_type,permalink';
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
-    console.log('Constructed Instagram API url:', chalk.yellow(instagramAPIUrl));
+    console.log('Constructed Instagram API url:', instagramAPIUrl);
 
     // Where fetched data should reside in the build
     const dataFile = inputs.dataFile;
-    console.log('Instagram datafile location:', chalk.yellow(dataFile));
+    console.log('Instagram datafile location:', dataFile);
 
     // reinstate from cache if it is present
     let instagramResponse;
@@ -33,16 +34,15 @@ module.exports = {
       try {
         const response = await axios.get(instagramAPIUrl)
         console.log('Intagram Status:', chalk.green(response.status));
-        console.log(response.data);
         instagramResponse = response.data;
-        console.log('=============================================');
       } catch (err) {
+        console.log('Intagram Status:', chalk.red(err.status));
         console.error(err)
       }
 
-      // If we didn't receive JSON, fail the plugin but not the build
+      // If we didn't receive data, fail the plugin but not the build
       if(!instagramResponse){
-        utils.build.failPlugin(`The Instagram feed did not return JSON data.\nProceeding with the build without the data from the plugin.`);
+        utils.build.failPlugin(`The Instagram feed did not return data.\nProceeding with the build without the data from the plugin.`);
         return;
       }
       console.log('=============================================');
@@ -51,7 +51,6 @@ module.exports = {
 
       instagramData = [];
       for (const image of instagramResponse.data) {
-        console.log('=============================================');
         let localImageURL = `${inputs.imageFolder}/${image.id}.jpg`;
         instagramData.push({
           "id": image.id,
