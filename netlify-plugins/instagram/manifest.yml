@@ -2,7 +2,7 @@ name: netlify-plugin-add-instagram
 inputs:
   - name: imageFolder
     required: true
-  - name: dataFile
+  - name: dataFolder
     required: true
   - name: feedTTL
     default: 180

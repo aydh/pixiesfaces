@@ -9,20 +9,42 @@ module.exports = {
   async onPreBuild({ inputs, utils }) {
     console.log('Starting up');
 
+    const dataFolder = inputs.dataFolder
+    const dataFile = `${endpoint}/instagram.json`
+    const imageFolder = inputs.imageFolder
     const endpoint = 'https://graph.instagram.com';
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
     console.log('Constructed Instagram API url:',  chalk.yellow(instagramAPIUrl));
+    console.log('Instagram data file location:', chalk.yellow(dataFile));
+    console.log('Instagram images location:', chalk.yellow(imageFolder));
 
-    // Where fetched data should reside in the build
-    const dataFile = inputs.dataFile;
-    console.log('Instagram datafile location:', chalk.yellow(dataFile));
+    // Create the images directory if it doesn't exist
+    if ( await utils.cache.has(imageFolder) ) {
+      await utils.cache.restore(imageFolder);
+      console.log('Restored images folder from cache:', chalk.green(imageFolder));
+    } else {
+      fs.mkdirSync(imageFolder, { recursive: true });
+      await utils.cache.save(imageFolder, { ttl: inputs.imageTTL });
+      console.log('Created images folder:', chalk.green(imageFolder));
+    }
 
-    // reinstate from cache if it is present
+    // Create the data file directory if it doesn't exist
+    if ( await utils.cache.has(dataFolder) ) {
+      await utils.cache.restore(dataFolder);
+      console.log('Restored data folder from cache:', chalk.green(dataFolder));
+    } else {
+      fs.mkdirSync(dataFolder, { recursive: true });
+      await utils.cache.save(dataFolder, { ttl: inputs.imageTTL });
+      console.log('Created data folder:', chalk.green(dataFolder));
+    }
+
     let instagramResponse;
     let instagramData;
+
+    // reinstate data file from cache if it is present
     if ( await utils.cache.has(dataFile) ) {
       await utils.cache.restore(dataFile);
       instagramData = require(`${process.cwd()}/${dataFile}`);
@@ -49,7 +71,7 @@ module.exports = {
 
       instagramData = [];
       for (const image of instagramResponse.data) {
-        let localImageURL = `${inputs.imageFolder}/${image.id}.jpg`;
+        let localImageURL = `${imageFolder}/${image.id}.jpg`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
@@ -60,7 +82,7 @@ module.exports = {
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
       await utils.cache.save(dataFile, { ttl: inputs.feedTTL });
-      console.log(chalk.green("Instagram data fetched and cached"), chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
+      console.log(chalk.green("Instagram data fetched and cached in data file"), chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
     }
 
     // Now we have a well-formated data object describing the instagram feed,
