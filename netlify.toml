@@ -44,10 +44,10 @@ package = "/netlify-plugins/instagram"
   [plugins.inputs]
 
     # Where to put the image files
-    imageFolder = "images/instagram"
+    imageFolder = "public/images/instagram"
 
     # Where to put the instagram data file
-    dataFolder = "_data"
+    dataFolder = "public/data"
 
     # How many seconds should we cache the instagram feed for?
     feedTTL = 30
@@ -58,8 +58,5 @@ package = "/netlify-plugins/instagram"
 [functions]
   directory = "functions"
 
-[functions."refresh-insta-token"]
-schedule = "@daily"
-
 [dev]
-functionsPort = 8888
+functionsPort = 9999
