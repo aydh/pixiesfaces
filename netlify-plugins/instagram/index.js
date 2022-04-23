@@ -71,6 +71,7 @@ module.exports = {
       console.log("Local image location:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       if ( await utils.cache.has(localImageURL) ) {
+        console.log('Restoring from cache:', chalk.yellow(localImageURL));
         await utils.cache.restore(localImageURL);
         console.log('Restored from cache:', chalk.green(localImageURL));
       } else {
@@ -80,9 +81,10 @@ module.exports = {
           url: sourceImageURL,
           method: 'GET',
           responseType: 'stream'      
-        })  
+        })
         const dest = fs.createWriteStream(localImageURL);
         response.data.pipe(dest);
+        console.log("Image written out:", chalk.yellow(localImageURL));
         await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
         console.log("Image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
       }
