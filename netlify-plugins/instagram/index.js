@@ -1,5 +1,5 @@
 const process = require('process');
-const fs      = require('fs  ');
+const fs      = require('fs');
 const axios   = require('axios');
 const chalk   = require('chalk');
 
