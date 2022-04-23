@@ -37,8 +37,8 @@ module.exports = {
         console.log('Intagram Success - Return Status:', chalk.green(response.status));
         instagramResponse = response.data;
       } catch (err) {
-        console.log('Intagram Failuew - Return Status:', chalk.red(err.status));
-        console.error(err)
+        console.log('Intagram Failure - Return Status:', chalk.red(err.status));
+        console.log(err)
       }
 
       // If we didn't receive data, fail the plugin but not the build
@@ -77,16 +77,22 @@ module.exports = {
       } else {
         // if the image is not cached, fetch and cache it.
         console.log("Retrieving from instagram URL:", chalk.grey(sourceImageURL));
-        const response = await axios({
-          url: sourceImageURL,
-          method: 'GET',
-          responseType: 'stream'      
-        })
-        const dest = fs.createWriteStream(localImageURL);
-        response.data.pipe(dest);
-        console.log("Image written out:", chalk.yellow(localImageURL));
-        await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
-        console.log("Image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
+        try {
+          const response = await axios({
+            url: sourceImageURL,
+            method: 'GET',
+            responseType: 'stream'      
+          })
+          console.log('Image Retrieval Success - Return Status:', chalk.green(response.status));
+          const dest = fs.createWriteStream(localImageURL);
+          response.data.pipe(dest);
+          console.log("Image written out:", chalk.yellow(localImageURL));
+          await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
+          console.log("Image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
+        } catch (err) {
+          console.log('Intagram Failure - Return Status:', chalk.red(err.status));
+          console.log(err)
+        }
       }
     }
   }
