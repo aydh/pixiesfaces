@@ -35,7 +35,8 @@ module.exports = {
 
       try {
         const { data } = await axios.get(instagramAPIUrl)
-        console.log('Data returned from Instagram API:'), chalk.yellow(data);
+        console.log('Status from Instagram API:'), chalk.yellow(data.status);
+        console.log('Data returned from Instagram API:'), chalk.yellow(JSON.stringify(data));
       } catch (error) {
         const { data, headers, status, statusText } = error.response
       }
@@ -53,7 +54,7 @@ module.exports = {
         });
       */
 
-      console.log('Data:'), check.yellow(data);
+      console.log('Data:'), chalk.yellow(data);
 
       // If we didn't receive JSON, fail the plugin but not the build
       if(!data){
