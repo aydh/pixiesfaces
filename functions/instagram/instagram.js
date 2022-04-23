@@ -1,6 +1,6 @@
-const process = require('process')
-const axios = require('axios')
-const qs = require('qs')
+const process = require('process');
+const axios   = require('axios');
+const qs      = require('qs');
 
 const handler = async function (event) {
 
