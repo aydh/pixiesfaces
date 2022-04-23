@@ -18,6 +18,7 @@ module.exports = {
 
     // Where fetched data should reside in the build
     const dataFile = inputs.dataFile;
+    console.log('Instagram data url:', chalk.yellow(dataFile));
 
     // reinstate from cache if it is present
     let instagramData;
@@ -28,8 +29,7 @@ module.exports = {
     }
     // Or if it's not cached, let's fetch it and cache it.
     else {
-
-
+      console.log('Getting Instagram data');
       const data = await fetch(instagramGraphUrl)
         .then(res => {
           // ensure that we are only acting on JSON responses
