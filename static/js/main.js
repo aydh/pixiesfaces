@@ -249,6 +249,7 @@
 		}
 	};
 
+	/*
 	var instaAnimate = function() {
 		if ( $('#pixies-insta').length > 0 ) {	
 
@@ -276,6 +277,7 @@
 
 		}
 	};
+	*/
 
 	var testimonialAnimate = function() {
 		var testimonial = $('#pixies-testimonials');
@@ -417,6 +419,7 @@
 		}
 	};
 	
+	/*
 	var loadInsta = function() {
 
 		const instarow = document.getElementById('insta');
@@ -470,6 +473,7 @@
 		
 		request.send();
 	};
+	*/
 
 	var gtagEnquiryEvent = function () {
 		// Gets a reference to the form element, assuming
@@ -511,7 +515,7 @@
 
 		gtagEnquiryEvent();
 
-		loadInsta();
+		//loadInsta();
 
 		burgerMenu();
 
@@ -527,7 +531,7 @@
 		// Animations
 		homeAnimate();
 		introAnimate();
-		instaAnimate();
+		//instaAnimate();
 		workAnimate();
 		testimonialAnimate();
 		servicesAnimate();
