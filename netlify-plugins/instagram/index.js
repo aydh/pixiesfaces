@@ -7,18 +7,18 @@ const chalk   = require('chalk');
 module.exports = {
 
   async onPreBuild({ inputs, utils }) {
-    console.log(chalk.grey('Starting up'));
+    console.log(chalk.green('Starting up'));
 
     const endpoint = 'https://graph.instagram.com';
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
-    console.log(chalk.grey('Constructed Instagram API url:', instagramAPIUrl));
+    console.log(chalk.green('Constructed Instagram API url:', instagramAPIUrl));
 
     // Where fetched data should reside in the build
     const dataFile = inputs.dataFile;
-    console.log(chalk.grey('Instagram datafile location:', dataFile));
+    console.log(chalk.green('Instagram datafile location:', dataFile));
 
     // reinstate from cache if it is present
     let instagramResponse;
@@ -65,7 +65,7 @@ module.exports = {
 
     // Now we have a well-formated data object describing the instagram feed,
     // let's fetch any uncached images we might need
-    console.log(chalk.grey("Iterating over images"));
+    console.log(chalk.green("Iterating over images"));
     for (const image in instagramData) {
       let { localImageURL, sourceImageURL } = instagramData[image];
       // if the image exists in the cache, recover it.
@@ -75,11 +75,15 @@ module.exports = {
       } else {
         // if the image is not cached, fetch and cache it.
         console.log("Retrieving image:", chalk.grey(sourceImageURL));
-        const response = await axios.get(sourceImageURL)
-          const dest = fs.createWriteStream(localImageURL);
-          response.data.pipe(dest);
-          await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
-          console.log("Image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
+        const response = await axios({
+          sourceImageURL,
+          method: 'GET',
+          responseType: 'stream'      
+        })  
+        const dest = fs.createWriteStream(localImageURL);
+        response.data.pipe(dest);
+        await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
+        console.log("Image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
       }
     }
   }
