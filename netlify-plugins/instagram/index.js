@@ -15,7 +15,7 @@ module.exports = {
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
 
-    console.log('Constructed Instagram API url:', chalk.yellow(instagramGraphUrl));
+    console.log('Constructed Instagram API url:', chalk.yellow(instagramAPIUrl));
 
     // Where fetched data should reside in the build
     const dataFile = inputs.dataFile;
@@ -40,7 +40,7 @@ module.exports = {
       }
 
 
-      /*const data = await fetch(instagramGraphUrl)
+      /*const data = await fetch(instagramAPIUrl)
         .then(res => {
           // ensure that we are only acting on JSON responses
           if(res.headers.get('content-type').includes('application/json')){
