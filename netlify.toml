@@ -34,26 +34,39 @@ HUGO_ENABLEGITINFO = "true"
   to = "/404.html"
   status = 404
 
+# Cache fonts for a year
 [[headers]]
-  for = "/*"
+  for = "/fonts/*"
   [headers.values]
-    X-pixie = "pixie"
+    cache-control = "max-age=31536000, public, immutable"
+
+[[headers]]
+  for = "/webfonts/*"
+  [headers.values]
+    cache-control = "max-age=31536000, public, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    cache-control = "max-age=86400, public, immutable"
 
 [[plugins]]
 package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
   [plugins.inputs]
 
     # Where to put the image files
-    imageFolder = "public/images/instagram"
+    # this is the Hugo static images directory
+    imageFolder = "static/images"
 
     # Where to put the instagram data file
-    dataFolder = "public/data"
+    # this is the Hugo data directory
+    dataFolder = "data"
 
     # How many seconds should we cache the instagram feed for?
-    feedTTL = 30
+    feedTTL = 2419200    # 4 weeks
 
     # How many seconds should we cache each instagram image for?
-    imageTTL = 1209600   # 2 weeks
+    imageTTL = 2419200   # 4 weeks
 
 [functions]
   directory = "functions"
