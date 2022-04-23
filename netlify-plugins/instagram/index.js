@@ -45,9 +45,6 @@ module.exports = {
         utils.build.failPlugin(`The Instagram feed did not return data.\nProceeding with the build without the data from the plugin.`);
         return;
       }
-      console.log('=============================================');
-      console.log(instagramResponse);
-      console.log('=============================================');
 
       instagramData = [];
       for (const image of instagramResponse.data) {
@@ -62,9 +59,9 @@ module.exports = {
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
       await utils.cache.save(dataFile, { ttl: inputs.feedTTL });
-      console.log("Instagram data fetched from", chalk.yellow(instagramAPIUrl), "and cached", chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
+      console.log(chalk.yellow("Instagram data fetched from and cached"), chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
+      console.log(JSON.stringify(instagramData);
     }
-
 
     // Now we have a well-formated data object describing the instagram feed,
     // let's fetch any uncached images we might need
