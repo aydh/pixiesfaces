@@ -14,11 +14,11 @@ module.exports = {
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramGraphUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
 
-    console.log('Instagram feed url:', chalk.yellow(instagramGraphUrl));
+    console.log('Constructed Instagram API url:', chalk.yellow(instagramGraphUrl));
 
     // Where fetched data should reside in the build
     const dataFile = inputs.dataFile;
-    console.log('Instagram data url:', chalk.yellow(dataFile));
+    console.log('Instagram datafile location:', chalk.yellow(dataFile));
 
     // reinstate from cache if it is present
     let instagramData;
@@ -29,16 +29,19 @@ module.exports = {
     }
     // Or if it's not cached, let's fetch it and cache it.
     else {
-      console.log('Getting Instagram data');
+      console.log('Instagram datafile not present so calling Instagram API');
       const data = await fetch(instagramGraphUrl)
         .then(res => {
           // ensure that we are only acting on JSON responses
           if(res.headers.get('content-type').includes('application/json')){
+            console.log('Data returned from Instagram API:'), check.yellow(res);
             return res.json();
           } else {
             return null;
           }
         });
+
+      console.log('Data:'), check.yellow(data);
 
       // If we didn't receive JSON, fail the plugin but not the build
       if(!data){
