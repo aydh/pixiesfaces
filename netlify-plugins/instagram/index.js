@@ -15,6 +15,7 @@ module.exports = {
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
 
+    console.log('token:', chalk.yellow(token));
     console.log('Constructed Instagram API url:', chalk.yellow(instagramAPIUrl));
 
     // Where fetched data should reside in the build
@@ -34,7 +35,7 @@ module.exports = {
 
       try {
         const { data } = await axios.get(instagramAPIUrl)
-        console.log('Data returned from Instagram API:'), check.yellow(data);
+        console.log('Data returned from Instagram API:'), chalk.yellow(data);
       } catch (error) {
         const { data, headers, status, statusText } = error.response
       }
