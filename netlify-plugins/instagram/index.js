@@ -76,7 +76,7 @@ module.exports = {
         console.log('Restored from cache:', chalk.green(localImageURL));
       } else {
         // if the image is not cached, fetch and cache it.
-        await fetch(sourceImageURL)
+        await axios.get(sourceImageURL)
           .then(async res => {
               const dest = fs.createWriteStream(localImageURL);
               res.body.pipe(dest);
