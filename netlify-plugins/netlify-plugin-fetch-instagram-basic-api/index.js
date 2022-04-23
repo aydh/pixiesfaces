@@ -93,7 +93,7 @@ module.exports = {
     console.log("Iterating over Instagram images");
     for (const image in instagramData) {
       let { localImageFilename, sourceImageURL } = instagramData[image];
-      let localImageURL=imageFolder/localImageFilename
+      let localImageURL = `${imageFolder}/${localImageFilename}`;
       console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       if ( await utils.cache.has(localImageURL) ) {
