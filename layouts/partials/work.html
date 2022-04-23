@@ -13,11 +13,8 @@
 			<div class="row row-bottom-padded-sm">
 			{{ range .Site.Data.instagram }}
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="{{ .instagramURL }}" class="pixies-project-item image-popup to-animate">
+					<a href="/images/{{ .localImageFilename }}" class="pixies-project-item image-popup to-animate">
 						<img src="/images/{{ .localImageFilename }}" alt="{{ .caption }}" class="img-responsive">
-						<div class="pixies-text">
-						<h2>{{ .caption }}</h2>
-						</div>
 					</a>
 				</div>				
 
