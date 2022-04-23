@@ -33,21 +33,22 @@ module.exports = {
       console.log('Instagram datafile not present so calling Instagram API');
 
       try {
-        const res = await axios.get(instagramAPIUrl)
-        console.log(res);
-        console.log('Data returned from Instagram API:'), chalk.yellow(JSON.stringify(res));
+        const response = await axios.get(instagramAPIUrl)
+        console.log('Intagram Status:', chalk.green(response.status));
+        console.log(response);
+        console.log('=============================================');
       } catch (err) {
         console.error(err)
       }
 
       // If we didn't receive JSON, fail the plugin but not the build
-      if(!res){
+      if(!response){
         utils.build.failPlugin(`The Instagram feed did not return JSON data.\nProceeding with the build without the data from the plugin.`);
         return;
       }
 
       instagramData = [];
-      for (const image of res.data) {
+      for (const image of response.data.data) {
         let localImageURL = `${inputs.imageFolder}/${image.id}.jpg`;
         instagramData.push({
           "id": image.id,
