@@ -1,5 +1,6 @@
 const process = require('process');
 const fs      = require('fs');
+const axios   = require('axios');
 const fetch   = require('node-fetch');
 const chalk   = require('chalk');
 
@@ -12,7 +13,7 @@ module.exports = {
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-    const instagramGraphUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
+    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
 
     console.log('Constructed Instagram API url:', chalk.yellow(instagramGraphUrl));
 
@@ -30,7 +31,16 @@ module.exports = {
     // Or if it's not cached, let's fetch it and cache it.
     else {
       console.log('Instagram datafile not present so calling Instagram API');
-      const data = await fetch(instagramGraphUrl)
+
+      try {
+        const { data } = await axios.get(instagramAPIUrl)
+        console.log('Data returned from Instagram API:'), check.yellow(data);
+      } catch (error) {
+        const { data, headers, status, statusText } = error.response
+      }
+
+
+      /*const data = await fetch(instagramGraphUrl)
         .then(res => {
           // ensure that we are only acting on JSON responses
           if(res.headers.get('content-type').includes('application/json')){
@@ -40,6 +50,7 @@ module.exports = {
             return null;
           }
         });
+      */
 
       console.log('Data:'), check.yellow(data);
 
