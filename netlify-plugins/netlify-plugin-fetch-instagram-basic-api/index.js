@@ -74,13 +74,13 @@ module.exports = {
       // create the instagram JSON and write it out and cache it
       instagramData = [];
       for (const image of instagramResponse.data) {
-        let localImageURL = `${imageFolder}/${image.id}.jpg`;
+        let localImageFilename = `${image.id}.jpg`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
           "instagramURL": image.permalink,
           "sourceImageURL": image.media_url,
-          "localImageURL": localImageURL
+          "localImageFilename": localImageFilename
         })
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
@@ -92,8 +92,9 @@ module.exports = {
     // let's fetch any uncached images we might need
     console.log("Iterating over Instagram images");
     for (const image in instagramData) {
-      let { localImageURL, sourceImageURL } = instagramData[image];
-      console.log("Instagram image local location:", chalk.yellow(localImageURL));
+      let { localImageFilename, sourceImageURL } = instagramData[image];
+      let localImageURL=`$(imageFolder)/$(localImageFilename)`
+      console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       if ( await utils.cache.has(localImageURL) ) {
         console.log('Instagram image restoring from cache:', chalk.yellow(localImageURL));

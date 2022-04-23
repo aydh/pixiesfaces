@@ -44,7 +44,7 @@ package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
   [plugins.inputs]
 
     # Where to put the image files
-    imageFolder = "images"
+    imageFolder = "static/images"
 
     # Where to put the instagram data file
     dataFolder = "data"
