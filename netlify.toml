@@ -34,5 +34,32 @@ HUGO_ENABLEGITINFO = "true"
   to = "/404.html"
   status = 404
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-pixie = "pixie"
+
+[[plugins]]
+package = "/netlify-plugins/instagram"
+  [plugins.inputs]
+
+    # Where to put the image files
+    imageFolder = "images/instagram"
+
+    # Where to put the instagram data file
+    dataFolder = "_data"
+
+    # How many seconds should we cache the instagram feed for?
+    feedTTL = 30
+
+    # How many seconds should we cache each instagram image for?
+    imageTTL = 1209600   # 2 weeks
+
 [functions]
   directory = "functions"
+
+[functions."refresh-insta-token"]
+schedule = "@daily"
+
+[dev]
+functionsPort = 8888
