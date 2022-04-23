@@ -76,7 +76,7 @@ module.exports = {
         // if the image is not cached, fetch and cache it.
         console.log("Retrieving image:", chalk.grey(sourceImageURL));
         const response = await axios({
-          sourceImageURL,
+          url: sourceImageURL,
           method: 'GET',
           responseType: 'stream'      
         })  
