@@ -201,16 +201,16 @@ DefaultContentLanguage = "en"
 
   # Instagram Feed section
   [params.insta]
-    enable = true
+    enable = false
     title = "Gallery"
     description = "Recent beautiful creations from Instagram"
     footertext = '&copy; Pixies Face Painting 2022'
 
   # Work section
   [params.work]
-    enable = false
+    enable = true
     title = "Gallery"
-    description = "Have a look at some of Pixie's amazing faces."
+    description = "Recent beautiful creations from Instagram"
     footertext = '&copy; Pixies Face Painting 2022'
 
     [[params.work.row]]

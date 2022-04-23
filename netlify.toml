@@ -44,10 +44,10 @@ package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
   [plugins.inputs]
 
     # Where to put the image files
-    imageFolder = "public/images/instagram"
+    imageFolder = "images"
 
     # Where to put the instagram data file
-    dataFolder = "public/data"
+    dataFolder = "data"
 
     # How many seconds should we cache the instagram feed for?
     feedTTL = 30
