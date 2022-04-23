@@ -1,32 +1,9 @@
 {
-  "name": "pixiesfaces",
-  "version": "1.0.0",
-  "description": "",
-  "main": "inde.html",
   "dependencies": {
+    "@netlify/functions": "^1.0.0",
     "axios": "^0.26.1",
-    "call-bind": "^1.0.2",
-    "follow-redirects": "^1.14.9",
-    "function-bind": "^1.1.1",
-    "get-intrinsic": "^1.1.1",
-    "has": "^1.0.3",
-    "has-symbols": "^1.0.3",
-    "is-promise": "^4.0.0",
-    "object-inspect": "^1.12.0",
-    "qs": "^6.10.3",
-    "side-channel": "^1.0.4"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aydh/pixiesfaces.git"
-  },
-  "author": "Andrew Saunders",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aydh/pixiesfaces/issues"
-  },
-  "homepage": "https://github.com/aydh/pixiesfaces#readme"
+    "faunadb": "^4.5.4",
+    "logrocket": "^2.2.1",
+    "qs": "^6.10.3"
+  }
 }
