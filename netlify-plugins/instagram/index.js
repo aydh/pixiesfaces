@@ -10,7 +10,7 @@ module.exports = {
     console.log('Starting up');
 
     const dataFolder = inputs.dataFolder
-    const dataFile = `${endpoint}/instagram.json`
+    const dataFile = `${dataFolder}/instagram.json`
     const imageFolder = inputs.imageFolder
     const endpoint = 'https://graph.instagram.com';
     const userId = process.env.INSTAGRAM_USER_ID;
