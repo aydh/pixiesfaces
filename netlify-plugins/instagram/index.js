@@ -1,5 +1,4 @@
 const process = require('process');
-const fs      = require('fs');
 const axios   = require('axios');
 const fetch   = require('node-fetch');
 const chalk   = require('chalk');
@@ -11,11 +10,11 @@ module.exports = {
 
     const endpoint = 'https://graph.instagram.com';
     const userId = process.env.INSTAGRAM_USER_ID;
+    console.log('token:', chalk.yellow(userId));
     const fields = 'caption,media_url,media_type,permalink';
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
-
     console.log('token:', chalk.yellow(token));
+    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
     console.log('Constructed Instagram API url:', chalk.yellow(instagramAPIUrl));
 
     // Where fetched data should reside in the build
@@ -34,36 +33,21 @@ module.exports = {
       console.log('Instagram datafile not present so calling Instagram API');
 
       try {
-        const { data } = await axios.get(instagramAPIUrl)
-        console.log('Status from Instagram API:'), chalk.yellow(data.status);
-        console.log('Data returned from Instagram API:'), chalk.yellow(JSON.stringify(data));
-      } catch (error) {
-        const { data, headers, status, statusText } = error.response
+        const res = await axios.get(instagramAPIUrl)
+        console.log(res);
+        console.log('Data returned from Instagram API:'), chalk.yellow(JSON.stringify(res));
+      } catch (err) {
+        console.error(err)
       }
 
-
-      /*const data = await fetch(instagramAPIUrl)
-        .then(res => {
-          // ensure that we are only acting on JSON responses
-          if(res.headers.get('content-type').includes('application/json')){
-            console.log('Data returned from Instagram API:'), check.yellow(res);
-            return res.json();
-          } else {
-            return null;
-          }
-        });
-      */
-
-      console.log('Data:'), chalk.yellow(data);
-
       // If we didn't receive JSON, fail the plugin but not the build
-      if(!data){
+      if(!res){
         utils.build.failPlugin(`The Instagram feed did not return JSON data.\nProceeding with the build without the data from the plugin.`);
         return;
       }
 
       instagramData = [];
-      for (const image of data.data) {
+      for (const image of res.data) {
         let localImageURL = `${inputs.imageFolder}/${image.id}.jpg`;
         instagramData.push({
           "id": image.id,
