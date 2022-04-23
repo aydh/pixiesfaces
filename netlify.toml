@@ -40,7 +40,7 @@ HUGO_ENABLEGITINFO = "true"
     X-pixie = "pixie"
 
 [[plugins]]
-package = "/netlify-plugins/instagram"
+package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
   [plugins.inputs]
 
     # Where to put the image files
