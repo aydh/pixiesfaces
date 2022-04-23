@@ -73,7 +73,7 @@ module.exports = {
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
       await utils.cache.save(dataFile, { ttl: inputs.feedTTL });
-      console.log("Instagram data fetched from", chalk.yellow(instagramGraphUrl), "and cached", chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
+      console.log("Instagram data fetched from", chalk.yellow(instagramAPIUrl), "and cached", chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
     }
 
 
