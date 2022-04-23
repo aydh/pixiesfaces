@@ -74,10 +74,13 @@ module.exports = {
       // create the instagram JSON and write it out and cache it
       instagramData = [];
       for (const image of instagramResponse.data) {
+        // skip videos
+        if (image.media_type === 'VIDEO') continue;
         let localImageFilename = `${image.id}.jpg`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
+          "media_type": image.media_type,
           "instagramURL": image.permalink,
           "sourceImageURL": image.media_url,
           "localImageFilename": localImageFilename
