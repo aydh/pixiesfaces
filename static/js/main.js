@@ -480,34 +480,40 @@
 		// it contains the ID attribute "signup-form".
 		var form = document.getElementById('pixies-enquiry-form');
 
-		// Adds a listener for the "submit" event.
-		form.addEventListener('submit', function(event) {
+		if(typeof(form) != 'undefined' && form != null){
+			console.log('Found enquiry form');
+			// Adds a listener for the "submit" event.
+			form.addEventListener('submit', function(event) {
 
-			// Prevents the browser from submitting the form
-			// and thus unloading the current page.
-			event.preventDefault();
+				// Prevents the browser from submitting the form
+				// and thus unloading the current page.
+				event.preventDefault();
 
-			// Creates a timeout to call submitForm after one second.
-			setTimeout(submitForm, 1000);
+				// Creates a timeout to call submitForm after one second.
+				setTimeout(submitForm, 1000);
 
-			// Monitors whether or not the form has been submitted.
-			// This prevents the form from being submitted twice in cases
-			// where the event callback function fires normally.
-			var formSubmitted = false;
+				// Monitors whether or not the form has been submitted.
+				// This prevents the form from being submitted twice in cases
+				// where the event callback function fires normally.
+				var formSubmitted = false;
 
-			function submitForm() {
-				if (!formSubmitted) {
-				formSubmitted = true;
-				form.submit();
+				function submitForm() {
+					if (!formSubmitted) {
+					formSubmitted = true;
+					form.submit();
+					}
 				}
-			}
 
-			// Sends the event to Google Analytics and
-			// resubmits the form once the hit is done.
-			gtag('event', 'generate_lead', {
-				'event_callback': submitForm
+				// Sends the event to Google Analytics and
+				// resubmits the form once the hit is done.
+				gtag('event', 'generate_lead', {
+					'event_callback': submitForm
+				});
 			});
-		});
+		} else {
+			console.log('No enquiry form found');
+		}
+
 	}
 	
 	// Document on load.
