@@ -56,6 +56,12 @@
 						<textarea id="message" cols="30" rows="5" class="form-control" name="message" placeholder="{{ . }}"></textarea>
 						{{ end }}
 					</div>
+					<div class="form-group ">
+						{{ with .Site.Params.contact.location }}
+						<label for="location" class="sr-only">{{ . | markdownify }}</label>
+						<input id="location" class="form-control" name="location" placeholder="{{ . }}" type="text">
+						{{ end }}
+					</div>
 					<div data-netlify-recaptcha="true">
 					</div>
 					<div class="form-group ">
