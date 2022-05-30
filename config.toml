@@ -321,6 +321,7 @@ DefaultContentLanguage = "en"
     phone = "Best contact number"
     subject = "Email subject"
     message = "Email message"
+    location = "Event suburb"
     button = "Send email"
 
   # Footer section
