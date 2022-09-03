@@ -2,7 +2,7 @@ const process   = require('process');
 const axios     = require('axios');
 const fs        = require('fs');
 const chalk     = require('chalk');
-const watermark = require('image-watermark');
+const watermark = require('jimp-watermark');
 
 module.exports = {
 
@@ -126,7 +126,7 @@ module.exports = {
           response.data.pipe(dest,{emitClose: true});
           dest.on('finish', () => {
             console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
-            watermark.embedWatermark(localImageURL,watermarkOptions);
+            watermark.addTextWatermark(localImageURL,watermarkOptions);
           });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
