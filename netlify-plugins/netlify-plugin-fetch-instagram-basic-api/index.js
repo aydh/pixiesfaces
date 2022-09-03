@@ -2,7 +2,6 @@ const process   = require('process');
 const axios     = require('axios');
 const fs        = require('fs');
 const chalk     = require('chalk');
-const watermark = require('image-watermark');
 
 module.exports = {
 
@@ -11,9 +10,6 @@ module.exports = {
     console.log(chalk.cyanBright("= Instagram images starting up ="));
     console.log(chalk.cyanBright("================================"));
 
-    const watermarkOptions = {
-      'text' : 'https://pixiesfaces.com'
-    };
     const timestamp = Date.now();
     const dataFolder = inputs.dataFolder;
     const dataFile = `${dataFolder}/instagram.json`;
@@ -126,7 +122,6 @@ module.exports = {
           response.data.pipe(dest,{emitClose: true});
           await dest.on('finish', () => {
             console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
-            watermark.embedWatermark(localImageURL,watermarkOptions);
           });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
