@@ -62,6 +62,9 @@ package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
     # this is the Hugo data directory
     dataFolder = "data"
 
+    # How images should we retrieve from Instagram?
+    imageCount = 100
+
     # How many seconds should we cache the instagram feed for?
     feedTTL = 2419200    # 4 weeks
 

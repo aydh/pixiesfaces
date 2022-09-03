@@ -11,15 +11,16 @@ module.exports = {
     console.log(chalk.cyanBright("= Instagram images starting up ="));
     console.log(chalk.cyanBright("================================"));
 
-    const dataFolder = inputs.dataFolder
-    const dataFile = `${dataFolder}/instagram.json`
-    const imageFolder = inputs.imageFolder
+    const dataFolder = inputs.dataFolder;
+    const dataFile = `${dataFolder}/instagram.json`;
+    const imageFolder = inputs.imageFolder;
     const endpoint = 'https://graph.instagram.com';
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
+    const numberImages = inputs.imageCount;
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&limit=100&access_token=${token}`;
-    console.log('Instagram API url comnstructed:',  chalk.yellow(instagramAPIUrl));
+    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&limit=${numberImages}&access_token=${token}`;
+    console.log('Instagram API url constructed:',  chalk.yellow(instagramAPIUrl));
     //console.log('Instagram data file location:', chalk.yellow(dataFile));
     //console.log('Instagram images folder location:', chalk.yellow(imageFolder));
 
@@ -57,12 +58,12 @@ module.exports = {
     //  console.log('Instagram datafile not present so calling Instagram API');
 
       try {
-        const response = await axios.get(instagramAPIUrl)
+        const response = await axios.get(instagramAPIUrl);
         console.log('Instagram API success - Return status:', chalk.green(response.status));
         instagramResponse = response.data;
       } catch (err) {
         console.log('Instagram API failure - Return status:', chalk.red(err.status));
-        console.log(err)
+        console.log(err);
       }
 
       // If we didn't receive data, fail the plugin but not the build
@@ -84,7 +85,7 @@ module.exports = {
           "instagramURL": image.permalink,
           "sourceImageURL": image.media_url,
           "localImageFilename": localImageFilename
-        })
+        });
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
       console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
@@ -113,7 +114,7 @@ module.exports = {
             url: sourceImageURL,
             method: 'GET',
             responseType: 'stream'      
-          })
+          });
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
@@ -122,7 +123,7 @@ module.exports = {
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
           console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
-          console.log(err)
+          console.log(err);
         }
         i++;
       //}
