@@ -125,6 +125,7 @@ module.exports = {
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
           dest.end();
+          await once(dest, 'finish');
           console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
