@@ -94,7 +94,8 @@ module.exports = {
 
     // Now we have a well-formated data object describing the instagram feed,
     // let's fetch any uncached images we might need
-    console.log("Iterating over Instagram images");
+    console.log("Iterating over Instagram images. There are: ", instagramData.length);
+    let i = 1;
     for (const image in instagramData) {
       let { localImageFilename, sourceImageURL } = instagramData[image];
       let localImageURL = `${imageFolder}/${localImageFilename}`;
@@ -116,13 +117,14 @@ module.exports = {
           console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
-          console.log("Instagram image written:", chalk.green(localImageURL));
+          console.log("Instagram image #",i," written:", chalk.green(localImageURL));
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
-          console.log('Instagram image retrieval failure - return status:', chalk.red(err.status));
+          console.log('Instagram image #",i," retrieval failure - return status:', chalk.red(err.status));
           console.log(err)
         }
+        i++;
       //}
     }
   console.log('=============================');
