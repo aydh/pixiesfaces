@@ -7,9 +7,9 @@ const chalk   = require('chalk');
 module.exports = {
 
   async onPreBuild({ inputs, utils }) {
-    console.log('================================');
-    console.log('= Instagram images starting up =');
-    console.log('================================');
+    console.log(chalk.cyanBright("================================"));
+    console.log(chalk.cyanBright("= Instagram images starting up ="));
+    console.log(chalk.cyanBright("================================"));
 
     const dataFolder = inputs.dataFolder
     const dataFile = `${dataFolder}/instagram.json`
@@ -18,7 +18,7 @@ module.exports = {
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&access_token=${token}`;
+    const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&limit=100&access_token=${token}`;
     console.log('Instagram API url comnstructed:',  chalk.yellow(instagramAPIUrl));
     //console.log('Instagram data file location:', chalk.yellow(dataFile));
     //console.log('Instagram images folder location:', chalk.yellow(imageFolder));
@@ -127,8 +127,8 @@ module.exports = {
         i++;
       //}
     }
-  console.log('=============================');
-  console.log('= Instagram images finihsed =');
-  console.log('=============================');
+  console.log(chalk.cyanBright("============================="));
+  console.log(chalk.cyanBright("= Instagram images finihsed ="));
+  console.log(chalk.cyanBright("============================="));
   }
 }
