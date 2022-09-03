@@ -87,14 +87,14 @@ module.exports = {
         })
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
-      console.log(chalk.green("Instagram data fetched and written to json data file "),chalk.green(dataFile));
+      console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
     //  await utils.cache.save(dataFile, { ttl: inputs.feedTTL });
     //  console.log(chalk.green("Instagram data fetched and cached in json data file"), chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
     //}
 
     // Now we have a well-formated data object describing the instagram feed,
     // let's fetch any uncached images we might need
-    console.log("Iterating over Instagram images. There are: ", instagramData.length);
+    console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
     let i = 1;
     for (const image in instagramData) {
       let { localImageFilename, sourceImageURL } = instagramData[image];
@@ -114,14 +114,14 @@ module.exports = {
             method: 'GET',
             responseType: 'stream'      
           })
-          console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
+          //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
-          console.log("Instagram image #",i," written:", chalk.green(localImageURL));
+          console.log("Instagram image #",i,"written to:", chalk.green(localImageURL));
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
-          console.log('Instagram image #",i," retrieval failure - return status:', chalk.red(err.status));
+          console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
           console.log(err)
         }
         i++;
