@@ -3,7 +3,6 @@ const axios     = require('axios');
 const fs        = require('fs');
 const chalk     = require('chalk');
 const watermark = require('image-watermark');
-const { once }  = require('events');
 
 module.exports = {
 
@@ -125,9 +124,10 @@ module.exports = {
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
+          dest.on('finish', () => {
+            console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
+          });
           dest.end();
-          await once(dest, 'finish');
-          console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
