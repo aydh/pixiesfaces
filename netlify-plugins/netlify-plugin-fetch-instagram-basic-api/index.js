@@ -11,6 +11,7 @@ module.exports = {
     console.log(chalk.cyanBright("= Instagram images starting up ="));
     console.log(chalk.cyanBright("================================"));
 
+    const timestamp = Date.now();
     const dataFolder = inputs.dataFolder;
     const dataFile = `${dataFolder}/instagram.json`;
     const imageFolder = inputs.imageFolder;
@@ -74,10 +75,11 @@ module.exports = {
 
       // create the instagram JSON and write it out and cache it
       instagramData = [];
+      let i=1;
       for (const image of instagramResponse.data) {
         // skip videos
         if (image.media_type === 'VIDEO') continue;
-        let localImageFilename = `${image.id}.jpg`;
+        let localImageFilename = `${timestamp}-${i}.jpg`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
@@ -86,6 +88,7 @@ module.exports = {
           "sourceImageURL": image.media_url,
           "localImageFilename": localImageFilename
         });
+        i++
       }
       await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
       console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
@@ -96,7 +99,7 @@ module.exports = {
     // Now we have a well-formated data object describing the instagram feed,
     // let's fetch any uncached images we might need
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
-    let i = 1;
+    let j = 1;
     for (const image in instagramData) {
       let { localImageFilename, sourceImageURL } = instagramData[image];
       let localImageURL = `${imageFolder}/${localImageFilename}`;
@@ -118,18 +121,18 @@ module.exports = {
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
-          console.log("Instagram image #",i,"written to:", chalk.green(localImageURL));
+          console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
           console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
           console.log(err);
         }
-        i++;
+        j++;
       //}
     }
   console.log(chalk.cyanBright("============================="));
-  console.log(chalk.cyanBright("= Instagram images finihsed ="));
+  console.log(chalk.cyanBright("= Instagram images finished ="));
   console.log(chalk.cyanBright("============================="));
   }
 }
