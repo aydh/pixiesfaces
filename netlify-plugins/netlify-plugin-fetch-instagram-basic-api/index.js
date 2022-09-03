@@ -3,6 +3,7 @@ const axios     = require('axios');
 const fs        = require('fs');
 const chalk     = require('chalk');
 const watermark = require('image-watermark');
+const { once }  = require('events');
 
 module.exports = {
 
