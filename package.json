@@ -2,6 +2,7 @@
   "dependencies": {
     "@netlify/functions": "^1.0.0",
     "axios": "^0.26.1",
+    "chalk": "^5.0.1",
     "qs": "^6.10.3"
   }
 }
