@@ -30,7 +30,7 @@ module.exports = {
     //} else {
       fs.mkdirSync(imageFolder, { recursive: true });
     //  await utils.cache.save(imageFolder, { ttl: inputs.imageTTL });
-      console.log('Created Instagram images folder:', chalk.green(imageFolder));
+    //  console.log('Created Instagram images folder:', chalk.green(imageFolder));
     //}
 
     // Create the data file directory if it doesn't exist
@@ -40,7 +40,7 @@ module.exports = {
     //} else {
       fs.mkdirSync(dataFolder, { recursive: true });
     //  await utils.cache.save(dataFolder, { ttl: inputs.imageTTL });
-      console.log('Created Instagram datafile folder:', chalk.green(dataFolder));
+    //  console.log('Created Instagram datafile folder:', chalk.green(dataFolder));
     //}
 
     let instagramResponse;
@@ -58,16 +58,16 @@ module.exports = {
 
       try {
         const response = await axios.get(instagramAPIUrl)
-        console.log('Instagram data success - Return status:', chalk.green(response.status));
+        console.log('Instagram API success - Return status:', chalk.green(response.status));
         instagramResponse = response.data;
       } catch (err) {
-        console.log('Instagram data failure - Return status:', chalk.red(err.status));
+        console.log('Instagram API failure - Return status:', chalk.red(err.status));
         console.log(err)
       }
 
       // If we didn't receive data, fail the plugin but not the build
       if(!instagramResponse){
-        utils.build.failPlugin(`The Instagram feed did not return data.\nProceeding with the build without the data from the plugin.`);
+        utils.build.failBuild(`The Instagram feed did not return data.\Halting the build.`);
         return;
       }
 
@@ -98,7 +98,7 @@ module.exports = {
     for (const image in instagramData) {
       let { localImageFilename, sourceImageURL } = instagramData[image];
       let localImageURL = `${imageFolder}/${localImageFilename}`;
-      console.log("Instagram image local filename:", chalk.yellow(localImageURL));
+      //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       //if ( await utils.cache.has(localImageURL) ) {
       //  console.log('Instagram image restoring from cache:', chalk.yellow(localImageURL));
@@ -106,7 +106,7 @@ module.exports = {
       //  console.log('Instagram image restored from cache:', chalk.green(localImageURL));
       //} else {
         // if the image is not cached, fetch and cache it.
-        console.log("Intagram image retrieving from URL:", chalk.yellow(sourceImageURL));
+        //console.log("Intagram image retrieving from URL:", chalk.yellow(sourceImageURL));
         try {
           const response = await axios({
             url: sourceImageURL,
@@ -116,7 +116,7 @@ module.exports = {
           console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest);
-          console.log("Instagram image written:", chalk.yellow(localImageURL));
+          console.log("Instagram image written:", chalk.green(localImageURL));
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
