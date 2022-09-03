@@ -120,8 +120,9 @@ module.exports = {
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest,{emitClose: true});
+          console.log("Processing image #",j);
           await dest.on('finish', () => {
-            console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
+            console.log("Image written to:", chalk.green(localImageURL));
           });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
