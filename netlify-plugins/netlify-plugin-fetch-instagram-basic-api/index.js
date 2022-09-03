@@ -123,21 +123,15 @@ module.exports = {
           });
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
-          response.data.pipe(dest);
+          response.data.pipe(dest,{emitClose: true});
           dest.on('finish', () => {
             console.log("Instagram image #",j,"written to:", chalk.green(localImageURL));
+            watermark.embedWatermark(localImageURL,watermarkOptions);
           });
-          dest.end();
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
           console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
-          console.log(err);
-        }
-        try {
-          watermark.embedWatermark(localImageURL,watermarkOptions);
-        } catch (err) {
-          console.log('Watermarking Failed', chalk.red(err.status));
           console.log(err);
         }
         j++;
