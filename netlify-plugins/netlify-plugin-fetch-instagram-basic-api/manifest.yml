@@ -4,6 +4,8 @@ inputs:
     required: true
   - name: dataFolder
     required: true
+  - name: imageCount
+    default: 100
   - name: feedTTL
     default: 180
   - name: imageTTL
