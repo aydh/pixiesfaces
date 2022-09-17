@@ -30,12 +30,6 @@ HUGO_VERSION = "0.94.1"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "https://www.pixiesfaces.com/*"
-  to = "https://pixiesfaces.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "https://www.pixiesfaces.com.au/*"
   to = "https://www.pixiesfaces.com/:splat"
   status = 301
