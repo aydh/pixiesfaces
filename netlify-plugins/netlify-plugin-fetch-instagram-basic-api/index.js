@@ -18,6 +18,7 @@ module.exports = {
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
     const numberImages = inputs.imageCount;
+    console.log('number images: ',numberImages);
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&limit=${numberImages}&access_token=${token}`;
     console.log('Instagram API url constructed:',  chalk.yellow(instagramAPIUrl));
