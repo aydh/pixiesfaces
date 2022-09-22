@@ -3,7 +3,7 @@ publish = "public"
 command = "hugo --gc --minify"
 
 [context.production.environment]
-HUGO_VERSION = "0.94.1"
+HUGO_VERSION = "0.103.1"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
@@ -11,20 +11,20 @@ HUGO_ENABLEGITINFO = "true"
 command = "hugo --gc --minify --enableGitInfo"
 
 [context.split1.environment]
-HUGO_VERSION = "0.94.1"
+HUGO_VERSION = "0.103.1"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
 command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.94.1"
+HUGO_VERSION = "0.103.1"
 
 [context.branch-deploy]
 command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.94.1"
+HUGO_VERSION = "0.103.1"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
@@ -86,14 +86,14 @@ package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
     # this is the Hugo data directory
     dataFolder = "data"
 
-    # How images should we retrieve from Instagram?
-    imageCount = 100
+    # How many images should we retrieve from Instagram?
+    imageCount = 25
 
     # How many seconds should we cache the instagram feed for?
-    feedTTL = 2419200    # 4 weeks
+    # feedTTL = 2419200    # 4 weeks
 
     # How many seconds should we cache each instagram image for?
-    imageTTL = 2419200   # 4 weeks
+    # imageTTL = 2419200   # 4 weeks
 
 [functions]
   directory = "functions"
