@@ -131,7 +131,7 @@ module.exports = {
               .webp({lossless: true})
               .toFile(localImageWebp);
             console.log("Converted to:", chalk.green(localImageWebp));
-              sharp(localImageURL)
+              sharp(localImageJpg)
               .resize({ width: 100 })
               .webp({lossless: true})
               .toFile(localImage100x100Webp);
