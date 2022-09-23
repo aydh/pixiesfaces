@@ -134,17 +134,23 @@ module.exports = {
               .toFile(localImageWebp);
             console.log("Converted to:", chalk.green(localImageWebp));
               sharp(localImageJpg)
-              .resize({ width: 320, 320, {fit:cover}})
+              .resize(320, 320, {
+                fit: 'cover'
+              })
               .webp({lossless: true})
               .toFile(localImage320wideWebp);
             console.log("Converted to:", chalk.green(localImage320wideWebp));
               sharp(localImageJpg)
-              .resize({ width: 480, 480, {fit:cover}})
+              .resize(480, 480, {
+                fit: 'cover'
+              })
               .webp({lossless: true})
               .toFile(localImage480wideWebp);
             console.log("Converted to:", chalk.green(localImage480wideWebp));
               sharp(localImageJpg)
-              .resize({ width: 640, 640, {fit:cover}})
+              .resize(640, 640, {
+                fit: 'cover'
+              })
               .webp({lossless: true})
               .toFile(localImage640wideWebp);
             console.log("Converted to:", chalk.green(localImage640wideWebp));
