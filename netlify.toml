@@ -54,11 +54,6 @@ HUGO_ENABLEGITINFO = "true"
   force = true
 
 [[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-
-[[redirects]]
   from = "http://www.pixiesfaces.com/PIXIES/Pixies_Face_Painting.html"
   to = "https://www.pixiesfaces.com/"
   status = 301
@@ -153,6 +148,11 @@ HUGO_ENABLEGITINFO = "true"
   to = "https://www.pixiesfaces.com/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
 
 # Cache fonts for a year
 [[headers]]
