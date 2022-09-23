@@ -14,7 +14,11 @@
 			{{ range .Site.Data.instagram }}
 				<div class="col-md-4 col-sm-6 col-xxs-12">
 					<a href="/images/{{ .localImageFilenamePrefix }}.webp" class="pixies-project-item image-popup to-animate">
-						<img src="/images/{{ .localImageFilenamePrefix }}.webp" alt="{{ .caption }}" class="img-responsive">
+						<picture>
+							<source srcset="/images/{{ .localImageFilenamePrefix }}.webp" type = "image/webp">
+							<source srcset="/images/{{ .localImageFilenamePrefix }}.jpg" type = "image/jpeg">
+							<img src="/images/{{ .localImageFilenamePrefix }}.jpg" alt="{{ .caption }}">
+						</picture  class="img-responsive">
 					</a>
 				</div>
 				<!--
