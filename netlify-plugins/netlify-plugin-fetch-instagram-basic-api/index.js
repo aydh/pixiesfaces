@@ -2,6 +2,7 @@ const process   = require('process');
 const axios     = require('axios');
 const fs        = require('fs');
 const chalk     = require('chalk');
+const sharp     = require('sharp');
 
 module.exports = {
 
@@ -80,6 +81,7 @@ module.exports = {
         // skip videos
         if (image.media_type === 'VIDEO') continue;
         let localImageFilename = `${timestamp}-${i}.jpg`;
+        let localImageFilename_webp = `${timestamp}-${i}.webp`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
@@ -87,6 +89,7 @@ module.exports = {
           "instagramURL": image.permalink,
           "sourceImageURL": image.media_url,
           "localImageFilename": localImageFilename
+          "localImageFilenameWebp": localImageFilename_webp
         });
         i++
       }
@@ -101,8 +104,9 @@ module.exports = {
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
     let j = 1;
     for (const image in instagramData) {
-      let { localImageFilename, sourceImageURL } = instagramData[image];
+      let { localImageFilename, localImageFilenameWebp, sourceImageURL } = instagramData[image];
       let localImageURL = `${imageFolder}/${localImageFilename}`;
+      let localImageURLWebp = `${imageFolder}/${localImageFilenameWebp}`;
       //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       //if ( await utils.cache.has(localImageURL) ) {
@@ -117,7 +121,7 @@ module.exports = {
             url: sourceImageURL,
             method: 'GET',
             responseType: 'stream'      
-          });
+          });          
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
           const dest = fs.createWriteStream(localImageURL);
           response.data.pipe(dest,{emitClose: true});
@@ -125,6 +129,18 @@ module.exports = {
           await dest.on('finish', () => {
             console.log("Image written to:", chalk.green(localImageURL));
           });
+
+          const destWebp = fs.createWriteStream(localImageURLWebp);
+          const webpImage = await sharp(response.data)
+            .resize({ width: 100 })
+            .webp({lossless: true})
+            .toBuffer();
+          webpImage.pipe(destWebp,{emitClose: true});
+          console.log("Processing Webp image #",j);
+          await destWebp.on('finish', () => {
+            console.log("Image written to:", chalk.green(localImageURLWebp));
+          });
+
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
