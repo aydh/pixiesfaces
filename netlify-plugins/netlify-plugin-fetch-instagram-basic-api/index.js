@@ -129,31 +129,6 @@ module.exports = {
           console.log("Processing image #",j);
           await dest.on('finish', () => {
             console.log("Image written to:", chalk.green(localImageJpg));
-            sharp(localImageJpg)
-              .webp({lossless: true})
-              .toFile(localImageWebp);
-            console.log("Converted to:", chalk.green(localImageWebp));
-              sharp(localImageJpg)
-              .resize(320, 320, {
-                fit: 'cover'
-              })
-              .webp({lossless: true})
-              .toFile(localImage320wideWebp);
-            console.log("Converted to:", chalk.green(localImage320wideWebp));
-              sharp(localImageJpg)
-              .resize(480, 480, {
-                fit: 'cover'
-              })
-              .webp({lossless: true})
-              .toFile(localImage480wideWebp);
-            console.log("Converted to:", chalk.green(localImage480wideWebp));
-              sharp(localImageJpg)
-              .resize(640, 640, {
-                fit: 'cover'
-              })
-              .webp({lossless: true})
-              .toFile(localImage640wideWebp);
-            console.log("Converted to:", chalk.green(localImage640wideWebp));
         });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
@@ -163,6 +138,45 @@ module.exports = {
         }
         j++;
       //}
+ 
+  }
+
+  console.log("Iterating over",chalk.yellow(instagramData.length),"local images to resize.");
+  let k = 1;
+  for (const image in instagramData) {
+    let { localImageFilenamePrefix } = instagramData[image];
+    let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
+    let localImageWebp = `${imageFolder}/${localImageFilenamePrefix}.webp`;
+    let localImage320wideWebp = `${imageFolder}/${localImageFilenamePrefix}-320w.webp`;
+    let localImage480wideWebp = `${imageFolder}/${localImageFilenamePrefix}-480w.webp`;
+    let localImage640wideWebp = `${imageFolder}/${localImageFilenamePrefix}-640w.webp`;
+
+    sharp(localImageJpg)
+      .webp({lossless: true})
+      .toFile(localImageWebp);
+    console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageWebp));
+      sharp(localImageJpg)
+      .resize(320, 320, {
+        fit: 'cover'
+      })
+      .webp({lossless: true})
+      .toFile(localImage320wideWebp);
+    console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage320wideWebp));
+      sharp(localImageJpg)
+      .resize(480, 480, {
+        fit: 'cover'
+      })
+      .webp({lossless: true})
+      .toFile(localImage480wideWebp);
+    console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage480wideWebp));
+      sharp(localImageJpg)
+      .resize(640, 640, {
+        fit: 'cover'
+      })
+      .webp({lossless: true})
+      .toFile(localImage640wideWebp);
+    console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage640wideWebp));
+    k++;
     }
   console.log(chalk.cyanBright("============================="));
   console.log(chalk.cyanBright("= Instagram images finished ="));
