@@ -137,25 +137,48 @@ module.exports = {
           await dest.on('finish', () => {
             console.log("Image written to:", chalk.green(localImageJpg));
 
-            sharp(localImageJpg).resize(480, 480, {fit: 'cover'}.toFile(localImageSmallJpg);
+            sharp(localImageJpg)
+              .resize(480, 480, 
+                {fit: 'cover'}
+              .toFile(localImageSmallJpg);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallJpg));
 
-            sharp(localImageJpg).resize(768, 768, {fit: 'cover'}).toFile(localImageMediumJpg);
+            sharp(localImageJpg)
+              .resize(768, 768, 
+                {fit: 'cover'})
+              .toFile(localImageMediumJpg);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumJpg));
 
-            sharp(localImageJpg).resize(1024, 1024, {fit: 'cover'}).toFile(localImageLargeJpg);
+            sharp(localImageJpg)
+              .resize(1024, 1024, 
+                {fit: 'cover'})
+              .toFile(localImageLargeJpg);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeJpg));
 
-            sharp(localImageJpg).webp({lossless: true}).toFile(localImageWebp);
+            sharp(localImageJpg)
+              .webp({lossless: true})
+              .toFile(localImageWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageWebp));
 
-            sharp(localImageJpg).resize(480, 480, {fit: 'cover'}.webp({lossless: true}).toFile(localImageSmallWebp);
+            sharp(localImageJpg)
+              .resize(480, 480, 
+                {fit: 'cover'}
+              .webp({lossless: true})
+              .toFile(localImageSmallWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallWebp));
 
-            sharp(localImageJpg).resize(768, 768, {fit: 'cover'}).webp({nearLossless: true}).toFile(localImageMediumWebp);
+            sharp(localImageJpg)
+              .resize(768, 768, 
+                {fit: 'cover'})
+              .webp({nearLossless: true})
+              .toFile(localImageMediumWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumWebp));
 
-            sharp(localImageJpg).resize(1024, 1024, {fit: 'cover'}).webp({nearLossless: true}).toFile(localImageLargeWebp);
+            sharp(localImageJpg)
+              .resize(1024, 1024, 
+                {fit: 'cover'})
+              .webp({nearLossless: true})
+              .toFile(localImageLargeWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeWebp));
         });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
