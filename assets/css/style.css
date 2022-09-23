@@ -917,7 +917,7 @@ WORK SECTION
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-#pixies-work .pixies-project-item picture {
+#pixies-work .pixies-project-item img {
   z-index: 8;
   opacity: 1;
   -webkit-transition: 0.3s;
@@ -951,7 +951,7 @@ WORK SECTION
   top: -15px;
 }
 
-#pixies-work .pixies-project-item:hover picture, #pixies-work .pixies-project-item:focus picture {
+#pixies-work .pixies-project-item:hover img, #pixies-work .pixies-project-item:focus img {
   opacity: .7;
 }
 
