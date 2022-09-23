@@ -130,16 +130,10 @@ module.exports = {
             console.log("Image written to:", chalk.green(localImageURL));
           });
 
-          const destWebp = fs.createWriteStream(localImageURLWebp);
-          const webpImage = await sharp(response.data)
+          const webpImage = await sharp(localImageURL)
             .resize({ width: 100 })
             .webp({lossless: true})
-            .toBuffer();
-          webpImage.pipe(destWebp,{emitClose: true});
-          console.log("Processing Webp image #",j);
-          await destWebp.on('finish', () => {
-            console.log("Image written to:", chalk.green(localImageURLWebp));
-          });
+            .toFile(localImageURLWebp);
 
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
