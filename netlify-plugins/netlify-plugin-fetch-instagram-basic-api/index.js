@@ -104,14 +104,18 @@ module.exports = {
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
+
       let localImageSmallJpg = `${imageFolder}/${localImageFilenamePrefix}-small.jpg`;
       let localImageMediumJpg = `${imageFolder}/${localImageFilenamePrefix}-medium.jpg`;
       let localImageLargeJpg = `${imageFolder}/${localImageFilenamePrefix}-large.jpg`;
+
       let localImageWebp = `${imageFolder}/${localImageFilenamePrefix}.webp`;
+
       let localImageSmallWebp = `${imageFolder}/${localImageFilenamePrefix}-small.webp`;
       let localImageMediumWebp = `${imageFolder}/${localImageFilenamePrefix}-medium.webp`;
       let localImageLargeWebp = `${imageFolder}/${localImageFilenamePrefix}-large.webp`;
-        //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
+
+      //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       //if ( await utils.cache.has(localImageURL) ) {
       //  console.log('Instagram image restoring from cache:', chalk.yellow(localImageURL));
@@ -134,16 +138,16 @@ module.exports = {
             console.log("Image written to:", chalk.green(localImageJpg));
 
             sharp(localImageJpg).resize(480, 480, {fit: 'cover'}.toFile(localImageSmallJpg);
-            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallWebp));
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallJpg));
 
             sharp(localImageJpg).resize(768, 768, {fit: 'cover'}).toFile(localImageMediumJpg);
-            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumWebp));
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumJpg));
 
             sharp(localImageJpg).resize(1024, 1024, {fit: 'cover'}).toFile(localImageLargeJpg);
-            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeWebp));
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeJpg));
 
             sharp(localImageJpg).webp({lossless: true}).toFile(localImageWebp);
-            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageOriginalWebp));
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageWebp));
 
             sharp(localImageJpg).resize(480, 480, {fit: 'cover'}.webp({lossless: true}).toFile(localImageSmallWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallWebp));
