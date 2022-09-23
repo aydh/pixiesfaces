@@ -128,7 +128,7 @@ module.exports = {
           console.log("Processing image #",j);
           await dest.on('finish', () => {
             console.log("Image written to:", chalk.green(localImageURL));
-            await sharp(localImageURL)
+            sharp(localImageURL)
               .resize({ width: 100 })
               .webp({lossless: true})
               .toFile(localImageURLWebp);
