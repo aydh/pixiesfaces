@@ -80,16 +80,14 @@ module.exports = {
       for (const image of instagramResponse.data) {
         // skip videos
         if (image.media_type === 'VIDEO') continue;
-        let localImageFilename = `${timestamp}-${i}.jpg`;
-        let localImageFilenameWebp = `${timestamp}-${i}.webp`;
+        let localImageFilenamePrefix = `${timestamp}-${i}`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
           "media_type": image.media_type,
           "instagramURL": image.permalink,
           "sourceImageURL": image.media_url,
-          "localImageFilename": localImageFilename,
-          "localImageFilenameWebp": localImageFilenameWebp
+          "localImageFilenamePrefix": localImageFilenamePrefix
         });
         i++
       }
@@ -104,9 +102,10 @@ module.exports = {
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
     let j = 1;
     for (const image in instagramData) {
-      let { localImageFilename, localImageFilenameWebp, sourceImageURL } = instagramData[image];
-      let localImageURL = `${imageFolder}/${localImageFilename}`;
-      let localImageURLWebp = `${imageFolder}/${localImageFilenameWebp}`;
+      let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
+      let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
+      let localImageWebp = `${imageFolder}/${localImageFilenamePrefix}.webp`;
+      let localImage100x100Webp = `${imageFolder}/${localImageFilenamePrefix}-100x100.webp`;
       //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       //if ( await utils.cache.has(localImageURL) ) {
@@ -123,20 +122,21 @@ module.exports = {
             responseType: 'stream'      
           });          
           //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
-          const dest = fs.createWriteStream(localImageURL);
+          const dest = fs.createWriteStream(localImageJpg);
           response.data.pipe(dest,{emitClose: true});
           console.log("Processing image #",j);
           await dest.on('finish', () => {
-            console.log("Image written to:", chalk.green(localImageURL));
-            sharp(localImageURL)
+            console.log("Image written to:", chalk.green(localImageJpg));
+            sharp(localImageJpg)
+              .webp({lossless: true})
+              .toFile(localImageWebp);
+            console.log("Converted to:", chalk.green(localImageWebp));
+              sharp(localImageURL)
               .resize({ width: 100 })
               .webp({lossless: true})
-              .toFile(localImageURLWebp);
-            console.log("Webp Image written to:", chalk.green(localImageURLWebp));
+              .toFile(localImage100x100Webp);
+            console.log("Converted to:", chalk.green(localImage100x100Webp));
           });
-
-
-
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
