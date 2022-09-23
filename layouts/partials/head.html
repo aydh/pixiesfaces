@@ -6,10 +6,9 @@
     <!-- SEO Title Tags-->
     <meta property="og:type" content="website" />
     <meta name="author" content="{{ .Site.Params.author }}" />
-    <meta name="description" content="{{ .Site.Params.description }}">
 
     <!-- SEO Title Tags-->
-    <title itemprop="name">{{ .Site.Title }} | {{ .Site.Params.description }}</title>
+    <title itemprop="name">{{ .Site.Title }}</title>
     <meta property="og:title" content="{{ .Site.Title }}" />
     <meta name="twitter:title" content="{{ .Site.Title }}" />
     <meta itemprop="name" content="{{ .Site.Title }}" />
@@ -44,7 +43,7 @@
     <meta name="twitter:image:src" content="{{ .Site.Params.seoimage | absURL }}" /> 
 
     <!-- SEO Date Tags-->
-    <meta property="og:updated_time" content={{ .Lastmod.Format "2022-03-20T00:00:00Z1100" | safeHTML }} />
+    <meta property="og:updated_time" content={{ .Lastmod.Format "2022-09-23T00:00:00Z1100" | safeHTML }} />
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" /> 
      
@@ -53,7 +52,7 @@
     <meta name="googlebot" content="index,follow" />
 
     <!-- More Social Media Related -->
-    <meta name="twitter:card" content="summary"></meta>
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="{{ .Site.Params.twitter }}">
     <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
 
