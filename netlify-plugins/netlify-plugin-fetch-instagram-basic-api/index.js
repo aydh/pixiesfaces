@@ -81,15 +81,15 @@ module.exports = {
         // skip videos
         if (image.media_type === 'VIDEO') continue;
         let localImageFilename = `${timestamp}-${i}.jpg`;
-        let localImageFilename_webp = `${timestamp}-${i}.webp`;
+        let localImageFilenameWebp = `${timestamp}-${i}.webp`;
         instagramData.push({
           "id": image.id,
           "caption": image.caption,
           "media_type": image.media_type,
           "instagramURL": image.permalink,
           "sourceImageURL": image.media_url,
-          "localImageFilename": localImageFilename
-          "localImageFilenameWebp": localImageFilename_webp
+          "localImageFilename": localImageFilename,
+          "localImageFilenameWebp": localImageFilenameWebp
         });
         i++
       }
