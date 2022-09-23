@@ -105,7 +105,9 @@ module.exports = {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
       let localImageWebp = `${imageFolder}/${localImageFilenamePrefix}.webp`;
-      let localImage100x100Webp = `${imageFolder}/${localImageFilenamePrefix}-100x100.webp`;
+      let localImage320wideWebp = `${imageFolder}/${localImageFilenamePrefix}-320w.webp`;
+      let localImage480wideWebp = `${imageFolder}/${localImageFilenamePrefix}-480w.webp`;
+      let localImage640wideWebp = `${imageFolder}/${localImageFilenamePrefix}-640w.webp`;
       //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
       // if the image exists in the cache, recover it.
       //if ( await utils.cache.has(localImageURL) ) {
@@ -132,11 +134,21 @@ module.exports = {
               .toFile(localImageWebp);
             console.log("Converted to:", chalk.green(localImageWebp));
               sharp(localImageJpg)
-              .resize({ width: 100 })
+              .resize({ width: 320, 320 {fit:cover}})
               .webp({lossless: true})
-              .toFile(localImage100x100Webp);
-            console.log("Converted to:", chalk.green(localImage100x100Webp));
-          });
+              .toFile(localImage320wideWebp);
+            console.log("Converted to:", chalk.green(localImage320wideWebp));
+              sharp(localImageJpg)
+              .resize({ width: 480, 480 {fit:cover}})
+              .webp({lossless: true})
+              .toFile(localImage480wideWebp);
+            console.log("Converted to:", chalk.green(localImage480wideWebp));
+              sharp(localImageJpg)
+              .resize({ width: 640, 640 {fit:cover}})
+              .webp({lossless: true})
+              .toFile(localImage640wideWebp);
+            console.log("Converted to:", chalk.green(localImage640wideWebp));
+        });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
           //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
         } catch (err) {
