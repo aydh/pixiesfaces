@@ -204,37 +204,37 @@ BOOTSTRAP EDGES OVERRIDES
 /*
 BACKGROUND
 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .no-webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-large.jpg) center center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1279px) {
   .no-webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-medium.jpg) center center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 959px) {
   .no-webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-small.jpg) center center;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-large.webp) center center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1279px) {
   .webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-medium.webp) center center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 959px) {
   .webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-medium.webp) center center;
   }
@@ -499,37 +499,37 @@ HEADER SECTION
 /*
 HOME SECTION
 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .no-webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-large.jpg) center center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1279px) {
   .no-webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-medium.jpg) center center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 959px) {
   .no-webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-small.jpg) center center;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-large.webp) center center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1279px) {
   .webp b#pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-medium.webp) center center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 959px) {
   .webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-medium.webp) center center;
   }
@@ -1471,37 +1471,37 @@ ANIMATION
 ERROR PAGE
 */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .no-webp #pixies-error {
     background: url(/images/{{ .Site.Params.hero.image }}-large.jpg) center center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1279px) {
   .no-webp #pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-medium.jpg) center center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 959px) {
   .no-webp #pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-small.jpg) center center;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .webp #pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-large.webp) center center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1279px) {
   .webp b#pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-medium.webp) center center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 959px) {
   .webp #pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-medium.webp) center center;
   }
