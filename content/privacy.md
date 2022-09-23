@@ -1,6 +1,7 @@
 +++
 title = "Privacy"
 draft = false
+sitemap_exclude = true 
 +++
 # Privacy Policy 
 
