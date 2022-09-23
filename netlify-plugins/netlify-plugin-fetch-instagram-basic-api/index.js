@@ -146,36 +146,39 @@ module.exports = {
   for (const image in instagramData) {
     let { localImageFilenamePrefix } = instagramData[image];
     let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
-    let localImageWebp = `${imageFolder}/${localImageFilenamePrefix}.webp`;
     let localImage320wideWebp = `${imageFolder}/${localImageFilenamePrefix}-320w.webp`;
     let localImage480wideWebp = `${imageFolder}/${localImageFilenamePrefix}-480w.webp`;
     let localImage640wideWebp = `${imageFolder}/${localImageFilenamePrefix}-640w.webp`;
+    let localImage960wideWebp = `${imageFolder}/${localImageFilenamePrefix}-960w.webp`;
 
     sharp(localImageJpg)
-      .webp({lossless: true})
-      .toFile(localImageWebp);
-    console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageWebp));
-      sharp(localImageJpg)
       .resize(320, 320, {
         fit: 'cover'
       })
       .webp({lossless: true})
       .toFile(localImage320wideWebp);
     console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage320wideWebp));
-      sharp(localImageJpg)
+    sharp(localImageJpg)
       .resize(480, 480, {
         fit: 'cover'
       })
       .webp({lossless: true})
       .toFile(localImage480wideWebp);
     console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage480wideWebp));
-      sharp(localImageJpg)
+    sharp(localImageJpg)
       .resize(640, 640, {
         fit: 'cover'
       })
       .webp({lossless: true})
       .toFile(localImage640wideWebp);
     console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage640wideWebp));
+    sharp(localImageJpg)
+      .resize(960, 960, {
+        fit: 'cover'
+      })
+      .webp({lossless: true})
+      .toFile(localImage960wideWebp);
+    console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImage960wideWebp));
     k++;
     }
   console.log(chalk.cyanBright("============================="));
