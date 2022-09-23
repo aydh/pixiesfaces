@@ -13,12 +13,11 @@
 			<div class="row row-bottom-padded-sm">
 			{{ range .Site.Data.instagram }}
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="/images/{{ .localImageFilenamePrefix }}.webp" class="pixies-project-item image-popup to-animate">
+					<a href="/images/{{ .localImageFilenamePrefix }}-original.webp" class="pixies-project-item image-popup to-animate">
 						<picture>
-							<source type = "image/webp" media="(min-width: 960px)" srcset="/images/{{ .localImageFilenamePrefix }}-960w.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
-							<source type = "image/webp" media="(max-width: 959px)" srcset="/images/{{ .localImageFilenamePrefix }}-640w.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
-							<source type = "image/webp" media="(max-width: 480px)" srcset="/images/{{ .localImageFilenamePrefix }}-480w.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
-							<source type = "image/webp" media="(max-width: 320px)" srcset="/images/{{ .localImageFilenamePrefix }}-320w.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
+							<source type = "image/webp" media="(min-width: 1024px)" srcset="/images/{{ .localImageFilenamePrefix }}-large.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
+							<source type = "image/webp" media="(max-width: 1023x)" srcset="/images/{{ .localImageFilenamePrefix }}-medium.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
+							<source type = "image/webp" media="(max-width: 480px)" srcset="/images/{{ .localImageFilenamePrefix }}-small.webp">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
 							<img src="/images/{{ .localImageFilenamePrefix }}.jpg" alt="{{ .caption }}" class="img-responsive">
 						</picture>
 					</a>
