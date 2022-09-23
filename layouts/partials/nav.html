@@ -6,7 +6,13 @@
                     <a href="#" class="js-pixies-nav-toggle pixies-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
                     <!-- Brand Logo and Title -->
                     {{ if .Site.Params.navigation.showlogo }}
-                    <a class="navbar-brand" href="#"><img src="/images/{{ .Site.Params.navigation.img }}" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}"></a>
+                    <a class="navbar-brand" href="#">
+                        <picture>
+                            <source type = "image/webp" srcset="/images/{{ .Site.Params.navigation.img }}-small.webp 50w, /images/{{ .localImageFilenamePrefix }}-medium.webp 128w, /images/{{ .localImageFilenamePrefix }}-large.webp 256w">
+                            <source type = "image/png" srcset="/images/{{ .Site.Params.navigation.img }}-small.png 50w, /images/{{ .localImageFilenamePrefix }}-medium.png 128w, /images/{{ .localImageFilenamePrefix }}-large.png 256w">
+                            <img src="/images/{{ .Site.Params.navigation.img }}.png" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}">
+                        </picture>
+                    </a>
                     {{end}}
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">

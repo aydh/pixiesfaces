@@ -204,6 +204,41 @@ BOOTSTRAP EDGES OVERRIDES
 /*
 BACKGROUND
 */
+@media screen and (min-width: 1024px) {
+  .no-webp body:after {
+    background: url(/images/{{ .Site.Params.background.image }}-large.jpg) center center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .no-webp body:after {
+    background: url(/images/{{ .Site.Params.background.image }}-medium.jpg) center center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .no-webp body:after {
+    background: url(/images/{{ .Site.Params.background.image }}-small.jpg) center center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .webp body:after {
+    background: url(/images/{{ .Site.Params.background.image }}-large.webp) center center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .webp body:after {
+    background: url(/images/{{ .Site.Params.background.image }}-medium.webp) center center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .webp body:after {
+    background: url(/images/{{ .Site.Params.background.image }}-medium.webp) center center;
+  }
+}
 
 body:after{
   content:"";
@@ -213,7 +248,6 @@ body:after{
   left:0;
   right:0;
   z-index:-1; /* needed to keep in the background */
-  background: url(/images/{{ .Site.Params.background.image }}) center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -465,9 +499,43 @@ HEADER SECTION
 /*
 HOME SECTION
 */
+@media screen and (min-width: 1024px) {
+  .no-webp #pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-large.jpg) center center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .no-webp #pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-medium.jpg) center center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .no-webp #pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-small.jpg) center center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .webp #pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-large.webp) center center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .webp b#pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-medium.webp) center center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .webp #pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-medium.webp) center center;
+  }
+}
 
 #pixies-home {
-  background: url(/images/{{ .Site.Params.hero.image }}) center center;
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1403,8 +1471,43 @@ ANIMATION
 ERROR PAGE
 */
 
+@media screen and (min-width: 1024px) {
+  .no-webp #pixies-error {
+    background: url(/images/{{ .Site.Params.hero.image }}-large.jpg) center center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .no-webp #pixies-error {
+    background: url(/images/{{ .Site.Params.errorpage.image }}-medium.jpg) center center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .no-webp #pixies-error {
+    background: url(/images/{{ .Site.Params.errorpage.image }}-small.jpg) center center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .webp #pixies-error {
+    background: url(/images/{{ .Site.Params.errorpage.image }}-large.webp) center center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .webp b#pixies-error {
+    background: url(/images/{{ .Site.Params.errorpage.image }}-medium.webp) center center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .webp #pixies-error {
+    background: url(/images/{{ .Site.Params.errorpage.image }}-medium.webp) center center;
+  }
+}
+
 #pixies-error {
-  background: url(/images/{{ .Site.Params.errorpage.image }}) center center;
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;

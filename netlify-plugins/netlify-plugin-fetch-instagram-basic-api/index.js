@@ -104,7 +104,10 @@ module.exports = {
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
-      let localImageOriginalWebp = `${imageFolder}/${localImageFilenamePrefix}-original.webp`;
+      let localImageSmallJpg = `${imageFolder}/${localImageFilenamePrefix}-small.jpg`;
+      let localImageMediumJpg = `${imageFolder}/${localImageFilenamePrefix}-medium.jpg`;
+      let localImageLargeJpg = `${imageFolder}/${localImageFilenamePrefix}-large.jpg`;
+      let localImageWebp = `${imageFolder}/${localImageFilenamePrefix}.webp`;
       let localImageSmallWebp = `${imageFolder}/${localImageFilenamePrefix}-small.webp`;
       let localImageMediumWebp = `${imageFolder}/${localImageFilenamePrefix}-medium.webp`;
       let localImageLargeWebp = `${imageFolder}/${localImageFilenamePrefix}-large.webp`;
@@ -129,30 +132,26 @@ module.exports = {
           console.log("Processing image #",j);
           await dest.on('finish', () => {
             console.log("Image written to:", chalk.green(localImageJpg));
-            sharp(localImageJpg)
-              .webp({lossless: true})
-              .toFile(localImageOriginalWebp);
-            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageOriginalWebp));
-            sharp(localImageJpg)
-              .resize(480, 480, {
-                fit: 'inside'
-              })
-              .webp({lossless: true})
-              .toFile(localImageSmallWebp);
+
+            sharp(localImageJpg).resize(480, 480, {fit: 'cover'}.toFile(localImageSmallJpg);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallWebp));
-            sharp(localImageJpg)
-              .resize(768, 768, {
-                fit: 'inside'
-              })
-              .webp({nearLossless: true})
-              .toFile(localImageMediumWebp);
+
+            sharp(localImageJpg).resize(768, 768, {fit: 'cover'}).toFile(localImageMediumJpg);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumWebp));
-            sharp(localImageJpg)
-              .resize(1024, 1024, {
-                fit: 'inside'
-              })
-              .webp({nearLossless: true})
-              .toFile(localImageLargeWebp);
+
+            sharp(localImageJpg).resize(1024, 1024, {fit: 'cover'}).toFile(localImageLargeJpg);
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeWebp));
+
+            sharp(localImageJpg).webp({lossless: true}).toFile(localImageWebp);
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageOriginalWebp));
+
+            sharp(localImageJpg).resize(480, 480, {fit: 'cover'}.webp({lossless: true}).toFile(localImageSmallWebp);
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageSmallWebp));
+
+            sharp(localImageJpg).resize(768, 768, {fit: 'cover'}).webp({nearLossless: true}).toFile(localImageMediumWebp);
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumWebp));
+
+            sharp(localImageJpg).resize(1024, 1024, {fit: 'cover'}).webp({nearLossless: true}).toFile(localImageLargeWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeWebp));
         });
           //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });

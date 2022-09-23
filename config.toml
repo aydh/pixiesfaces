@@ -133,7 +133,7 @@ DefaultContentLanguage = "en"
   # Navigation
   [params.navigation]
     showlogo = true
-    img = "banner-logo.png"
+    img = "banner-logo"
     logoheight = "50px"
     logowidth = "50px"
     alt = "Pixies Logo"
@@ -157,14 +157,14 @@ DefaultContentLanguage = "en"
   [params.background]
     enableheader = true  
     enablefooter = false  
-    image = "background-logo.png"
+    image = "background-logo"
     alt = "Pixies Logo"
 
   # Hero section
   [params.hero]
     title = "Pixies Face Painting"
     subtitle = 'Beautiful face painting, balloon twisting and fairy parties in Melbourne East.'
-    image = "redtiger.png"
+    image = "redtiger"
     alt = "Pixies Logo"
 
   # Intro section
@@ -335,7 +335,7 @@ DefaultContentLanguage = "en"
 
   # Custom error/404 page
   [params.errorpage]
-    image = "redtiger.png"
+    image = "redtiger"
     alt = "Red Tiger"
     title = "Sorry"
     subtitle = "It seems that page does not exist"

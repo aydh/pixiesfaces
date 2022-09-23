@@ -15,8 +15,9 @@
 				<div class="col-md-4 col-sm-6 col-xxs-12">
 					<a href="/images/{{ .localImageFilenamePrefix }}-original.webp" class="pixies-project-item image-popup to-animate">
 						<picture>
-							<source type = "image/webp" srcset="/images/{{ .localImageFilenamePrefix }}-small.webp 480w, /images/{{ .localImageFilenamePrefix }}-medium.webp 768w, /images/{{ .localImageFilenamePrefix }}-large.webp 1024w">							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}.jpg">
-							<img src="/images/{{ .localImageFilenamePrefix }}.jpg" alt="{{ .caption }}" class="img-responsive">
+							<source type = "image/webp" srcset="/images/{{ .localImageFilenamePrefix }}-small.webp 480w, /images/{{ .localImageFilenamePrefix }}-medium.webp 768w, /images/{{ .localImageFilenamePrefix }}-large.webp 1024w">
+							<source type = "image/jpeg" srcset="/images/{{ .localImageFilenamePrefix }}-small.jpg 480w, /images/{{ .localImageFilenamePrefix }}-medium.jpg 768w, /images/{{ .localImageFilenamePrefix }}-large.jpg 1024w">
+							<img src="/images/{{ .localImageFilenamePrefix }}.png" alt="{{ .caption }}" class="img-responsive">
 						</picture>
 					</a>
 				</div>
