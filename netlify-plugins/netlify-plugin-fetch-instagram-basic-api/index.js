@@ -132,7 +132,7 @@ module.exports = {
             sharp(localImageJpg)
               .webp({lossless: true})
               .toFile(localImageOriginalWebp);
-            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageWebp));
+            console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageOriginalWebp));
             sharp(localImageJpg)
               .resize(480, 480, {
                 fit: 'inside'
