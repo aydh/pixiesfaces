@@ -140,6 +140,8 @@ module.exports = {
       //}
  
   }
+  
+  await new Promise(resolve => setTimeout(resolve, 5000));
 
   console.log("Iterating over",chalk.yellow(instagramData.length),"local images to resize.");
   let k = 1;
