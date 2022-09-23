@@ -127,7 +127,7 @@ HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
   from = "https://pixiesfaces.com/page-sitemap.xml"
-  to = "https://www.pixiesfaces.com/"
+  to = "https://www.pixiesfaces.com/sitemap.xml"
   status = 301
   force = true
 
