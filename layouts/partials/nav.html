@@ -8,8 +8,8 @@
                     {{ if .Site.Params.navigation.showlogo }}
                     <a class="navbar-brand" href="#">
                         <picture>
-                            <source type = "image/webp" srcset="/images/{{ .Site.Params.navigation.img }}-small.webp 50w">
-                            <source type = "image/png" srcset="/images/{{ .Site.Params.navigation.img }}-small.png 50w">
+                            <source type = "image/webp" sizes="50px" srcset="/images/{{ .Site.Params.navigation.img }}-small.webp 50w">
+                            <source type = "image/png" sizes="50px" srcset="/images/{{ .Site.Params.navigation.img }}-small.png 50w">
                             <img src="/images/{{ .Site.Params.navigation.img }}-small.png" alt="{{ .Site.Params.navigation.alt }}" width="{{ .Site.Params.navigation.logowidth }}" height="{{ .Site.Params.navigation.logoheight }}">
                         </picture>
                     </a>
