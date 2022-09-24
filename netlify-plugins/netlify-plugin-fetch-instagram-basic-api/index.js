@@ -165,13 +165,13 @@ module.exports = {
 
             sharp(localImageJpg)
               .resize(768, 768,{fit: 'cover'})
-              .webp({nearLossless: true})
+              .webp({lossless: true})
               .toFile(localImageMediumWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageMediumWebp));
 
             sharp(localImageJpg)
               .resize(1024, 1024,{fit: 'cover'})
-              .webp({nearLossless: true})
+              .webp({lossless: true})
               .toFile(localImageLargeWebp);
             console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(localImageLargeWebp));
         });
