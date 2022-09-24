@@ -6,6 +6,8 @@ const sharp     = require('sharp');
 
 const sharpConv = ( inputFileNamePrefix, size) => {
 
+  console.log("Converting",chalk.yellow(inputFileNamePrefix));
+
   let inputFileName = inputFileNamePrefix + '.jpg'
   let outputFileNameJpg = inputFileNamePrefix + '-' + size + '.jpg';
   let outputFileNameWebp = inputFileNamePrefix + '-' + size + '.webp';

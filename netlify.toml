@@ -183,7 +183,7 @@ package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
     dataFolder = "data"
 
     # How many images should we retrieve from Instagram?
-    imageCount = 30
+    imageCount = 3
 
     # How many seconds should we cache the instagram feed for?
     # feedTTL = 2419200    # 4 weeks
