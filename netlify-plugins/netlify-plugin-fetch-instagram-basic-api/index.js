@@ -121,11 +121,12 @@ module.exports = {
     let k = 1;
     for (const image in instagramData) {
       let { localImageFilenamePrefix } = instagramData[image];
-      sharpConv(localImageFilenamePrefix,360);
-      sharpConv(localImageFilenamePrefix,720);
-      sharpConv(localImageFilenamePrefix,1024);
-      sharpConv(localImageFilenamePrefix,1250);
-      sharpConv(localImageFilenamePrefix,1440);
+      let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}`;
+      sharpConv(localImageJpg,360);
+      sharpConv(localImageJpg,720);
+      sharpConv(localImageJpg,1024);
+      sharpConv(localImageJpg,1250);
+      sharpConv(localImageJpg,1440);
       k++; 
     }
     console.log(chalk.cyanBright("============================="));
