@@ -114,6 +114,9 @@ module.exports = {
       j++; 
     }
 
+    // Wait so we can allow the async bits to complete - I think this is cos mixing sync/async.
+    await new Promise(resolve => setTimeout(resolve, 5000));
+
     console.log("Converting",chalk.yellow(instagramData.length),"local images.");
     let k = 1;
     for (const image in instagramData) {
@@ -125,8 +128,6 @@ module.exports = {
       sharpConv(localImageFilenamePrefix,1440);
       k++; 
     }
-    // Wait so we can allow the async bits to complete - I think this is cos mixing sync/async.
-    await new Promise(resolve => setTimeout(resolve, 5000));
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
     console.log(chalk.cyanBright("============================="));
