@@ -204,56 +204,131 @@ BOOTSTRAP EDGES OVERRIDES
 /*
 BACKGROUND
 */
+
 @media screen and (min-width: 1280px) {
   .no-webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-large.jpg) center center;
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1279px) {
+@media screen and (min-width: 640px) and (max-width: 1279px) {
   .no-webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-medium.jpg) center center;
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 639px) {
   .no-webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-small.jpg) center center;
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-large.webp) center center;
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1279px) {
+@media screen and (min-width: 640px) and (max-width: 1279px) {
   .webp body:after {
     background: url(/images/{{ .Site.Params.background.image }}-medium.webp) center center;
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 639px) {
   .webp body:after {
-    background: url(/images/{{ .Site.Params.background.image }}-medium.webp) center center;
+    background: url(/images/{{ .Site.Params.background.image }}-small.webp) center center;
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
-
+/*
 body:after{
+  background: url(/images/{{ .Site.Params.background.image }}.png) center center;
   content:"";
-  position:fixed; /* stretch a fixed position to the whole screen */
+  position:fixed;
   top:0;
-  height:100vh; /* fix for mobile browser address bar appearing disappearing */
+  height:100vh;
   left:0;
   right:0;
-  z-index:-1; /* needed to keep in the background */
+  z-index:-1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: contain;
   background-repeat: no-repeat;
 }
+*/
 
 #pixies-background-header {
   margin: 0;
@@ -499,50 +574,83 @@ HEADER SECTION
 /*
 HOME SECTION
 */
+
 @media screen and (min-width: 1280px) {
   .no-webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-large.jpg) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1279px) {
+@media screen and (min-width: 640px) and (max-width: 1279px) {
   .no-webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-medium.jpg) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 639px) {
   .no-webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-small.jpg) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-large.webp) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1279px) {
-  .webp b#pixies-home {
-    background: url(/images/{{ .Site.Params.hero.image }}-medium.webp) center center;
-  }
-}
-
-@media screen and (max-width: 959px) {
+@media screen and (min-width: 640px) and (max-width: 1279px) {
   .webp #pixies-home {
     background: url(/images/{{ .Site.Params.hero.image }}-medium.webp) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-#pixies-home {
-  background-color: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  width: 100vw;
-  color: {{ .Site.Params.whiteColor }};
-  overflow: hidden;
+@media screen and (max-width: 639px) {
+  .webp #pixies-home {
+    background: url(/images/{{ .Site.Params.hero.image }}-small.webp) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
+  }
 }
 
 #pixies-home .gradient {
@@ -1473,40 +1581,89 @@ ERROR PAGE
 
 @media screen and (min-width: 1280px) {
   .no-webp #pixies-error {
-    background: url(/images/{{ .Site.Params.hero.image }}-large.jpg) center center;
+    background: url(/images/{{ .Site.Params.errorpage.image }}-large.png) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1279px) {
+@media screen and (min-width: 640px) and (max-width: 1279px) {
   .no-webp #pixies-error {
-    background: url(/images/{{ .Site.Params.errorpage.image }}-medium.jpg) center center;
+    background: url(/images/{{ .Site.Params.errorpage.image }}-medium.png) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 639px) {
   .no-webp #pixies-error {
-    background: url(/images/{{ .Site.Params.errorpage.image }}-small.jpg) center center;
+    background: url(/images/{{ .Site.Params.errorpage.image }}-small.png) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .webp #pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-large.webp) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1279px) {
-  .webp b#pixies-error {
-    background: url(/images/{{ .Site.Params.errorpage.image }}-medium.webp) center center;
-  }
-}
-
-@media screen and (max-width: 959px) {
+@media screen and (min-width: 640px) and (max-width: 1279px) {
   .webp #pixies-error {
     background: url(/images/{{ .Site.Params.errorpage.image }}-medium.webp) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
   }
 }
 
+@media screen and (max-width: 639px) {
+  .webp #pixies-error {
+    background: url(/images/{{ .Site.Params.errorpage.image }}-small.webp) center center;
+    background-color: transparent;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: {{ .Site.Params.whiteColor }};
+    overflow: hidden;
+  }
+}
+
+/*
 #pixies-error {
   background-color: transparent;
   background-size: cover;
@@ -1517,6 +1674,7 @@ ERROR PAGE
   color: {{ .Site.Params.whiteColor }};
   overflow: hidden;
 }
+*/
 
 #pixies-error .gradient {
   position: absolute;
