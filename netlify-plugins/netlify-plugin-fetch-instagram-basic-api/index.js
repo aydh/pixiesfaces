@@ -4,7 +4,7 @@ const fs        = require('fs');
 const chalk     = require('chalk');
 const sharp     = require('sharp');
 
-const sharpConv = ( inputFileNamePrefix, size) => {
+const sharpConv = async ( inputFileNamePrefix, size) => {
 
   console.log("Converting",chalk.yellow(inputFileNamePrefix));
 
