@@ -4,6 +4,39 @@ const fs        = require('fs');
 const chalk     = require('chalk');
 const sharp     = require('sharp');
 
+const downloadFile = (fileUrl, outputLocationPath) => {
+  const writer = fs.createWriteStream(outputLocationPath);
+
+  return Axios({
+    method: 'get',
+    url: fileUrl,
+    responseType: 'stream',
+  }).then(response => {
+
+    //ensure that the user can call `then()` only when the file has
+    //been downloaded entirely.
+
+    return new Promise((resolve, reject) => {
+      console.log('File retrieval success - return status:', chalk.green(response.status))
+      response.data.pipe(writer);
+      let error = null;
+      writer.on('error', err => {
+        error = err;
+        writer.close();
+        reject(err);
+      });
+      writer.on('close', () => {
+        if (!error) {
+          console.log("File written to:", chalk.green(outputLocationPath));
+          resolve(true);
+        }
+        //no need to call the reject here, as it will have been called in the
+        //'error' stream;
+      });
+    });
+  });
+}
+
 module.exports = {
 
   async onPreBuild({ inputs, utils }) {
@@ -67,53 +100,33 @@ module.exports = {
     }
     await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
     console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
+    console.log(instagramData);
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
 
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
-      
-      return axios({
-        method: 'get',
-        url: sourceImageURL,
-        responseType: 'stream',
-      }).then(response => {
-        return new Promise((resolve, reject) => {
-          console.log('Instagram image retrieval success - return status:', chalk.green(response.status))
-          const writer = fs.createWriteStream(localImageJpg);
-          response.data.pipe(writer);
-          let error = null;
-          writer.on('error', err => {
-            error = err;
-            writer.close();
-            reject(err);
-          });
-          writer.on('close', () => {
-            if (!error) {
-              resolve(true);
-              console.log("Image written to:", chalk.green(localImageJpg));
-              for (const size of sizes) {
-                outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
-                outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-                try {
-                  sharp(localImageJpg)
-                    .resize(size, size,{fit: 'cover'})
-                    .webp({ lossless: true })
-                    .toFile(outputFilenameWebp);
-                  console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
-                  sharp(localImageJpg)
-                    .resize(size, size,{fit: 'cover'})
-                    .toFile(outputFilenameJpg);
-                  console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
-                } catch (err) {
-                  console.log(err)
-                }
-              }
-            }
-          });
-        });
-      });
+
+      downloadFile(sourceImageURL, localImageJpg);
+
+      for (const size of sizes) {
+        outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
+        outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
+        try {
+          sharp(localImageJpg)
+            .resize(size, size,{fit: 'cover'})
+            .webp({ lossless: true })
+            .toFile(outputFilenameWebp);
+          console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
+          sharp(localImageJpg)
+            .resize(size, size,{fit: 'cover'})
+            .toFile(outputFilenameJpg);
+          console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
+        } catch (err) {
+          console.log(err)
+        }
+      }
     }
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
