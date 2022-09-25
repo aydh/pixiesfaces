@@ -75,7 +75,7 @@ module.exports = {
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
       
       const writer = fs.createWriteStream(localImageJpg);
-      return Axios({
+      return axios({
         method: 'get',
         url: sourceImageURL,
         responseType: 'stream',
