@@ -94,8 +94,11 @@ module.exports = {
               resolve(true);
               console.log("Image written to:", chalk.green(localImageJpg));
               for (const size in sizes) {
-                outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`
-                outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`
+                outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
+                outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
+                console.log(szie);
+
+                /*
                 sharp(localImageJpg)
                 .resize(size, size,{fit: 'cover'})
                 .webp({ lossless: true })
@@ -104,7 +107,8 @@ module.exports = {
                 sharp(localImageJpg)
                 .resize(size, size,{fit: 'cover'})
                 .toFile(outputFileNameJpg);
-                console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg));      
+                console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg)); 
+                */     
               }
             }
           });
