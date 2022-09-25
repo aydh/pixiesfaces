@@ -103,7 +103,7 @@ module.exports = {
                 console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
                 sharp(localImageJpg)
                   .resize(size, size,{fit: 'cover'})
-                  .toFile(outputFileNameJpg);
+                  .toFile(outputFilenameJpg);
                 console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
               }
             }
