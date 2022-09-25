@@ -7,7 +7,7 @@ const sharp     = require('sharp');
 const downloadFile = (fileUrl, outputLocationPath) => {
   const writer = fs.createWriteStream(outputLocationPath);
 
-  return Axios({
+  return axios({
     method: 'get',
     url: fileUrl,
     responseType: 'stream',
