@@ -115,7 +115,7 @@ module.exports = {
         outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
         await sharp(localImageJpg)
           .resize(size, size,{fit: 'cover'})
-          .webp({ nearLossless:true, quality:100 })
+          .webp({ nearLossless:true, quality:50 })
           .toFile(outputFilenameWebp);
         console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
         await sharp(localImageJpg)
