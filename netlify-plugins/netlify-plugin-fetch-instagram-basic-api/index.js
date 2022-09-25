@@ -104,23 +104,21 @@ module.exports = {
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
 
     for (let j=0; j < instagramData.length; j++) {
-      console.log("j=",j);
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[j];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
 
       await downloadFile(sourceImageURL, localImageJpg)
       
       for (let k=0;k < sizes.length; k++) {
-        console.log("k=",k);
         let size=sizes[k];
         outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
         outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-        sharp(localImageJpg)
+        await sharp(localImageJpg)
           .resize(size, size,{fit: 'cover'})
           .webp({ lossless: true })
           .toFile(outputFilenameWebp);
         console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
-        sharp(localImageJpg)
+        await sharp(localImageJpg)
           .resize(size, size,{fit: 'cover'})
           .toFile(outputFilenameJpg);
         console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
