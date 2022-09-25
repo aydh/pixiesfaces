@@ -68,8 +68,6 @@ module.exports = {
     console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
-    let j = 1;
-    let sizes = [360, 720, 1024, 1250, 1440];
 
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
@@ -83,10 +81,11 @@ module.exports = {
         //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
         const dest = fs.createWriteStream(localImageJpg);
         response.data.pipe(dest,{emitClose: true});
-        console.log("Saving image",j);
+        console.log("Saving image",localImageJpg);
 
         await dest.on('finish', () => {
-          console.log("Image",j,"written to:", chalk.green(localImageJpg));
+          console.log("Image written to:", chalk.green(localImageJpg));
+          sizes = [360, 720, 1024, 1250, 1440];
           for (size in sizes) {
             outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`
             outputFilenameWJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`
@@ -105,7 +104,6 @@ module.exports = {
         console.log('Instagram image ",i,"retrieval failure - return status:', chalk.red(err.status));
         console.log(err);
       }
-      j++; 
     }
 
     // Wait so we can allow the async bits to complete - I think this is cos mixing sync/async.
