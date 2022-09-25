@@ -89,7 +89,6 @@ module.exports = {
     console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
-    let j = 1;
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
@@ -111,23 +110,20 @@ module.exports = {
         console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
         console.log(err);
       }
-      j++; 
     }
 
     // Wait so we can allow the async bits to complete - I think this is cos mixing sync/async.
     await new Promise(resolve => setTimeout(resolve, 5000));
 
     console.log("Converting",chalk.yellow(instagramData.length),"local images.");
-    let k = 1;
     for (const image in instagramData) {
       let { localImageFilenamePrefix } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}`;
-      sharpConv(localImageJpg,360);
-      sharpConv(localImageJpg,720);
-      sharpConv(localImageJpg,1024);
-      sharpConv(localImageJpg,1250);
-      sharpConv(localImageJpg,1440);
-      k++; 
+      await sharpConv(localImageJpg,360);
+      await sharpConv(localImageJpg,720);
+      await sharpConv(localImageJpg,1024);
+      await sharpConv(localImageJpg,1250);
+      await sharpConv(localImageJpg,1440);
     }
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
