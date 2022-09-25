@@ -70,7 +70,7 @@ module.exports = {
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
 
-    for (const image of instagramData) {
+    for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
       
