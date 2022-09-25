@@ -14,15 +14,24 @@ const sharpConv = async ( inputFileNamePrefix, size) => {
 
   sharp(inputFileName)
     .resize(size, size,{fit: 'cover'})
-    .webp({lossless: true})
-    .toFile(outputFileNameWebp);
-  console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp));
+    .webp({ lossless: true })
+    .toFile(outputFileNameWebp)
+    .then(info => {
+      console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp), "||",info.height);      
+     })
+    .catch(err => { 
+      console.log(err);
+    });
 
   sharp(inputFileName)
     .resize(size, size,{fit: 'cover'})
-    .toFile(outputFileNameJpg);
-  console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg));
-
+    .toFile(outputFileNameJpg)
+    .then(info => {
+      console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp), "||",info.height);      
+     })
+    .catch(err => { 
+      console.log(err);
+    });
 }
 
 module.exports = {
