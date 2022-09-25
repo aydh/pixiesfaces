@@ -104,7 +104,7 @@ module.exports = {
                 sharp(localImageJpg)
                   .resize(size, size,{fit: 'cover'})
                   .toFile(outputFileNameJpg);
-                console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFileNameJpg)); 
+                console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
               }
             }
           });
