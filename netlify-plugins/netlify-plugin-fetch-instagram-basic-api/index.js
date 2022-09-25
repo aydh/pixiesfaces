@@ -96,7 +96,7 @@ module.exports = {
               for (const size in sizes) {
                 outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
                 outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-                console.log(szie);
+                console.log(size);
 
                 /*
                 sharp(localImageJpg)
