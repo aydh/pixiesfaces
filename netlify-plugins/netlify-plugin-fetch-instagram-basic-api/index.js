@@ -4,26 +4,6 @@ const fs        = require('fs');
 const chalk     = require('chalk');
 const sharp     = require('sharp');
 
-const sharpConv = ( inputFileNamePrefix, size) => {
-
-  console.log("Converting",chalk.yellow(inputFileNamePrefix));
-
-  let inputFileName = inputFileNamePrefix + '.jpg'
-  let outputFileNameJpg = inputFileNamePrefix + '-' + size + '.jpg';
-  let outputFileNameWebp = inputFileNamePrefix + '-' + size + '.webp';
-
-  sharp(inputFileName)
-    .resize(size, size,{fit: 'cover'})
-    .webp({ lossless: true })
-    .toFile(outputFileNameWebp);
-    console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp));      
-
-  sharp(inputFileName)
-    .resize(size, size,{fit: 'cover'})
-    .toFile(outputFileNameJpg);
-    console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp));      
-}
-
 module.exports = {
 
   async onPreBuild({ inputs, utils }) {
@@ -89,6 +69,8 @@ module.exports = {
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
     let j = 1;
+    const sizes = [360, 720, 1024, 1250, 1440];
+
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
@@ -101,13 +83,26 @@ module.exports = {
         //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
         const dest = fs.createWriteStream(localImageJpg);
         response.data.pipe(dest,{emitClose: true});
-        console.log("Processing image #",j);
+        console.log("Saving image",j);
 
         await dest.on('finish', () => {
-          console.log("Image written to:", chalk.green(localImageJpg));
+          console.log("Image",j,"written to:", chalk.green(localImageJpg));
+          for (const size in sizes) {
+            outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`
+            outputFilenameWJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`
+            sharp(localImageJpg)
+            .resize(size, size,{fit: 'cover'})
+            .webp({ lossless: true })
+            .toFile(outputFilenameWebp);
+            console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFilenameWebp));        
+            sharp(localImageJpg)
+            .resize(size, size,{fit: 'cover'})
+            .toFile(outputFileNameJpg);
+            console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg));      
+          }
         });
       } catch (err) {
-        console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
+        console.log('Instagram image ",i,"retrieval failure - return status:', chalk.red(err.status));
         console.log(err);
       }
       j++; 
@@ -116,17 +111,6 @@ module.exports = {
     // Wait so we can allow the async bits to complete - I think this is cos mixing sync/async.
     await new Promise(resolve => setTimeout(resolve, 5000));
 
-    console.log("Converting",chalk.yellow(instagramData.length),"local images.");
-    let k = 1;
-    for (const image in instagramData) {
-      console.log("Converting image Batch #",k);
-      let { localImageFilenamePrefix } = instagramData[image];
-      let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}`;
-      sharpConv(localImageJpg,360);
-      sharpConv(localImageJpg,720);
-      sharpConv(localImageJpg,1024);
-      k++; 
-    }
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
     console.log(chalk.cyanBright("============================="));
