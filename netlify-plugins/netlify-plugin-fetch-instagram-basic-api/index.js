@@ -105,10 +105,17 @@ module.exports = {
 
     for (let image=1; image <= instagramData.length; image++) {
       console.log(image);
+      console.log(instagramData[image]);
+
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
+      console.log(localImageFilenamePrefix);
+      console.log(sourceImageURL);
+
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
+      console.log(localImageJpg);
 
       await downloadFile(sourceImageURL, localImageJpg)
+      console.log("END");
       
         /*for (const size of sizes) {
           outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
