@@ -103,33 +103,29 @@ module.exports = {
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
 
-    for (let image=0; image < instagramData.length; image++) {
-      console.log(image);
-      console.log(instagramData[image]);
-
-      let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
-      console.log(localImageFilenamePrefix);
-      console.log(sourceImageURL);
-
+    for (let j=0; j < instagramData.length; j++) {
+      console.log("j=",j);
+      let { localImageFilenamePrefix, sourceImageURL } = instagramData[j];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
-      console.log(localImageJpg);
 
       await downloadFile(sourceImageURL, localImageJpg)
-      console.log("END");
       
-        /*for (const size of sizes) {
-          outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
-          outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-          sharp(localImageJpg)
-            .resize(size, size,{fit: 'cover'})
-            .webp({ lossless: true })
-            .toFile(outputFilenameWebp);
-          console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
-          sharp(localImageJpg)
-            .resize(size, size,{fit: 'cover'})
-            .toFile(outputFilenameJpg);
-          console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
-        }*/
+      for (let k=0;k < sizes.length; k++) {
+        console.log("k=",k);
+        let size=sizes[k];
+        outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
+        outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
+        sharp(localImageJpg)
+          .resize(size, size,{fit: 'cover'})
+          .webp({ lossless: true })
+          .toFile(outputFilenameWebp);
+        console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
+        sharp(localImageJpg)
+          .resize(size, size,{fit: 'cover'})
+          .toFile(outputFilenameJpg);
+        console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
+      }
+      console.log("NEXT");
     }
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
