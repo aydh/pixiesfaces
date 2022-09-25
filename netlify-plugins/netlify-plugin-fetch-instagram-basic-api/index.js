@@ -73,19 +73,11 @@ module.exports = {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
       try {
-        const response = await axios({
-          url: sourceImageURL,
-          method: 'GET',
-          responseType: 'stream'      
-        });          
+        const response = await axios.get(sourceImageURL);
         //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
-        const dest = fs.createWriteStream(localImageJpg);
-        response.data.pipe(dest,{emitClose: true});
-        console.log("Saving image",localImageJpg);
-        dest.close();
+        await fs.writeFileSync(localImageJpg, response.data);
+        console.log("Saved image",localImageJpg);
 
-        await dest.on('finish', () => {
-          console.log("Image written to:", chalk.green(localImageJpg));
           sizes = [360, 720, 1024, 1250, 1440];
           for (size in sizes) {
             outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`
@@ -100,7 +92,6 @@ module.exports = {
             .toFile(outputFileNameJpg);
             console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg));      
           }
-        });
       } catch (err) {
         console.log('Instagram image ",i,"retrieval failure - return status:', chalk.red(err.status));
         console.log(err);
