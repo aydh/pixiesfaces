@@ -4,7 +4,7 @@ const fs        = require('fs');
 const chalk     = require('chalk');
 const sharp     = require('sharp');
 
-const downloadFile = (fileUrl, outputLocationPath) => {
+const downloadFile = async (fileUrl, outputLocationPath) => {
   const writer = fs.createWriteStream(outputLocationPath);
 
   return axios({
@@ -35,7 +35,7 @@ const downloadFile = (fileUrl, outputLocationPath) => {
       });
     });
   });
-}
+};
 
 module.exports = {
 
@@ -108,12 +108,12 @@ module.exports = {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
 
-      downloadFile(sourceImageURL, localImageJpg);
-
-      for (const size of sizes) {
-        outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
-        outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-        try {
+      await downloadFile(sourceImageURL, localImageJpg)
+      
+      Promise.all(() => {
+        for (const size of sizes) {
+          outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
+          outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
           sharp(localImageJpg)
             .resize(size, size,{fit: 'cover'})
             .webp({ lossless: true })
@@ -123,10 +123,8 @@ module.exports = {
             .resize(size, size,{fit: 'cover'})
             .toFile(outputFilenameJpg);
           console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
-        } catch (err) {
-          console.log(err)
         }
-      }
+      })
     }
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
