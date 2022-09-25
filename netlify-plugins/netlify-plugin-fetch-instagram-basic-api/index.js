@@ -4,7 +4,7 @@ const fs        = require('fs');
 const chalk     = require('chalk');
 const sharp     = require('sharp');
 
-const sharpConv = async ( inputFileNamePrefix, size) => {
+const sharpConv = ( inputFileNamePrefix, size) => {
 
   console.log("Converting",chalk.yellow(inputFileNamePrefix));
 
@@ -17,7 +17,7 @@ const sharpConv = async ( inputFileNamePrefix, size) => {
     .webp({ lossless: true })
     .toFile(outputFileNameWebp)
     .then(info => {
-      console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp), "||",info.height);      
+      console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp));      
      })
     .catch(err => { 
       console.log(err);
@@ -27,7 +27,7 @@ const sharpConv = async ( inputFileNamePrefix, size) => {
     .resize(size, size,{fit: 'cover'})
     .toFile(outputFileNameJpg)
     .then(info => {
-      console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp), "||",info.height);      
+      console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameWebp));      
      })
     .catch(err => { 
       console.log(err);
@@ -132,11 +132,11 @@ module.exports = {
       console.log("Converting image Batch #",k);
       let { localImageFilenamePrefix } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}`;
-      await sharpConv(localImageJpg,360);
-      await sharpConv(localImageJpg,720);
-      await sharpConv(localImageJpg,1024);
-      await sharpConv(localImageJpg,1250);
-      await sharpConv(localImageJpg,1440);
+      sharpConv(localImageJpg,360);
+      sharpConv(localImageJpg,720);
+      sharpConv(localImageJpg,1024);
+      sharpConv(localImageJpg,1250);
+      sharpConv(localImageJpg,1440);
       k++; 
     }
     console.log(chalk.cyanBright("============================="));
