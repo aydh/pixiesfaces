@@ -81,7 +81,7 @@ module.exports = {
       }).then(response => {
         return new Promise((resolve, reject) => {
           console.log('Instagram image retrieval success - return status:', chalk.green(response.status))
-          const writer = createWriteStream(localImageJpg);
+          const writer = fs.createWriteStream(localImageJpg);
           response.data.pipe(writer);
           let error = null;
           writer.on('error', err => {
