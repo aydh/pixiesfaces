@@ -82,6 +82,7 @@ module.exports = {
         const dest = fs.createWriteStream(localImageJpg);
         response.data.pipe(dest,{emitClose: true});
         console.log("Saving image",localImageJpg);
+        dest.close();
 
         await dest.on('finish', () => {
           console.log("Image written to:", chalk.green(localImageJpg));
