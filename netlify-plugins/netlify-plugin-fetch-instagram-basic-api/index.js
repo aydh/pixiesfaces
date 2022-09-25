@@ -113,15 +113,15 @@ module.exports = {
         let size=sizes[k];
         outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
         outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-        await sharp(localImageJpg)
+        let webpInfo = await sharp(localImageJpg)
           .resize(size, size,{fit: 'cover'})
           .webp({ nearLossless:true, quality:50 })
           .toFile(outputFilenameWebp);
-        console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
-        await sharp(localImageJpg)
+        console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp),webpInfo);        
+        let jpgInfo = await sharp(localImageJpg)
           .resize(size, size,{fit: 'cover'})
           .toFile(outputFilenameJpg);
-        console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
+        console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg),jpgInfo); 
       }
       console.log("NEXT");
     }
