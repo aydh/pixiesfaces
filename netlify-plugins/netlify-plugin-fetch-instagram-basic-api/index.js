@@ -97,12 +97,12 @@ module.exports = {
                 outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`
                 outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`
                 sharp(localImageJpg)
-                .resize(size, size,{fit: 'cover'})
+                .resize(parseInt(size), parseInt(size),{fit: 'cover'})
                 .webp({ lossless: true })
                 .toFile(outputFilenameWebp);
                 console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFilenameWebp));        
                 sharp(localImageJpg)
-                .resize(size, size,{fit: 'cover'})
+                .resize(parseInt(size), parseInt(size),{fit: 'cover'})
                 .toFile(outputFileNameJpg);
                 console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg));      
               }
