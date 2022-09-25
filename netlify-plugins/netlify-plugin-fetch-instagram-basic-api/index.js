@@ -103,7 +103,7 @@ module.exports = {
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
 
-    for (let image=1; image <= instagramData.length; image++) {
+    for (let image=0; image < instagramData.length; image++) {
       console.log(image);
       console.log(instagramData[image]);
 
