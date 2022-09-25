@@ -100,18 +100,17 @@ module.exports = {
     }
     await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
     console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
-    console.log(instagramData);
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
 
-    for (const image in instagramData) {
+    for (let image=1; image <= instagramData.length; image++) {
+      console.log(image);
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
 
       await downloadFile(sourceImageURL, localImageJpg)
       
-      Promise.all(() => {
-        for (const size of sizes) {
+        /*for (const size of sizes) {
           outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
           outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
           sharp(localImageJpg)
@@ -123,8 +122,7 @@ module.exports = {
             .resize(size, size,{fit: 'cover'})
             .toFile(outputFilenameJpg);
           console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
-        }
-      })
+        }*/
     }
     console.log(chalk.cyanBright("============================="));
     console.log(chalk.cyanBright("= Instagram images finished ="));
