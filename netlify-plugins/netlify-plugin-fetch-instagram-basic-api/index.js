@@ -100,11 +100,11 @@ module.exports = {
                 .resize(size, size,{fit: 'cover'})
                   .webp({ lossless: true })
                   .toFile(outputFilenameWebp);
-                console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFilenameWebp));        
+                console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
                 sharp(localImageJpg)
                   .resize(size, size,{fit: 'cover'})
                   .toFile(outputFileNameJpg);
-                console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg)); 
+                console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFileNameJpg)); 
               }
             }
           });
