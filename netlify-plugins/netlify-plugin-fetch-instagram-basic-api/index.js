@@ -69,7 +69,7 @@ module.exports = {
 
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
     let j = 1;
-    const sizes = [360, 720, 1024, 1250, 1440];
+    let sizes = [360, 720, 1024, 1250, 1440];
 
     for (const image in instagramData) {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
@@ -87,7 +87,7 @@ module.exports = {
 
         await dest.on('finish', () => {
           console.log("Image",j,"written to:", chalk.green(localImageJpg));
-          for (const size in sizes) {
+          for (size in sizes) {
             outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`
             outputFilenameWJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`
             sharp(localImageJpg)
