@@ -20,7 +20,7 @@ module.exports = {
     const userId = process.env.INSTAGRAM_USER_ID;
     const fields = 'caption,media_url,media_type,permalink';
     const numberImages = inputs.imageCount;
-    const sizes = new Array(360, 720, 1024, 1250, 1440);
+    const sizes = [360, 720, 1024, 1250, 1440];
     const token = process.env.INSTAGRAM_ACCESS_TOKEN;
     const instagramAPIUrl = `${endpoint}/${userId}/media/?fields=${fields}&limit=${numberImages}&access_token=${token}`;
 
@@ -96,19 +96,15 @@ module.exports = {
               for (const size of sizes) {
                 outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
                 outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-                console.log(size);
-
-                /*
                 sharp(localImageJpg)
                 .resize(size, size,{fit: 'cover'})
-                .webp({ lossless: true })
-                .toFile(outputFilenameWebp);
+                  .webp({ lossless: true })
+                  .toFile(outputFilenameWebp);
                 console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFilenameWebp));        
                 sharp(localImageJpg)
-                .resize(size, size,{fit: 'cover'})
-                .toFile(outputFileNameJpg);
+                  .resize(size, size,{fit: 'cover'})
+                  .toFile(outputFileNameJpg);
                 console.log("Converted",chalk.yellow(inputFileName),"to", chalk.green(outputFileNameJpg)); 
-                */     
               }
             }
           });
