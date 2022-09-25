@@ -96,15 +96,19 @@ module.exports = {
               for (const size of sizes) {
                 outputFilenameWebp = `${imageFolder}/${localImageFilenamePrefix}-${size}.webp`;
                 outputFilenameJpg = `${imageFolder}/${localImageFilenamePrefix}-${size}.jpg`;
-                sharp(localImageJpg)
-                .resize(size, size,{fit: 'cover'})
-                  .webp({ lossless: true })
-                  .toFile(outputFilenameWebp);
-                console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
-                sharp(localImageJpg)
-                  .resize(size, size,{fit: 'cover'})
-                  .toFile(outputFilenameJpg);
-                console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
+                try {
+                  sharp(localImageJpg)
+                    .resize(size, size,{fit: 'cover'})
+                    .webp({ lossless: true })
+                    .toFile(outputFilenameWebp);
+                  console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameWebp));        
+                  sharp(localImageJpg)
+                    .resize(size, size,{fit: 'cover'})
+                    .toFile(outputFilenameJpg);
+                  console.log("Converted",chalk.yellow(localImageJpg),"to", chalk.green(outputFilenameJpg)); 
+                } catch (err) {
+                  console.log(err)
+                }
               }
             }
           });
