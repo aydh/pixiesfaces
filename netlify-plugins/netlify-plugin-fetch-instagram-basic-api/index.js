@@ -74,7 +74,6 @@ module.exports = {
       let { localImageFilenamePrefix, sourceImageURL } = instagramData[image];
       let localImageJpg = `${imageFolder}/${localImageFilenamePrefix}.jpg`;
       
-      const writer = fs.createWriteStream(localImageJpg);
       return axios({
         method: 'get',
         url: sourceImageURL,
@@ -82,6 +81,7 @@ module.exports = {
       }).then(response => {
         return new Promise((resolve, reject) => {
           console.log('Instagram image retrieval success - return status:', chalk.green(response.status))
+          const writer = createWriteStream(localImageJpg);
           response.data.pipe(writer);
           let error = null;
           writer.on('error', err => {
